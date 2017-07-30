@@ -1,0 +1,3271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="pumTables.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="pumAutoCorrect.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>439, 17</value>
+  </metadata>
+  <metadata name="textBlockServerSQL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>128, 17</value>
+  </metadata>
+  <data name="textBlockServerSQL.StringBlock" xml:space="preserve">
+    <value>CREATE GENERATOR REPLICATE$COLUMNLOG_ID;
+CREATE GENERATOR REPLICATE$OPERATIONLOG_ID;
+CREATE GENERATOR REPLICATE$REPLICATETABLES_ID;
+
+GRANT USAGE ON GENERATOR REPLICATE$COLUMNLOG_ID TO PUBLIC; 
+GRANT USAGE ON GENERATOR REPLICATE$OPERATIONLOG_ID TO PUBLIC; 
+GRANT USAGE ON GENERATOR REPLICATE$REPLICATETABLES_ID TO PUBLIC; 
+
+CREATE TABLE REPLICATE$TABLES
+(
+  ID Bigint NOT NULL,
+  OPTIONS Bigint DEFAULT 0 NOT NULL,
+  SORT_ORDER Integer DEFAULT 0 NOT NULL,
+  INDICE_TYPE Integer DEFAULT 0 NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  OPERATION Varchar(6) NOT NULL,
+  TRIGGER_NAME Varchar(18),
+  EXCLUDE_FIELDS Varchar(255) DEFAULT '' NOT NULL,
+  LOCAL_GENERATOR Varchar(31) DEFAULT '' NOT NULL,
+  REMOTE_GENERATOR Varchar(31) DEFAULT '' NOT NULL,
+  LOCAL_ID_COLUMN Varchar(31) DEFAULT '' NOT NULL,
+  CONSTRAINT PK_REPLICATE$TABLES_ID PRIMARY KEY (ID)
+);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$TABLES TO PUBLIC;
+
+COMMENT ON TABLE REPLICATE$TABLES IS 'Contains information on the tables that will be replicated.';
+
+CREATE TABLE REPLICATE$OPERATIONLOG
+(
+  ID Bigint NOT NULL,
+  DATETIME Timestamp NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  OPERATION Varchar(6) NOT NULL,
+  PKEY1 Varchar(31),
+  PKEY1_VALUE Varchar(24),
+  PKEY2 Varchar(31),
+  PKEY2_VALUE Varchar(24),
+  PKEY3 Varchar(31),
+  PKEY3_VALUE Varchar(24),
+  CLIENT_ADDRESS Varchar(255),
+  USER_NAME Varchar(31),
+  USER_ROLE Varchar(31),
+  CONSTRAINT PK_REPLICATE$OPERATIONLOG PRIMARY KEY (ID)
+);
+
+CREATE INDEX REPLICATE$OPERATIONLOG_ASC_IDX ON REPLICATE$OPERATIONLOG (DATETIME);
+CREATE DESCENDING INDEX REPLICATE$OPERATIONLOG_DESC_IDX ON REPLICATE$OPERATIONLOG (DATETIME);
+CREATE INDEX IDX_REPLICATE$OPERATIONLOGO ON REPLICATE$OPERATIONLOG (OPERATION);
+CREATE INDEX IDX_REPLICATE$OPERATIONLOGT ON REPLICATE$OPERATIONLOG (TABLE_NAME);
+CREATE INDEX IDX_REPLICATE$OPERATIONLOGP ON REPLICATE$OPERATIONLOG (PKEY1);
+CREATE INDEX IDX_REPLICATE$OPERATIONLOGPV ON REPLICATE$OPERATIONLOG (PKEY1_VALUE);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$OPERATIONLOG TO PUBLIC;
+
+COMMENT ON TABLE REPLICATE$OPERATIONLOG IS 'Primary table containing changes to records that will be replicated.';
+
+CREATE TABLE REPLICATE$REQUIRED_SQL
+(
+  ID Bigint NOT NULL,
+  REQUIRED_SQL Blob sub_type 1,
+  CONSTRAINT PK_REPL$REQUIRED_SQL_ID PRIMARY KEY (ID)
+);
+
+ALTER TABLE REPLICATE$REQUIRED_SQL ADD CONSTRAINT FK_REPL$REQUIRED_SQL_OL
+  FOREIGN KEY (ID) REFERENCES REPLICATE$OPERATIONLOG (ID) ON UPDATE CASCADE ON DELETE CASCADE;
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$REQUIRED_SQL TO PUBLIC;
+
+
+
+
+CREATE TABLE REPLICATE$LOCALPKCHANGES
+(
+  TABLE_NAME Varchar(31) NOT NULL,
+  PK_COLUMN Varchar(31) NOT NULL,
+  OLD_PK_VALUE Bigint NOT NULL,
+  NEW_PK_VALUE Bigint NOT NULL,
+  CONSTRAINT PK_REPLICATE$PKCHANGES PRIMARY KEY (TABLE_NAME,PK_COLUMN,OLD_PK_VALUE)
+);
+
+COMMENT ON TABLE REPLICATE$LOCALPKCHANGES IS 'Contains data on primary key changes for replicated data.';
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$LOCALPKCHANGES TO PUBLIC;
+
+
+CREATE TABLE REPLICATE$COLUMNLOG
+(
+  ID Bigint NOT NULL,
+  OPERATIONLOG_ID Bigint NOT NULL,
+  COLUMN_NAME Varchar(31),
+  OLD_VALUE_BLOB Blob sub_type 0,
+  NEW_VALUE_BLOB Blob sub_type 0,
+  OLD_VALUE Varchar(300),
+  NEW_VALUE Varchar(300),
+  CONSTRAINT PK_REPLICATE$COLUMNLOG PRIMARY KEY (ID)
+);
+
+
+COMMENT ON TABLE REPLICATE$COLUMNLOG IS 'Contains field level changes for each change to a record within a table.';
+
+ALTER TABLE REPLICATE$COLUMNLOG ADD CONSTRAINT FK_REPLICATE$COLUMNLOG
+  FOREIGN KEY (OPERATIONLOG_ID) REFERENCES REPLICATE$OPERATIONLOG (ID) ON UPDATE CASCADE ON DELETE CASCADE;
+  
+CREATE INDEX IDX_REPLICATE$COLUMNLOG1 ON REPLICATE$COLUMNLOG (COLUMN_NAME);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$COLUMNLOG TO PUBLIC;
+
+CREATE TABLE REPLICATE$AUTOCORRECTRULES
+(
+  OPTIONS Integer DEFAULT 0 NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  KEY_NAME Varchar(31) NOT NULL,
+  TARGET_TABLE Varchar(31) NOT NULL,
+  TARGET_COLUMN Varchar(31) NOT NULL,
+  REPLICATE_COLUMN_NAME Varchar(100) NOT NULL,
+  DEPENDENCIES Varchar(310) DEFAULT '' NOT NULL,
+  SQL_RULE Varchar(2000) DEFAULT '' NOT NULL,
+  SQL_RULE_REMOTE Varchar(2000) DEFAULT '' NOT NULL,
+  CONSTRAINT IDX_REPLICATE$AUTOCORRECTRULES PRIMARY KEY (TABLE_NAME,KEY_NAME,OPTIONS)
+);
+
+COMMENT ON TABLE REPLICATE$AUTOCORRECTRULES IS 'Contains rules for automatically correcting replicated data.';
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$AUTOCORRECTRULES TO PUBLIC;
+
+
+CREATE TABLE REPLICATE$OPTIONS
+(
+    SITE_ID INTEGER NOT NULL,
+    REPLICATION_TYPE INTEGER DEFAULT 0 NOT NULL,
+    REPLICATION_VERSION INTEGER DEFAULT 1 NOT NULL,
+    DATABASE_VERSION INTEGER DEFAULT 1 NOT NULL
+);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$OPTIONS TO PUBLIC;
+
+COMMENT ON TABLE REPLICATE$OPTIONS IS 'Contains replication options and rules.';
+ 
+INSERT INTO REPLICATE$OPTIONS (SITE_ID, REPLICATION_TYPE, REPLICATION_VERSION, DATABASE_VERSION) VALUES (0, 1, 4, 0);
+
+CREATE TABLE REPLICATE$REQUIRED_SQL
+(
+  ID Bigint NOT NULL,
+  REQUIRED_SQL Blob sub_type 1,
+  CONSTRAINT PK_REPLICATE$REQUIRED_SQL_ID PRIMARY KEY (ID)
+);
+
+ALTER TABLE REPLICATE$REQUIRED_SQL ADD CONSTRAINT FK_REPLICATE$REQUIRED_SQL_OL
+  FOREIGN KEY (ID) REFERENCES REPLICATE$OPERATIONLOG (ID) ON UPDATE CASCADE ON DELETE CASCADE;
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$REQUIRED_SQL TO PUBLIC;
+
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$BUILDWHERECLAUSE (
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPKEY1V Varchar(24),
+    IPKEY2V Varchar(24),
+    IPKEY3V Varchar(24) )
+RETURNS (
+    OPWHERE Varchar(400) )
+AS
+BEGIN
+  IF (IPKEY1V IS NULL) THEN
+  BEGIN
+    opWHERE = ';';
+  END
+  ELSE
+  BEGIN
+    
+    opWHERE = ' WHERE (';
+
+    IF ((ipKey1v IS NOT NULL) AND (ipKey1 IS NOT NULL)) THEN
+      opWHERE = opWHERE || :ipKey1 || ' = ''' || IPKEY1V || '''';
+
+    IF ((ipKey2v IS NOT NULL) AND (ipKey2 IS NOT NULL)) THEN
+      opWHERE = opWHERE || ' AND ' ||ipKey2 || ' = ''' || IPKEY2V || '''';
+
+    IF ((ipKey3v IS NOT NULL) AND (ipKey3 IS NOT NULL)) THEN
+      opWHERE = opWHERE || ' AND ' || ipKey3 || ' = ''' || IPKEY3V || '''';
+  
+    opWHERE = opWHERE || ');';
+  END
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$BUILDWHERECLAUSE TO PUBLIC;
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$QUOTESTR (
+    IPTABLE Varchar(31),
+    IPCOLUMN Varchar(31) )
+RETURNS (
+    OPCANQUOTE Char(1) )
+AS
+BEGIN
+  SELECT CASE f.RDB$FIELD_TYPE WHEN 14 THEN 'T' WHEN 40 THEN 'T' WHEN 12 THEN 'T' WHEN 13 THEN 'T' WHEN 35 THEN 'T' WHEN 37 THEN 'T' ELSE 'F' END
+   FROM RDB$RELATION_FIELDS r
+   LEFT JOIN RDB$FIELDS f ON r.RDB$FIELD_SOURCE = f.RDB$FIELD_NAME
+  WHERE r.RDB$RELATION_NAME = :ipTABLE
+    AND r.RDB$FIELD_NAME = :ipCOLUMN  
+  INTO :opCANQUOTE;
+
+  SUSPEND;
+END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$QUOTESTR TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$SPLITSTRING (
+    IPSTRING Blob sub_type 1,
+    IPDELIMITER Char(1) )
+RETURNS (
+    OPPART Blob sub_type 1 )
+AS
+declare variable vLastPos integer;
+  declare variable vNextPos integer;
+begin
+    ipString = :ipString || :ipDelimiter;
+    
+    vLastPos = 1;
+    vNextPos = POSITION(:ipDelimiter, :ipString, :vLastPos);
+    
+    IF (vLastPos = vNextPos) THEN
+    BEGIN
+        opPart = SUBSTRING(:ipString FROM :vLastPos FOR :vNextPos - :vLastPos);
+        SUSPEND;
+        vLastPos = :vNextPos + 1;
+        vNextPos = POSITION(:ipDelimiter, :ipString, vLastPos);
+    END
+    
+    WHILE (:vNextPos &gt; 1) DO
+    BEGIN
+        opPart = SUBSTRING(:ipString FROM :vLastPos FOR :vNextPos - :vLastPos);
+        vLastPos = :vNextPos + 1;
+        vNextPos = POSITION(:ipDelimiter, :ipString, :vLastPos);
+        SUSPEND;
+    END
+end
+
+^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$SPLITSTRING TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATEDELETE (
+    IPOPERATIONID Bigint )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vWhereClause VARCHAR(400);
+BEGIN
+  SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE
+  FROM REPLICATE$OPERATIONLOG ol
+  WHERE ol.ID = :ipOPERATIONID
+  INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v;
+
+  EXECUTE PROCEDURE REPLICATE$BUILDWHERECLAUSE(vKey1, vKey2, vKey3, vKey1v, vKey2v, vKey3v) RETURNING_VALUES :vWhereClause;
+
+  opSQL = 'DELETE FROM ' || vTableName || ' ' || vWhereClause;
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATEDELETE TO PUBLIC;
+
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$CREATE_MISSING_RECORD (
+    IPTABLENAME Varchar(31),
+    IPCOLUMNNAME Varchar(31),
+    IPRECORDID Varchar(24) )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE vColumnName VARCHAR(31);
+  DECLARE VARIABLE vValues BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vFieldValue BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vSQL BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vFirst INTEGER;
+BEGIN
+    vFirst = 0;
+    opSQL = 'INSERT INTO ' || :ipTABLENAME || '(';
+    vValues = ' VALUES (';
+    
+    FOR
+        SELECT RDB$FIELD_NAME
+        FROM RDB$RELATION_FIELDS
+        WHERE RDB$RELATION_NAME = :ipTABLENAME
+		AND RDB$FIELD_NAME &lt;&gt; 'REPLICATE$HASH'
+        INTO :vColumnName
+    DO
+    BEGIN
+        vSQL = 'SELECT ' || :vColumnName || ' FROM ' || ipTABLENAME || ' WHERE ' || ipCOLUMNNAME || ' = ''' || ipRECORDID || '''';
+        EXECUTE STATEMENT vSQL INTO vFieldValue;
+        
+        IF (vFirst = 0) THEN
+        BEGIN
+            opSQL = opSQL || TRIM(:vColumnName);
+            
+            IF (vFieldValue IS NULL) THEN
+            BEGIN
+                vValues = vValues || 'NULL';
+            END ELSE
+            BEGIN
+                vValues = vValues || '''' || REPLACE(TRIM(vFieldValue), '''', '''''') || '''';
+            END
+            
+            vFirst = 1;
+        END ELSE
+        BEGIN
+            opSQL = opSQL || ', ' || TRIM(:vColumnName);
+            
+            IF (vFieldValue IS NULL) THEN
+            BEGIN
+                vValues = vValues || ', NULL';
+            END ELSE
+            BEGIN            
+                vValues = vValues || ', ''' || REPLACE(TRIM(vFieldValue), '''', '''''') || '''';
+            END
+        END        
+    END
+    
+    vValues = vValues || ');';
+    
+    opSQL = opSQL || ')' || vValues;
+    
+    
+    SUSPEND;
+END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$CREATE_MISSING_RECORD TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATEINSERT (
+    IPOPERATIONID Bigint )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vColumnName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vFirst INTEGER;
+  DECLARE VARIABLE vParamCount INTEGER;
+  DECLARE VARIABLE vNewValue VARCHAR(300); 
+  DECLARE VARIABLE vNewValueBlob BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vOldValue VARCHAR(300); 
+  DECLARE VARIABLE vOldValueBlob BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vQuoteString CHAR(1);
+  DECLARE VARIABLE vInsertColumns VARCHAR(700);
+  DECLARE VARIABLE vInsertValues BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vWhereClause VARCHAR(400);
+  DECLARE VARIABLE vChangedValue VARCHAR(300);
+BEGIN
+  vFirst = 0;
+  vParamCount = 0;
+  
+  SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE
+  FROM REPLICATE$OPERATIONLOG ol
+  WHERE ol.ID = :ipOPERATIONID
+  INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v;
+  
+  
+  IF (vKey2 IS NULL AND vKey2v IS NULL) THEN
+  BEGIN
+      EXECUTE PROCEDURE REPLICATE$CREATE_MISSING_RECORD(:vTableName, :vKey1, :vKey1v) RETURNING_VALUES :opSQL;
+  END ELSE
+  BEGIN
+      EXECUTE PROCEDURE REPLICATE$BUILDWHERECLAUSE(vKey1, vKey2, vKey3, vKey1v, vKey2v, vKey3v) RETURNING_VALUES :vWhereClause;
+      
+      FOR 
+        SELECT r.COLUMN_NAME, r.NEW_VALUE_BLOB, r.NEW_VALUE, r.OLD_VALUE_BLOB, r.OLD_VALUE
+        FROM REPLICATE$COLUMNLOG r
+        WHERE r.OPERATIONLOG_ID = :ipOPERATIONID
+      INTO :vColumnName, :vNewValueBlob, :vNewValue, :vOldValueBlob, :vOldValue
+      DO
+      BEGIN
+        vParamCount = vParamCount + 1;
+        EXECUTE PROCEDURE REPLICATE$QUOTESTR(vTableName, vColumnName) RETURNING_VALUES vQuoteString;
+        
+        -- has the id for a foreign key been updated?
+          IF (EXISTS(SELECT TRIM(rc1.RDB$RELATION_NAME)
+                From RDB$RELATION_CONSTRAINTS rc 
+                    left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                    left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                    left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                    left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+                WHERE rc.RDB$RELATION_NAME = :vTableName
+                    AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+                    AND TRIM(ins.RDB$FIELD_NAME) = :vColumnName)) THEN
+          BEGIN
+            SELECT FIRST 1 CAST(a.NEW_VALUE AS VARCHAR(24))
+            FROM REPLICATE$COLUMNLOG a
+            WHERE a.COLUMN_NAME = :vColumnName
+                AND a.OLD_VALUE = :vNewValue
+                AND a.NEW_VALUE IS NOT NULL
+            ORDER BY a.ID DESC
+            INTO :vChangedValue;
+
+            if (vChangedValue IS NOT NULL AND vChangedValue &lt;&gt; '') THEN
+            BEGIN
+                vNewValue = vChangedValue;
+            END
+          END
+        
+        IF (vFirst = 0) THEN
+        BEGIN
+          IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL) AND (vOldValue IS NOT NULL OR vNewValue IS NOT NULL)) THEN
+          BEGIN
+            IF (vQuoteString = 'T') THEN
+            BEGIN
+              vInsertColumns = vColumnName;
+              vInsertValues = '''' || REPLACE(vNewValue, '''', '''''') || '''';
+            END ELSE
+            BEGIN
+              vInsertColumns = vColumnName;
+              vInsertValues = vNewValue;
+            END
+          END ELSE 
+          BEGIN
+            vInsertColumns = vColumnName;
+            vInsertValues = '''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+          END
+          
+          vFirst = 1;
+        END ELSE 
+        BEGIN
+          IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL) AND (vOldValue IS NOT NULL OR vNewValue IS NOT NULL)) THEN
+          BEGIN
+            IF (vQuoteString = 'T') THEN
+            BEGIN
+              vInsertColumns = vInsertColumns || ', ' || vColumnName;
+              vInsertValues = vInsertValues || ', ''' || REPLACE(vNewValue, '''', '''''') || '''';
+            END ELSE
+            BEGIN
+              vInsertColumns = vInsertColumns || ', ' || vColumnName;
+              vInsertValues = vInsertValues || ', ' || vNewValue;
+            END
+          END ELSE 
+          BEGIN
+            vInsertColumns = vInsertColumns || ', ' || vColumnName;
+            vInsertValues = vInsertValues  || ', ''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+          END
+        END
+      END
+      
+      opSQL = 'INSERT INTO ' || vTableName || ' (' || vInsertColumns || ') VALUES (' || vInsertValues || ');';
+  END
+  
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATEINSERT TO PUBLIC;
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATEUPDATE (
+    IPOPERATIONID Bigint )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vColumnName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vFirst INTEGER;
+  DECLARE VARIABLE vParamCount INTEGER;
+  DECLARE VARIABLE vNewValue VARCHAR(300); 
+  DECLARE VARIABLE vNewValueBlob blob SUB_TYPE text;
+  DECLARE VARIABLE vOldValue VARCHAR(300); 
+  DECLARE VARIABLE vOldValueBlob blob SUB_TYPE text;
+  DECLARE VARIABLE vQuoteString CHAR(1);
+  DECLARE VARIABLE vWhereClause VARCHAR(400);
+BEGIN
+  vFirst = 0;
+  vParamCount = 0;
+  
+  SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE
+  FROM REPLICATE$OPERATIONLOG ol
+  WHERE ol.ID = :ipOPERATIONID
+  INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v;
+
+  EXECUTE PROCEDURE REPLICATE$BUILDWHERECLAUSE(vKey1, vKey2, vKey3, vKey1v, vKey2v, vKey3v) RETURNING_VALUES :vWhereClause;
+
+  
+  opSQL = 'UPDATE ' || vTableName || ' SET ';
+  
+  FOR 
+    SELECT r.COLUMN_NAME, r.NEW_VALUE_BLOB, r.NEW_VALUE, r.OLD_VALUE_BLOB, r.OLD_VALUE
+    FROM REPLICATE$COLUMNLOG r
+    WHERE r.OPERATIONLOG_ID = :ipOPERATIONID
+  INTO :vColumnName, :vNewValueBlob, :vNewValue, :vOldValueBlob, :vOldValue
+  DO
+  BEGIN
+    vParamCount = vParamCount + 1;
+    EXECUTE PROCEDURE REPLICATE$QUOTESTR(vTableName, vColumnName) RETURNING_VALUES vQuoteString;
+    
+    IF (vFirst = 0) THEN
+    BEGIN    
+      IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL)) THEN
+      BEGIN
+        IF (vQuoteString = 'T') THEN
+        BEGIN
+            IF (vNewValue IS NULL) THEN
+                opSQL = opSQL || ' ' || vColumnName || ' = NULL ';
+            ELSE
+                opSQL = opSQL || ' ' || vColumnName || ' = ''' || REPLACE(vNewValue, '''', '''''') || '''';
+        END ELSE
+        BEGIN
+            IF (vNewValue IS NULL) THEN
+                opSQL = opSQL || ' ' || vColumnName || ' = NULL ';
+            ELSE
+                opSQL = opSQL || ' ' || vColumnName || ' = ' || vNewValue;
+        END
+      END ELSE 
+      BEGIN
+        opSQL = opSQL || ' ' || vColumnName || ' = ''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+      END
+    
+      vFirst = 1;
+    END ELSE 
+    BEGIN
+      IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL)) THEN
+      BEGIN
+        IF (vQuoteString = 'T') THEN
+        BEGIN
+            IF (vNewValue IS NULL) THEN
+                opSQL = opSQL || ', ' || vColumnName || ' = NULL ';
+            ELSE
+                opSQL = opSQL || ', ' || vColumnName || ' = ''' || REPLACE(vNewValue, '''', '''''') || '''';
+        END ELSE
+        BEGIN
+            IF (vNewValue IS NULL) THEN
+                opSQL = opSQL || ', ' || vColumnName || ' = NULL ';
+            ELSE
+                opSQL = opSQL || ', ' || vColumnName || ' = ' || vNewValue;
+        END
+      END ELSE 
+      BEGIN
+        IF (vQuoteString = 'T') THEN
+          vNewValue = '''' || vNewValue || '''';
+
+        opSQL = opSQL || ', ' || vColumnName || ' = ''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+      END 
+    END
+  END
+  
+  IF (vParamCount &gt; 0) THEN
+  BEGIN
+    opSQL = opSQL || ' ' || vWhereClause;
+  
+    SUSPEND;
+  END ELSE 
+    opSQL = NULL;
+END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATEUPDATE TO PUBLIC;
+
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATECHANGES (
+    IPFROMID Bigint,
+    IPTOID Bigint )
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPTABLE Varchar(31),
+    OPPRIMARY_KEY Varchar(31),
+    OPPRIMARY_KEY_VALUE Varchar(24),
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE VOperationType VARCHAR(6);
+BEGIN
+  
+  FOR
+    SELECT ol.ID, ol.OPERATION, ol.TABLE_NAME, ol.PKEY1, OL.PKEY1_VALUE, RS.REQUIRED_SQL
+    FROM REPLICATE$OPERATIONLOG ol
+      LEFT JOIN REPLICATE$REQUIRED_SQL rs ON (rs.ID = OL.ID)
+    WHERE ol.ID BETWEEN :IPFROMID AND :IPTOID    
+    ORDER BY ol.ID
+    INTO :OPOPERATION_ID, :vOperationType, :opTable, :opPRIMARY_KEY, :opPRIMARY_KEY_VALUE, :opSQL
+  DO
+  BEGIN
+    IF (opSQL IS NULL) THEN
+    BEGIN
+        IF (vOperationType = 'UPDATE') THEN
+        BEGIN
+          EXECUTE PROCEDURE REPLICATE$REPLICATEUPDATE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+        END ELSE IF (vOperationType = 'DELETE') THEN
+        BEGIN
+          EXECUTE PROCEDURE REPLICATE$REPLICATEDELETE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+        END ELSE IF (vOperationType = 'INSERT') THEN
+        BEGIN
+          EXECUTE PROCEDURE REPLICATE$REPLICATEINSERT(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+        END
+
+        IF (opSQL IS NOT NULL) THEN
+        BEGIN
+          INSERT INTO REPLICATE$REQUIRED_SQL (ID, REQUIRED_SQL) VALUES(:opOPERATION_ID, :opSQL);
+          
+          SUSPEND;
+          
+          WHEN ANY DO
+          BEGIN
+           
+          END
+        END
+    END ELSE
+      SUSPEND;
+  END
+END^
+SET TERM ; ^
+
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATECHANGES TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$COLUMNLOG_INSERT (
+    ipOPERATIONLOG_ID Bigint,
+    ipCOLUMN_NAME Varchar(31),
+    ipOLD_VALUE Varchar(300),
+    ipNEW_VALUE Varchar(300),
+    ipOLD_VALUE_BLOB Blob sub_type 0,
+    ipNEW_VALUE_BLOB Blob sub_type 0 )
+AS
+BEGIN
+  INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)
+  VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :ipOPERATIONLOG_ID, :ipCOLUMN_NAME, :ipOLD_VALUE, :ipNEW_VALUE, :ipOLD_VALUE_BLOB, :ipNEW_VALUE_BLOB); 
+END^
+SET TERM ; ^
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$COLUMNLOG_INSERT TO PUBLIC;
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$OPERATIONLOG_INSERT (
+    ipTABLE_NAME Varchar(31),
+    ipOPERATION Varchar(6),
+    ipPKEY1 Varchar(31),
+    ipPKEY1_VALUE Varchar(24),
+    ipPKEY2 Varchar(31),
+    ipPKEY2_VALUE Varchar(24),
+    ipPKEY3 Varchar(31),
+    ipPKEY3_VALUE Varchar(24) )
+RETURNS (
+    opNEWID Bigint )
+AS
+BEGIN 
+  opNEWID = GEN_ID(REPLICATE$OPERATIONLOG_ID, 1);
+  INSERT INTO REPLICATE$OPERATIONLOG (ID, DATETIME, TABLE_NAME, OPERATION, PKEY1, PKEY1_VALUE, PKEY2, PKEY2_VALUE, PKEY3, PKEY3_VALUE, REPLICATED, CLIENT_ADDRESS, USER_NAME, USER_ROLE)
+  VALUES (:opNEWID, CURRENT_TIMESTAMP, :ipTABLE_NAME, :ipOPERATION, :ipPKEY1, :ipPKEY1_VALUE, :ipPKEY2, :ipPKEY2_VALUE, :ipPKEY3, :ipPKEY3_VALUE, 0, rdb$get_context('SYSTEM', 'CLIENT_ADDRESS'), USER, CURRENT_ROLE); 
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$OPERATIONLOG_INSERT TO PUBLIC;
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$FIND_MISSING_RECORDS (
+    IPTABLE_NAME Varchar(31),
+    IPPK_FIELD Varchar(31),
+    IPARRAY_VALUES Blob sub_type 1 )
+RETURNS (
+    OPNOT_FOUND Varchar(24),
+    OPISDELETED Char(1) )
+AS
+DECLARE VARIABLE vSQL BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vValue BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vCount INTEGER;
+  DECLARE VARIABLE vDeleteCount INTEGER;
+BEGIN
+  
+  FOR 
+  SELECT opPART 
+  FROM REPLICATE$SPLITSTRING(:ipARRAY_VALUES, ',')
+  INTO :vValue
+  DO
+  BEGIN
+    IF (TRIM(vValue) &lt;&gt; '') THEN
+    BEGIN
+        vSQL = 'SELECT COUNT(' || ipPK_FIELD || ') FROM ' || ipTABLE_NAME || ' WHERE ' || ipPK_FIELD || ' = ' || TRIM(vValue);
+        EXECUTE STATEMENT vSQL INTO vCount;
+
+        IF (vCount = 0) THEN
+        BEGIN
+            
+            vSQL = 'SELECT COUNT(a.ID) FROM REPLICATE$OPERATIONLOG a WHERE a.OPERATION = ''DELETE'' AND a.PKEY1 = ''' || ipPK_FIELD || ''' AND a.TABLE_NAME = ''' || ipTABLE_NAME || ''' AND a.PKEY1_VALUE = ''' || TRIM(vVALUE) || ''';';
+            
+            EXECUTE STATEMENT vSQL INTO vDeleteCount;
+
+            IF (vDeleteCount = 0) THEN
+            BEGIN
+                opIsDeleted = 'N';
+                opNOT_FOUND = vValue;
+                SUSPEND;
+            END
+            ELSE IF (vDeleteCount &gt; 0) THEN
+            BEGIN
+                opIsDeleted = 'Y';
+                opNOT_FOUND = vValue;
+                SUSPEND;
+            END
+        END
+    END
+  END
+END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$FIND_MISSING_RECORDS TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$MISSINGRECORD (
+    IPTABLENAME Varchar(31),
+    IPCOLUMNNAME Varchar(31),
+    IPRECORDVALUE Varchar(24) )
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE VOperationType VARCHAR(6);
+DECLARE VARIABLE vCount INTEGER;
+BEGIN
+  vCount = 0;
+  
+  
+  IF (vCount = 0) THEN
+  BEGIN
+    
+    OPOPERATION_ID = -1;
+    EXECUTE PROCEDURE REPLICATE$CREATE_MISSING_RECORD(ipTABLENAME, ipCOLUMNNAME, ipRECORDVALUE) RETURNING_VALUES :opSQL;
+    SUSPEND;
+  END ELSE
+  BEGIN
+    
+    FOR
+      SELECT ol.ID, ol.OPERATION
+      FROM REPLICATE$OPERATIONLOG ol
+      WHERE ol.ID IN
+      (
+          SELECT a.ID
+          FROM REPLICATE$OPERATIONLOG a
+          WHERE a.TABLE_NAME = :ipTABLENAME
+              AND (
+                    (a.PKEY1 = :ipCOLUMNNAME AND a.PKEY1_VALUE = :ipRECORDVALUE) OR 
+                    (a.PKEY2 = :ipCOLUMNNAME AND a.PKEY2_VALUE = :ipRECORDVALUE) OR
+                    (a.PKEY3 = :ipCOLUMNNAME AND a.PKEY3_VALUE = :ipRECORDVALUE) 
+                  )
+      )
+      ORDER BY ol.DATETIME
+      INTO :OPOPERATION_ID, :vOperationType
+    DO
+    BEGIN
+    IF (vOperationType = 'UPDATE') THEN
+      BEGIN
+        EXECUTE PROCEDURE REPLICATE$REPLICATEUPDATE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+      END ELSE IF (vOperationType = 'DELETE') THEN
+      BEGIN
+        EXECUTE PROCEDURE REPLICATE$REPLICATEDELETE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+      END ELSE IF (vOperationType = 'INSERT') THEN
+      BEGIN
+        EXECUTE PROCEDURE REPLICATE$REPLICATEINSERT(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+      END
+
+      IF (opSQL IS NOT NULL) THEN
+      BEGIN
+        SUSPEND;
+      
+        WHEN ANY DO
+        BEGIN
+         
+        END
+      END
+    END
+  END
+END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$MISSINGRECORD TO PUBLIC;
+
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$RUNSQL (
+    IPSQL Blob sub_type 1,
+    IPGENERATOR_NAME Varchar(31) )
+RETURNS (
+    OPNEW_GENERATOR_VALUE Bigint )
+AS
+BEGIN
+    RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'YES');
+
+    IF ((ipGENERATOR_NAME IS NOT NULL) AND (ipGENERATOR_NAME &lt;&gt; '')) THEN
+    BEGIN
+        EXECUTE STATEMENT 'SELECT GEN_ID(' || :ipGENERATOR_NAME || ', 1) FROM RDB$DATABASE' INTO :opNEW_GENERATOR_VALUE;
+        ipSQL = REPLACE(ipSQL, '@NEWGEN@', opNEW_GENERATOR_VALUE);
+    END ELSE
+    BEGIN
+        opNEW_GENERATOR_VALUE = -1;
+        ipSQL = REPLACE(ipSQL, '@NEWGEN@', 'NULL');
+    END
+      
+    EXECUTE STATEMENT ipSQL;
+  
+    SUSPEND;
+  
+    RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', NULL);
+END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$RUNSQL TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$VERIFY_RECORDS (
+    IPTABLE_NAME Varchar(31),
+    IPPK_FIELD Varchar(31),
+    IPPAGENUMBER Integer,
+    IPPAGESIZE Integer )
+RETURNS (
+    OPARRAY_VALUES Blob sub_type 1,
+    OPFIRSTVALUE Varchar(24),
+    OPLASTVALUE Varchar(24) )
+AS
+DECLARE VARIABLE vSQL VARCHAR(2000);
+  DECLARE VARIABLE vValue VARCHAR(24);
+  DECLARE VARIABLE vCount INTEGER;
+  DECLARE VARIABLE vPAGENO BIGINT;
+  DECLARE VARIABLE vCOUNTER BIGINT;
+BEGIN
+  IF (ipPAGENUMBER &lt; 1) THEN
+    EXCEPTION ;
+
+  IF (ipPAGESIZE &lt; 1) THEN
+    EXCEPTION ;
+
+  opARRAY_VALUES = '';
+  vCOUNTER = 0;
+
+  vPAGENO = (ipPAGESIZE * ipPAGENUMBER) - ipPAGESIZE;
+
+  FOR EXECUTE STATEMENT 
+    'SELECT ' || ipPK_FIELD || ' FROM ' || ipTABLE_NAME || ' ORDER BY ' || ipPK_FIELD || ' DESC '
+  INTO :vValue
+  DO
+  BEGIN
+        IF ((vCOUNTER &gt;= vPAGENO) AND (vCOUNTER &lt; (vPAGENO + ipPAGESIZE))) THEN
+        BEGIN
+            IF (opARRAY_VALUES = '') THEN
+            BEGIN
+                opFIRSTVALUE = vValue;
+                opARRAY_VALUES = vValue;
+            END ELSE
+            BEGIN
+                opARRAY_VALUES = opARRAY_VALUES || ',' || vValue;
+                opLASTVALUE = vValue;
+            END
+        END
+
+        vCOUNTER = vCOUNTER + 1;
+
+        IF (vCOUNTER &gt; (vPAGENO + ipPAGESIZE)) THEN
+        BEGIN
+            BREAK;
+        END
+  END
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$VERIFY_RECORDS TO PUBLIC;
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATION$REMOTECOUNT (
+    IPCURRENTID Bigint )
+RETURNS (
+    OPUPDATES Bigint )
+AS
+BEGIN
+    SELECT COUNT(*)
+    FROM REPLICATE$OPERATIONLOG ol
+    WHERE ol.ID &gt;= :ipCURRENTID
+        AND ol.ID IN (SELECT cl.OPERATIONLOG_ID FROM REPLICATE$COLUMNLOG cl WHERE cl.OPERATIONLOG_ID &gt;= :ipCURRENTID) 
+    INTO :opUPDATES;
+    SUSPEND;
+END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATION$REMOTECOUNT TO PUBLIC;
+</value>
+  </data>
+  <metadata name="textBlockClientSQL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>285, 17</value>
+  </metadata>
+  <data name="textBlockClientSQL.StringBlock" xml:space="preserve">
+    <value>CREATE GENERATOR REPLICATE$COLUMNLOG_ID;
+CREATE GENERATOR REPLICATE$OPERATIONLOG_ID;
+CREATE GENERATOR REPLICATE$REMOTE_LOG_ID;
+CREATE GENERATOR REPLICATE$REPLICATETABLES_ID;
+CREATE GENERATOR REPLICATION$ID;
+
+
+GRANT USAGE ON GENERATOR REPLICATE$COLUMNLOG_ID TO PUBLIC; 
+GRANT USAGE ON GENERATOR REPLICATE$OPERATIONLOG_ID TO PUBLIC; 
+GRANT USAGE ON GENERATOR REPLICATE$REPLICATETABLES_ID TO PUBLIC; 
+GRANT USAGE ON GENERATOR REPLICATE$REPLICATETABLES_ID TO PUBLIC; 
+GRANT USAGE ON GENERATOR REPLICATION$ID TO PUBLIC; 
+
+CREATE TABLE REPLICATE$TABLES
+(
+  ID Bigint NOT NULL,
+  OPTIONS Bigint DEFAULT 0 NOT NULL,
+  SORT_ORDER Integer DEFAULT 0 NOT NULL,
+  INDICE_TYPE Integer DEFAULT 0 NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  OPERATION Varchar(6) NOT NULL,
+  TRIGGER_NAME Varchar(18),
+  EXCLUDE_FIELDS Varchar(255) DEFAULT '' NOT NULL,
+  LOCAL_GENERATOR Varchar(31) DEFAULT '' NOT NULL,
+  REMOTE_GENERATOR Varchar(31) DEFAULT '' NOT NULL,
+  LOCAL_ID_COLUMN Varchar(31) DEFAULT '' NOT NULL,
+  CONSTRAINT PK_REPLICATE$TABLES_ID PRIMARY KEY (ID)
+);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$TABLES TO PUBLIC;
+
+COMMENT ON TABLE REPLICATE$TABLES IS 'Contains information on the tables that will be replicated.';
+
+CREATE TABLE REPLICATE$OPERATIONLOG
+(
+  ID Bigint NOT NULL,
+  DATETIME Timestamp NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  OPERATION Varchar(6) NOT NULL,
+  PKEY1 Varchar(31),
+  PKEY1_VALUE Varchar(24),
+  PKEY2 Varchar(31),
+  PKEY2_VALUE Varchar(24),
+  PKEY3 Varchar(31),
+  PKEY3_VALUE Varchar(24),
+  CLIENT_ADDRESS Varchar(255),
+  USER_NAME Varchar(31),
+  USER_ROLE Varchar(31),
+  REPLICATED Integer DEFAULT 0,
+  CONSTRAINT PK_REPLICATE$OPERATIONLOG PRIMARY KEY (ID)
+);
+
+CREATE INDEX REPLICATE$OPERATIONLOG_ASC_IDX ON REPLICATE$OPERATIONLOG (DATETIME);
+CREATE DESCENDING INDEX REPLICATE$OPERATIONLOG_DESC_IDX ON REPLICATE$OPERATIONLOG (DATETIME);
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$OPERATIONLOG TO PUBLIC;
+
+CREATE INDEX IDX_REPLICATE$OPERATIONLOGR ON REPLICATE$OPERATIONLOG
+  (REPLICATED);
+
+
+COMMENT ON TABLE REPLICATE$OPERATIONLOG IS 'Primary table containing changes to records that will be replicated.';
+
+
+CREATE TABLE REPLICATE$LOCALPKCHANGES
+(
+  OLD_PK_VALUE Bigint NOT NULL,
+  NEW_PK_VALUE Bigint NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  PK_COLUMN Varchar(31) NOT NULL,
+  CONSTRAINT PK_REPLICATE$PKCHANGES PRIMARY KEY (TABLE_NAME,PK_COLUMN,OLD_PK_VALUE)
+);
+
+COMMENT ON TABLE REPLICATE$LOCALPKCHANGES IS 'Contains data on primary key changes for replicated data.';
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$LOCALPKCHANGES TO PUBLIC;
+
+
+CREATE TABLE REPLICATE$COLUMNLOG
+(
+  ID Bigint NOT NULL,
+  OPERATIONLOG_ID Bigint NOT NULL,
+  COLUMN_NAME Varchar(31),
+  OLD_VALUE_BLOB Blob sub_type 0,
+  NEW_VALUE_BLOB Blob sub_type 0,
+  OLD_VALUE Varchar(300),
+  NEW_VALUE Varchar(300),
+  CONSTRAINT PK_REPLICATE$COLUMNLOG PRIMARY KEY (ID)
+);
+
+
+COMMENT ON TABLE REPLICATE$COLUMNLOG IS 'Contains field level changes for each change to a record within a table.';
+
+ALTER TABLE REPLICATE$COLUMNLOG ADD CONSTRAINT FK_REPLICATE$COLUMNLOG
+  FOREIGN KEY (OPERATIONLOG_ID) REFERENCES REPLICATE$OPERATIONLOG (ID) ON UPDATE CASCADE ON DELETE CASCADE;
+  
+CREATE INDEX IDX_REPLICATE$COLUMNLOG1 ON REPLICATE$COLUMNLOG (COLUMN_NAME);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$COLUMNLOG TO PUBLIC;
+
+CREATE TABLE REPLICATE$AUTOCORRECTRULES
+(
+  OPTIONS Integer DEFAULT 0 NOT NULL,
+  TABLE_NAME Varchar(31) NOT NULL,
+  KEY_NAME Varchar(31) NOT NULL,
+  TARGET_TABLE Varchar(31) NOT NULL,
+  TARGET_COLUMN Varchar(31) NOT NULL,
+  REPLICATE_COLUMN_NAME Varchar(100) NOT NULL,
+  DEPENDENCIES Varchar(310) DEFAULT '' NOT NULL,
+  SQL_RULE Varchar(2000) DEFAULT '' NOT NULL,
+  SQL_RULE_REMOTE Varchar(2000) DEFAULT '' NOT NULL,
+  CONSTRAINT IDX_REPLICATE$AUTOCORRECTRULES PRIMARY KEY (TABLE_NAME,KEY_NAME,OPTIONS)
+);
+
+COMMENT ON TABLE REPLICATE$AUTOCORRECTRULES IS 'Contains rules for automatically correcting replicated data.';
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$AUTOCORRECTRULES TO PUBLIC;
+
+
+CREATE TABLE REPLICATE$OPTIONS
+(
+    SITE_ID INTEGER NOT NULL,
+    REPLICATION_TYPE INTEGER DEFAULT 0 NOT NULL,
+    REPLICATION_VERSION INTEGER DEFAULT 1 NOT NULL,
+    DATABASE_VERSION INTEGER DEFAULT 1 NOT NULL
+);
+
+GRANT DELETE, INSERT, REFERENCES, SELECT, UPDATE
+ ON REPLICATE$OPTIONS TO PUBLIC;
+
+COMMENT ON TABLE REPLICATE$OPTIONS IS 'Contains replication options and rules.';
+ 
+INSERT INTO REPLICATE$OPTIONS (SITE_ID, REPLICATION_TYPE, REPLICATION_VERSION, DATABASE_VERSION) VALUES (0, 1, 4, 0);
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$AUTOFIXRECORD (
+    IPRECORDID Bigint )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$AUTOFIXRECORD TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$AUTOFIXRECORD IS 'Attempts to fix the primary key in column log changes if the record fails to replicate due to violation of foreign key.';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$BUILDWHERECLAUSE (
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPKEY1V Varchar(24),
+    IPKEY2V Varchar(24),
+    IPKEY3V Varchar(24) )
+RETURNS (
+    OPWHERE Varchar(400) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$BUILDWHERECLAUSE TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$BUILDWHERECLAUSE  IS 'Builds a where clause for a record within the change log for delete statements';
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$BUILDWHERECLAUSE2 (
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPKEY1V Varchar(24),
+    IPKEY2V Varchar(24),
+    IPKEY3V Varchar(24),
+    IPPK_COLUMN Varchar(31) )
+RETURNS (
+    OPWHERE Varchar(400) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$BUILDWHERECLAUSE2 TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$BUILDWHERECLAUSE2 IS 'Builds a where clause for a record within the change log for update statements';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$COLUMNLOG_INSERT (
+    ipOPERATIONLOG_ID Bigint,
+    ipCOLUMN_NAME Varchar(31),
+    ipOLD_VALUE Varchar(300),
+    ipNEW_VALUE Varchar(300),
+    ipOLD_VALUE_BLOB Blob sub_type 0,
+    ipNEW_VALUE_BLOB Blob sub_type 0 )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$COLUMNLOG_INSERT TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$COLUMNLOG_INSERT IS 'Inserts a record into the column change log for any column change during insert/update/delete';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$FIND_MISSING_RECORDS (
+    IPTABLE_NAME Varchar(31),
+    IPPK_FIELD Varchar(31),
+    IPARRAY_VALUES Blob sub_type 1 )
+RETURNS (
+    IPNOT_FOUND Varchar(24) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$FIND_MISSING_RECORDS TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$FIND_MISSING_RECORDS IS 'Determines wether a record exists within a table, used when performing a deep scan of all records looking for missing records';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$GENERATEINSERT (
+    IPTABLENAME Varchar(31),
+    IPPRIMARYKEY Varchar(31),
+    IPRECORDID Varchar(24),
+    IPGENERATELOG Integer )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$GENERATEINSERT TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$GENERATEINSERT IS 'Creates an insert statement based on the record from within the operation log and column log';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$LOCALPKCHANGES_INSERT (
+    IPTABLE_NAME Varchar(31),
+    IPPK_COLUMN Varchar(31),
+    IPOLD_PK_VALUE Bigint,
+    IPNEW_PK_VALUE Bigint )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$LOCALPKCHANGES_INSERT TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$LOCALPKCHANGES_INSERT IS 'Records a change in primary key for records updated by the master database';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$OPERATIONLOG_INSERT (
+    ipTABLE_NAME Varchar(31),
+    ipOPERATION Varchar(6),
+    ipPKEY1 Varchar(31),
+    ipPKEY1_VALUE Varchar(24),
+    ipPKEY2 Varchar(31),
+    ipPKEY2_VALUE Varchar(24),
+    ipPKEY3 Varchar(31),
+    ipPKEY3_VALUE Varchar(24) )
+RETURNS (
+    opNEWID Bigint )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$OPERATIONLOG_INSERT TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$OPERATIONLOG_INSERT IS 'Insert a record into the operation log, registering an insert/update/delete of a record being replicated';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$QUOTESTR (
+    IPTABLE Varchar(31),
+    IPCOLUMN Varchar(31) )
+RETURNS (
+    OPCANQUOTE Char(1) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$QUOTESTR TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$QUOTESTR IS 'Determines wether a field should be quoted when createing insert/update/delete statements';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REMOTEUPDATES (
+    IPOPERATIONID Bigint,
+    IPSQL Blob sub_type 1 )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REMOTEUPDATES TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REMOTEUPDATES IS 'Changes the replicating context and executes a sql statement during replication';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REMOTEUPDATES_2 (
+    IS_SET Integer )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REMOTEUPDATES_2 TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REMOTEUPDATES_2 IS 'Changes the replicating context prior to a sql statement being executed';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATECHANGES_I (
+    IPTABLENAME Varchar(31),
+    IPCOLUMNNAME Varchar(31),
+    IPRECORDID Bigint )
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPSQL Blob sub_type 1,
+    OPTABLE_NAME Varchar(31),
+    OPOLD_ID Bigint,
+    OPPRIMARY_KEY_COLUMN Varchar(31),
+    OPREMOTE_GENERATOR Varchar(31),
+    OPFKEY1 Varchar(180),
+    OPFKEY2 Varchar(180),
+    OPFKEY3 Varchar(180),
+    OPOPTIONS Bigint )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATECHANGES_I TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REPLICATECHANGES_I IS 'Returns an individual record from the change log for replication';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATECHANGES
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPSQL Blob sub_type 1,
+    OPTABLE_NAME Varchar(31),
+    OPOLD_ID Bigint,
+    OPPRIMARY_KEY_COLUMN Varchar(31),
+    OPREMOTE_GENERATOR Varchar(31),
+    OPFKEY1 Varchar(180),
+    OPFKEY2 Varchar(180),
+    OPFKEY3 Varchar(180),
+    OPOPTIONS Bigint )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATECHANGES TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REPLICATECHANGES IS 'Returns all records that need to be replicated to master database';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATEDELETE (
+    IPOPERATIONID Bigint )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATEDELETE TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REPLICATEDELETE IS 'Creates a delete statement from change log';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATEINSERT (
+    IPOPERATIONID Bigint,
+    IPPRIMARY_KEY_COLUMN Varchar(31),
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPINDICETYPE Integer )
+RETURNS (
+    OPSQL Blob sub_type 1,
+    OPOLD_ID Bigint,
+    OPPK1OLD Bigint,
+    OPPK2OLD Bigint,
+    OPPK3OLD Varchar(24) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATEINSERT TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REPLICATEINSERT IS 'Creates an insert statement from the change log';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$REPLICATEUPDATE (
+    IPOPERATIONID Bigint,
+    IPPRIMARY_KEY_COLUMN Varchar(31),
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31) )
+RETURNS (
+    OPSQL Blob sub_type 1,
+    OPOLD_ID Bigint,
+    OPPK1OLD Bigint,
+    OPPK2OLD Bigint,
+    OPPK3OLD Varchar(24) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$REPLICATEUPDATE TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$REPLICATEUPDATE IS 'Creates an update statement from the change log';
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$VERIFY_RECORDS (
+    IPTABLE_NAME Varchar(31),
+    IPPK_FIELD Varchar(31),
+    IPPAGENUMBER Integer,
+    IPPAGESIZE Integer )
+RETURNS (
+    OPARRAY_VALUES Blob sub_type 1,
+    OPFIRSTVALUE Varchar(24),
+    OPLASTVALUE Varchar(24) )
+AS
+BEGIN SUSPEND; END^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$VERIFY_RECORDS TO PUBLIC;
+
+COMMENT ON PROCEDURE REPLICATE$VERIFY_RECORDS IS 'Verifies records between master/child databases';
+
+
+
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$AUTOFIXRECORD (
+    IPRECORDID Bigint )
+AS
+DECLARE VARIABLE vNewID BIGINT;
+  DECLARE VARIABLE vOldID BIGINT;
+  DECLARE VARIABLE vColumnLogID BIGINT;
+  DECLARE VARIABLE vFixApplied INTEGER; -- 0 = yes anything else = no
+  DECLARE VARIABLE vTable VARCHAR(31);
+  DECLARE VARIABLE vTargetTable VARCHAR(31);
+  DECLARE VARIABLE vTargetColumn VARCHAR(31);
+  DECLARE VARIABLE vReplicateColumn VARCHAR(31);
+begin
+  vFixApplied = 1;
+  --get the table name
+  SELECT a.TABLE_NAME
+  FROM REPLICATE$OPERATIONLOG a
+  WHERE a.ID = :ipRECORDID
+    AND a.OPERATION = 'INSERT'
+  INTO :vTable;
+  
+  -- do the rules for foreign keys exist within auto correct rules?
+  -- if so process those rules
+  FOR
+    SELECT acr.TARGET_TABLE, acr.TARGET_COLUMN, acr.REPLICATE_COLUMN_NAME
+    FROM REPLICATE$AUTOCORRECTRULES acr
+    WHERE acr.OPTIONS = 0 -- ZERO relates to foreign key ONLY
+      AND acr.TABLE_NAME = :vTable
+    INTO :vTargetTable, :vTargetColumn, :vReplicateColumn
+  DO
+  BEGIN  
+    -- get the old id from the replication columns TABLE
+    SELECT a.ID, a.NEW_VALUE
+    FROM REPLICATE$COLUMNLOG a
+    WHERE a.COLUMN_NAME = :vReplicateColumn
+        AND a.OPERATIONLOG_ID = :ipRECORDID
+    INTO :vColumnLogID, :vOldID;
+    
+    --Can we find the new ID?
+    SELECT pkc.NEW_PK_VALUE
+    FROM REPLICATE$LOCALPKCHANGES pkc
+    WHERE pkc.TABLE_NAME = :vTargetTable 
+        AND pkc.PK_COLUMN = :vTargetColumn
+        AND pkc.OLD_PK_VALUE = :vOldID
+    INTO :vNewID;
+    
+    IF (vNewID IS NULL) THEN
+    BEGIN
+        -- new id not found, search column log for it
+        SELECT a.NEW_VALUE
+        FROM REPLICATE$COLUMNLOG a
+        WHERE 
+            (a.OPERATIONLOG_ID IN 
+                (
+                    SELECT a.ID
+                    FROM REPLICATE$OPERATIONLOG a
+                    WHERE a.TABLE_NAME = :vTable
+                        AND a.OPERATION = 'UPDATE'
+                )
+             )
+            AND a.COLUMN_NAME = :vReplicateColumn
+            AND a.OLD_VALUE = :vOldID
+        INTO vNewID;
+    END
+        
+    IF (vNewID IS NOT NULL) THEN
+    BEGIN
+        -- update the record with the new id
+        UPDATE REPLICATE$COLUMNLOG SET 
+        NEW_VALUE = :vNewID 
+        WHERE ID = :vColumnLogID;
+        vFixApplied = 0;
+    END
+  END
+  
+  -- if it couldn't be fixed update the replication status
+  
+  IF (vFixApplied &lt;&gt; 0) THEN
+  BEGIN
+    UPDATE REPLICATE$OPERATIONLOG 
+    SET REPLICATED = 104 -- indicates no id available 
+    WHERE ID = :ipRECORDID;
+  END 
+  ELSE
+  BEGIN
+    UPDATE REPLICATE$OPERATIONLOG 
+    SET REPLICATED = 0 
+    WHERE ID = :ipRECORDID;
+  END
+end^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$BUILDWHERECLAUSE (
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPKEY1V Varchar(24),
+    IPKEY2V Varchar(24),
+    IPKEY3V Varchar(24) )
+RETURNS (
+    OPWHERE Varchar(400) )
+AS
+BEGIN
+  opWHERE = ' WHERE (';
+
+  IF ((ipKey1v IS NOT NULL) AND (ipKey1 IS NOT NULL)) THEN
+    opWHERE = opWHERE || :ipKey1 || ' = ' || ipKey1v;
+
+  IF ((ipKey2v IS NOT NULL) AND (ipKey2 IS NOT NULL)) THEN
+    opWHERE = opWHERE || ' AND ' ||ipKey2 || ' = ' || ipKey2v;
+
+  IF ((ipKey3v IS NOT NULL) AND (ipKey3 IS NOT NULL)) THEN
+    opWHERE = opWHERE || ' AND ' || ipKey3 || ' = ''' || ipKey3v || '''';
+
+  opWHERE = opWHERE || ');';
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$BUILDWHERECLAUSE2 (
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPKEY1V Varchar(24),
+    IPKEY2V Varchar(24),
+    IPKEY3V Varchar(24),
+    IPPK_COLUMN Varchar(31) )
+RETURNS (
+    OPWHERE Varchar(400) )
+AS
+BEGIN
+  opWHERE = ' WHERE (';
+
+  IF ((ipKey1v IS NOT NULL) AND (ipKey1 IS NOT NULL)) THEN
+  BEGIN
+    IF (ipKEY1 = ipPK_COLUMN) THEN
+        opWHERE  = opWHERE || :ipKEY1 || ' =  @' || IPPK_COLUMN || '@';
+    ELSE
+        opWHERE = opWHERE || :ipKey1 || ' = ' || ipKey1v;
+  END 
+  
+  IF ((ipKey2v IS NOT NULL) AND (ipKey2 IS NOT NULL)) THEN
+  BEGIN
+    IF (ipKEY2 = ipPK_COLUMN) THEN
+        opWHERE = opWHERE || ' AND ' || ipKey2 || ' = @' || IPPK_COLUMN || '@';
+    ELSE
+        opWHERE = opWHERE || ' AND ' ||ipKey2 || ' = ' || ipKey2v;
+  END
+  
+  IF ((ipKey3v IS NOT NULL) AND (ipKey3 IS NOT NULL)) THEN
+    opWHERE = opWHERE || ' AND ' || ipKey3 || ' = ''' || ipKey3v || '''';
+
+  opWHERE = opWHERE || ');';
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$COLUMNLOG_INSERT (
+    ipOPERATIONLOG_ID Bigint,
+    ipCOLUMN_NAME Varchar(31),
+    ipOLD_VALUE Varchar(300),
+    ipNEW_VALUE Varchar(300),
+    ipOLD_VALUE_BLOB Blob sub_type 0,
+    ipNEW_VALUE_BLOB Blob sub_type 0 )
+AS
+BEGIN
+  INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)
+  VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :ipOPERATIONLOG_ID, :ipCOLUMN_NAME, :ipOLD_VALUE, :ipNEW_VALUE, :ipOLD_VALUE_BLOB, :ipNEW_VALUE_BLOB); 
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+CREATE OR ALTER PROCEDURE REPLICATE$SPLITSTRING (
+    IPSTRING Blob sub_type 1,
+    IPDELIMITER Char(1) )
+RETURNS (
+    OPPART Blob sub_type 1 )
+AS
+declare variable vLastPos integer;
+  declare variable vNextPos integer;
+begin
+    ipString = :ipString || :ipDelimiter;
+    
+    vLastPos = 1;
+    vNextPos = POSITION(:ipDelimiter, :ipString, :vLastPos);
+    
+    IF (vLastPos = vNextPos) THEN
+    BEGIN
+        opPart = SUBSTRING(:ipString FROM :vLastPos FOR :vNextPos - :vLastPos);
+        SUSPEND;
+        vLastPos = :vNextPos + 1;
+        vNextPos = POSITION(:ipDelimiter, :ipString, vLastPos);
+    END
+    
+    WHILE (:vNextPos &gt; 1) DO
+    BEGIN
+        opPart = SUBSTRING(:ipString FROM :vLastPos FOR :vNextPos - :vLastPos);
+        vLastPos = :vNextPos + 1;
+        vNextPos = POSITION(:ipDelimiter, :ipString, :vLastPos);
+        SUSPEND;
+    END
+end
+
+^
+SET TERM ; ^
+
+GRANT EXECUTE
+ ON PROCEDURE REPLICATE$SPLITSTRING TO PUBLIC;
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$FIND_MISSING_RECORDS (
+    IPTABLE_NAME Varchar(31),
+    IPPK_FIELD Varchar(31),
+    IPARRAY_VALUES Blob sub_type 1 )
+RETURNS (
+    IPNOT_FOUND Varchar(24) )
+AS
+DECLARE VARIABLE vSQL BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vValue BLOB SUB_TYPE TEXT;
+  DECLARE VARIABLE vCount INTEGER;
+BEGIN
+  
+  FOR 
+  SELECT opPART 
+  FROM REPLICATE$SplitString(:ipARRAY_VALUES, ',')
+  INTO :vValue
+  DO
+  BEGIN
+    IF (TRIM(vValue) &lt;&gt; '') THEN
+    BEGIN
+        vSQL = 'SELECT COUNT(' || ipPK_FIELD || ') FROM ' || ipTABLE_NAME || ' WHERE ' || ipPK_FIELD || ' = ' || TRIM(vValue);
+        EXECUTE STATEMENT vSQL INTO vCount;
+        
+        --ipNOT_FOUND = vCount;
+        --SUSPEND;
+        
+        IF (vCount = 0) THEN
+        BEGIN
+            ipNOT_FOUND = vValue;
+            SUSPEND;
+        END
+    END
+  END
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$GENERATEINSERT (
+    IPTABLENAME Varchar(31),
+    IPPRIMARYKEY Varchar(31),
+    IPRECORDID Varchar(24),
+    IPGENERATELOG Integer )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE vValues BLOB SUB_TYPE 1;
+    DECLARE VARIABLE vColumn VARCHAR(31);
+    DECLARE VARIABLE vType INTEGER;
+    DECLARE VARIABLE vLength INTEGER;
+    DECLARE VARIABLE vCount INTEGER;
+    DECLARE VARIABLE vValue BLOB SUB_TYPE 1;
+    DECLARE VARIABLE vSQL VARCHAR (8100);
+    DECLARE VARIABLE vValueShort VARCHAR(300);
+    DECLARE VARIABLE vValueLong BLOB SUB_TYPE 1;
+    DECLARE VARIABLE vOperationLogID BIGINT;
+BEGIN
+    vCount = 0;
+    opSQL = 'INSERT INTO ' || ipTABLENAME || '(';
+    vValues = '';
+    
+    IF (ipGENERATELOG = 0) THEN
+    BEGIN
+        EXECUTE PROCEDURE REPLICATE$OPERATIONLOG_INSERT (ipTABLENAME, 'INSERT', IPPRIMARYKEY, IPRECORDID, NULL, NULL, NULL, NULL) RETURNING_VALUES :vOperationLogID;
+    END
+    
+    FOR
+        SELECT TRIM(rf.RDB$FIELD_NAME), f.RDB$FIELD_TYPE, f.RDB$FIELD_LENGTH
+        FROM RDB$FIELDS f
+            JOIN RDB$RELATION_FIELDS rf ON (rf.RDB$FIELD_SOURCE = f.RDB$FIELD_NAME)
+        WHERE rf.RDB$RELATION_NAME = :ipTABLENAME
+		AND TRIM(rf.RDB$FIELD_NAME) &lt;&gt; 'REPLICATE$HASH'
+        INTO :vColumn, :vType, :vLength
+    DO
+    BEGIN
+        IF (ipGENERATELOG = 0) THEN
+        BEGIN
+            -- insert the record into the replication table
+            IF ((vType IN (261)) OR (vLength &gt; 299)) THEN
+            BEGIN
+                EXECUTE STATEMENT 'SELECT ' || vColumn || ' FROM ' || ipTABLENAME || ' WHERE ' || ipPRIMARYKEY || ' = ' || ipRECORDID INTO :vValueLong;
+            
+                IF (vValueLong IS NOT NULL) THEN
+                    INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)
+                    VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, :vColumn, NULL, NULL, NULL, :vValueLong);
+            END ELSE
+            BEGIN
+                EXECUTE STATEMENT 'SELECT ' || vColumn || ' FROM ' || ipTABLENAME || ' WHERE ' || ipPRIMARYKEY || ' = ' || ipRECORDID INTO :vValueShort;
+            
+                IF (vValueShort IS NOT NULL) THEN
+                    INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)
+                    VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, :vColumn, NULL, :vValueShort, NULL, NULL);
+            END
+        END
+    
+        -- generate an insert statement
+        IF (vCount = 0) THEN
+        BEGIN
+            opSQL = opSQL || vColumn;
+        END ELSE 
+        BEGIN
+            opSQL = opSQL || ', ' || vColumn;
+        END
+           
+        EXECUTE STATEMENT 'SELECT ' || vColumn || ' FROM ' || ipTABLENAME || ' WHERE ' || ipPRIMARYKEY || ' = ' || ipRECORDID INTO :vValue;
+                
+        IF (vValue IS NULL) THEN
+        BEGIN
+            IF (vCount = 0) THEN
+            BEGIN
+                vValues = vValues || 'NULL';
+            END ELSE 
+            BEGIN
+                vValues = vValues || ', NULL';
+            END
+        END ELSE
+        BEGIN
+            IF (vCount = 0) THEN
+            BEGIN
+                vValues = vValues || '''' || REPLACE(vValue, '''', '''''') || '''';
+            END ELSE 
+            BEGIN
+                vValues = vValues || ', ''' || REPLACE(vValue, '''', '''''')  || '''';
+            END
+        END
+        
+        vCount = vCount + 1;
+    END
+
+    opSQL = opSQL || ') VALUES (' || vValues || ');';
+    
+    SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$LOCALPKCHANGES_INSERT (
+    IPTABLE_NAME Varchar(31),
+    IPPK_COLUMN Varchar(31),
+    IPOLD_PK_VALUE Bigint,
+    IPNEW_PK_VALUE Bigint )
+AS
+BEGIN
+	IF (NOT EXISTS(SELECT a.TABLE_NAME, a.PK_COLUMN, a.OLD_PK_VALUE, a.NEW_PK_VALUE
+	    FROM REPLICATE$LOCALPKCHANGES a
+	    WHERE a.TABLE_NAME = :ipTABLE_NAME AND a.PK_COLUMN = :ipPK_COLUMN AND a.OLD_PK_VALUE = :ipOLD_PK_VALUE)) THEN
+	BEGIN
+        INSERT INTO REPLICATE$LOCALPKCHANGES (TABLE_NAME, PK_COLUMN, OLD_PK_VALUE, NEW_PK_VALUE)
+        VALUES (
+            :ipTABLE_NAME, 
+            :ipPK_COLUMN, 
+            :ipOLD_PK_VALUE, 
+            :ipNEW_PK_VALUE
+        );
+    END
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$OPERATIONLOG_INSERT (
+    ipTABLE_NAME Varchar(31),
+    ipOPERATION Varchar(6),
+    ipPKEY1 Varchar(31),
+    ipPKEY1_VALUE Varchar(24),
+    ipPKEY2 Varchar(31),
+    ipPKEY2_VALUE Varchar(24),
+    ipPKEY3 Varchar(31),
+    ipPKEY3_VALUE Varchar(24) )
+RETURNS (
+    opNEWID Bigint )
+AS
+BEGIN 
+  opNEWID = GEN_ID(REPLICATE$OPERATIONLOG_ID, 1);
+  INSERT INTO REPLICATE$OPERATIONLOG (ID, DATETIME, TABLE_NAME, OPERATION, PKEY1, PKEY1_VALUE, PKEY2, PKEY2_VALUE, PKEY3, PKEY3_VALUE, REPLICATED, CLIENT_ADDRESS, USER_NAME, USER_ROLE)
+  VALUES (:opNEWID, CURRENT_TIMESTAMP, :ipTABLE_NAME, :ipOPERATION, :ipPKEY1, :ipPKEY1_VALUE, :ipPKEY2, :ipPKEY2_VALUE, :ipPKEY3, :ipPKEY3_VALUE, 0, rdb$get_context('SYSTEM', 'CLIENT_ADDRESS'), USER, CURRENT_ROLE); 
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$QUOTESTR (
+    IPTABLE Varchar(31),
+    IPCOLUMN Varchar(31) )
+RETURNS (
+    OPCANQUOTE Char(1) )
+AS
+BEGIN
+  SELECT CASE f.RDB$FIELD_TYPE WHEN 16 THEN 'F' WHEN 8 THEN 'F' WHEN 14 THEN 'T' WHEN 40 THEN 'T' WHEN 12 THEN 'T' WHEN 13 THEN 'T' WHEN 35 THEN 'T' WHEN 37 THEN 'T' ELSE 'T' END
+   FROM RDB$RELATION_FIELDS r
+   LEFT JOIN RDB$FIELDS f ON r.RDB$FIELD_SOURCE = f.RDB$FIELD_NAME
+  WHERE r.RDB$RELATION_NAME = :ipTABLE
+    AND r.RDB$FIELD_NAME = :ipCOLUMN  
+  INTO :opCANQUOTE;
+
+  IF (opCANQUOTE IS NULL) THEN
+  BEGIN
+    opCANQUOTE = 'T';
+  END
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REMOTEUPDATES (
+    IPOPERATIONID Bigint,
+    IPSQL Blob sub_type 1 )
+AS
+begin
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'YES');
+  
+  EXECUTE STATEMENT ipSQL;
+
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', NULL);
+end^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REMOTEUPDATES_2 (
+    IS_SET Integer )
+AS
+begin
+  IF (IS_SET &lt;&gt; 0) THEN
+    RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'YES');
+  ELSE
+    RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', NULL);
+end^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATECHANGES_I (
+    IPTABLENAME Varchar(31),
+    IPCOLUMNNAME Varchar(31),
+    IPRECORDID Bigint )
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPSQL Blob sub_type 1,
+    OPTABLE_NAME Varchar(31),
+    OPOLD_ID Bigint,
+    OPPRIMARY_KEY_COLUMN Varchar(31),
+    OPREMOTE_GENERATOR Varchar(31),
+    OPFKEY1 Varchar(180),
+    OPFKEY2 Varchar(180),
+    OPFKEY3 Varchar(180),
+    OPOPTIONS Bigint )
+AS
+DECLARE VARIABLE VOperationType VARCHAR(6);
+DECLARE VARIABLE vpKey VARCHAR(120);
+DECLARE VARIABLE vFromTable VARCHAR(31);
+DECLARE VARIABLE vFromColumn VARCHAR(31);
+DECLARE VARIABLE vToTable VARCHAR(31);
+DECLARE VARIABLE vToColumn VARCHAR(31);
+DECLARE VARIABLE vFromPK1 VARCHAR(31);
+DECLARE VARIABLE vFromPK2 VARCHAR(31);
+DECLARE VARIABLE vFromPK3 VARCHAR(31);
+DECLARE VARIABLE vPK1 BIGINT;
+DECLARE VARIABLE vPK2 BIGINT;
+DECLARE VARIABLE vPK3 VARCHAR(24);
+DECLARE VARIABLE vCount INTEGER;
+DECLARE VARIABLE vIndice INTEGER;
+DECLARE VARIABLE vIndiceType VARCHAR(50);
+BEGIN
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'YES');
+
+  FOR
+    SELECT ol.ID, ol.OPERATION, ol.TABLE_NAME
+    FROM REPLICATE$OPERATIONLOG ol
+    WHERE ol.TABLE_NAME = :IPTABLENAME
+      AND ((ol.PKEY1 = :IPCOLUMNNAME AND ol.PKEY1_VALUE = :IPRECORDID) 
+        OR (ol.PKEY2 = :IPCOLUMNNAME AND ol.PKEY2_VALUE = :IPRECORDID) 
+        OR (ol.PKEY3 = :IPCOLUMNNAME AND ol.PKEY3_VALUE = :IPRECORDID))
+    ORDER BY ol.ID
+    INTO :OPOPERATION_ID, :vOperationType, :OPTABLE_NAME
+  DO
+  BEGIN
+    
+    vCount = 0;
+    opFKEY1 = NULL;
+    opFKEY2 = NULL;
+    opFKEY3 = NULL;
+    vFromPK1 = NULL;
+    vFromPK2 = NULL;
+    vFromPK3 = NULL;
+    
+    SELECT FIRST 1 INDICE_TYPE
+    FROM REPLICATE$TABLES
+    WHERE TABLE_NAME = :OPTABLE_NAME
+    INTO :vIndice;
+    
+    FOR
+    Select TRIM(rc.RDB$RELATION_NAME), TRIM(ins.RDB$FIELD_NAME), TRIM(rc1.RDB$RELATION_NAME), TRIM(ins1.RDB$FIELD_NAME), rc.RDB$CONSTRAINT_TYPE
+    From RDB$RELATION_CONSTRAINTS rc 
+        left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+        left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+    WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+        AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+    UNION ALL
+    Select TRIM(rc.RDB$RELATION_NAME), TRIM(ins.RDB$FIELD_NAME), TRIM(rc1.RDB$RELATION_NAME), TRIM(ins1.RDB$FIELD_NAME), rc.RDB$CONSTRAINT_TYPE
+    From RDB$RELATION_CONSTRAINTS rc 
+        left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+        left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+    WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+        AND rc.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY'
+        AND ins.RDB$FIELD_NAME NOT IN 
+        (
+            Select TRIM(ins.RDB$FIELD_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+        )
+    
+        ORDER BY 1, 3 DESC
+    INTO :vFromTable, :vFromColumn, :vToTable, :vToColumn, :vIndiceType
+    DO
+    BEGIN
+        IF ((vIndiceType = 'FOREIGN KEY' AND vIndice = 2) 
+            OR (vIndiceType = 'PRIMARY KEY' AND vIndice = 1)
+            OR (vIndice = 0)) THEN
+        BEGIN
+            IF (vCount = 0) THEN
+            BEGIN
+                OPFKEY1 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY1 = opFKEY1 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK1 = vFromColumn;
+            END ELSE IF (vCount = 1) THEN
+            BEGIN
+                OPFKEY2 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY2 = opFKEY2 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK2 = vFromColumn;
+            END ELSE IF (vCount = 2) THEN
+            BEGIN
+                OPFKEY3 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY3 = opFKEY3 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK3 = vFromColumn;
+            END
+            vCount = vCount + 1;
+        END
+    END
+  
+ 
+    opOLD_ID = NULL;
+    opPRIMARY_KEY_COLUMN = NULL;
+    opREMOTE_GENERATOR = NULL;
+    
+    vPK1 = NULL;
+    vPK2 = NULL;
+    vPK3 = NULL;
+    
+    SELECT rt.REMOTE_GENERATOR, rt.LOCAL_ID_COLUMN, rt.OPTIONS
+    FROM REPLICATE$TABLES rt
+    WHERE rt.TABLE_NAME = :opTABLE_NAME AND rt.OPERATION = :vOperationType
+    INTO :opREMOTE_GENERATOR, :opPRIMARY_KEY_COLUMN, :opOPTIONS;
+
+    IF (vOperationType = 'UPDATE') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEUPDATE(OPOPERATION_ID, opPRIMARY_KEY_COLUMN, vFromPK1, vFromPK2, vFromPK3) RETURNING_VALUES :opSQL, :opOLD_ID, :vPK1, :vPK2, :vPK3;
+    END ELSE IF (vOperationType = 'DELETE') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEDELETE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+    END ELSE IF (vOperationType = 'INSERT') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEINSERT(OPOPERATION_ID, opPRIMARY_KEY_COLUMN, vFromPK1, vFromPK2, vFromPK3, vIndice) RETURNING_VALUES :opSQL, :opOLD_ID, :vPK1, :vPK2, :vPK3;
+    END
+    
+    
+    IF (vPK1 IS NOT NULL) THEN
+        opFKEY1 = opFKEY1 || vPK1;
+    ELSE 
+        opFKEY1 = NULL;
+
+    IF (vPK2 IS NOT NULL) THEN
+        opFKEY2 = opFKEY2 || vPK2;
+    ELSE 
+        opFKEY2 = NULL;
+        
+    IF (vPK3 IS NOT NULL) THEN
+        opFKEY3 = opFKEY3 || vPK3;
+    ELSE 
+        opFKEY3 = NULL;
+    
+    IF (opSQL IS NOT NULL) THEN
+    BEGIN
+      SUSPEND; 
+    END
+  END
+  
+
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'NO');
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATECHANGES
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPSQL Blob sub_type 1,
+    OPTABLE_NAME Varchar(31),
+    OPOLD_ID Bigint,
+    OPPRIMARY_KEY_COLUMN Varchar(31),
+    OPREMOTE_GENERATOR Varchar(31),
+    OPFKEY1 Varchar(180),
+    OPFKEY2 Varchar(180),
+    OPFKEY3 Varchar(180),
+    OPOPTIONS Bigint )
+AS
+DECLARE VARIABLE VOperationType VARCHAR(6);
+DECLARE VARIABLE vpKey VARCHAR(120);
+DECLARE VARIABLE vFromTable VARCHAR(31);
+DECLARE VARIABLE vFromColumn VARCHAR(31);
+DECLARE VARIABLE vToTable VARCHAR(31);
+DECLARE VARIABLE vToColumn VARCHAR(31);
+DECLARE VARIABLE vFromPK1 VARCHAR(31);
+DECLARE VARIABLE vFromPK2 VARCHAR(31);
+DECLARE VARIABLE vFromPK3 VARCHAR(31);
+DECLARE VARIABLE vPK1 BIGINT;
+DECLARE VARIABLE vPK2 BIGINT;
+DECLARE VARIABLE vPK3 VARCHAR(24);
+DECLARE VARIABLE vCount INTEGER;
+DECLARE VARIABLE vIndice INTEGER;
+DECLARE VARIABLE vIndiceType VARCHAR(50);
+BEGIN
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'YES');
+  
+    
+  UPDATE REPLICATE$OPERATIONLOG 
+  SET REPLICATED = 3
+  WHERE (REPLICATED = 0 AND ID NOT IN (SELECT OPERATIONLOG_ID FROM REPLICATE$COLUMNLOG));
+
+  FOR
+    SELECT ol.ID, ol.OPERATION, ol.TABLE_NAME
+    FROM REPLICATE$OPERATIONLOG ol
+    WHERE ol.REPLICATED = 0
+
+    ORDER BY ol.ID
+    INTO :OPOPERATION_ID, :vOperationType, :OPTABLE_NAME
+  DO
+  BEGIN
+    
+    vCount = 0;
+    opFKEY1 = NULL;
+    opFKEY2 = NULL;
+    opFKEY3 = NULL;
+    vFromPK1 = NULL;
+    vFromPK2 = NULL;
+    vFromPK3 = NULL;
+    
+    SELECT FIRST 1 INDICE_TYPE
+    FROM REPLICATE$TABLES
+    WHERE TABLE_NAME = :OPTABLE_NAME
+    INTO :vIndice;
+    
+    FOR
+    Select TRIM(rc.RDB$RELATION_NAME), TRIM(ins.RDB$FIELD_NAME), TRIM(rc1.RDB$RELATION_NAME), TRIM(ins1.RDB$FIELD_NAME), rc.RDB$CONSTRAINT_TYPE
+    From RDB$RELATION_CONSTRAINTS rc 
+        left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+        left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+    WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+        AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+    UNION ALL
+    Select TRIM(rc.RDB$RELATION_NAME), TRIM(ins.RDB$FIELD_NAME), TRIM(rc1.RDB$RELATION_NAME), TRIM(ins1.RDB$FIELD_NAME), rc.RDB$CONSTRAINT_TYPE
+    From RDB$RELATION_CONSTRAINTS rc 
+        left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+        left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+    WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+        AND rc.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY'
+        AND ins.RDB$FIELD_NAME NOT IN 
+        (
+            Select TRIM(ins.RDB$FIELD_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+        )
+    
+        ORDER BY 1, 3 DESC
+    INTO :vFromTable, :vFromColumn, :vToTable, :vToColumn, :vIndiceType
+    DO
+    BEGIN
+        IF ((vIndiceType = 'FOREIGN KEY' AND vIndice = 2) 
+            OR (vIndiceType = 'PRIMARY KEY' AND vIndice = 1)
+            OR (vIndice = 0)) THEN
+        BEGIN
+            IF (vCount = 0) THEN
+            BEGIN
+                OPFKEY1 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY1 = opFKEY1 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK1 = vFromColumn;
+            END ELSE IF (vCount = 1) THEN
+            BEGIN
+                OPFKEY2 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY2 = opFKEY2 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK2 = vFromColumn;
+            END ELSE IF (vCount = 2) THEN
+            BEGIN
+                OPFKEY3 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY3 = opFKEY3 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK3 = vFromColumn;
+            END
+            vCount = vCount + 1;
+        END
+    END
+  
+ 
+    opOLD_ID = NULL;
+    opPRIMARY_KEY_COLUMN = NULL;
+    opREMOTE_GENERATOR = NULL;
+    
+    vPK1 = NULL;
+    vPK2 = NULL;
+    vPK3 = NULL;
+    
+    SELECT rt.REMOTE_GENERATOR, rt.LOCAL_ID_COLUMN, rt.OPTIONS
+    FROM REPLICATE$TABLES rt
+    WHERE rt.TABLE_NAME = :opTABLE_NAME AND rt.OPERATION = :vOperationType
+    INTO :opREMOTE_GENERATOR, :opPRIMARY_KEY_COLUMN, :opOPTIONS;
+
+    IF (vOperationType = 'UPDATE') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEUPDATE(OPOPERATION_ID, opPRIMARY_KEY_COLUMN, vFromPK1, vFromPK2, vFromPK3) RETURNING_VALUES :opSQL, :opOLD_ID, :vPK1, :vPK2, :vPK3;
+    END ELSE IF (vOperationType = 'DELETE') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEDELETE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+    END ELSE IF (vOperationType = 'INSERT') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEINSERT(OPOPERATION_ID, opPRIMARY_KEY_COLUMN, vFromPK1, vFromPK2, vFromPK3, vIndice) RETURNING_VALUES :opSQL, :opOLD_ID, :vPK1, :vPK2, :vPK3;
+    END
+    
+    
+    IF (vPK1 IS NOT NULL) THEN
+        opFKEY1 = opFKEY1 || vPK1;
+    ELSE 
+        opFKEY1 = NULL;
+
+    IF (vPK2 IS NOT NULL) THEN
+        opFKEY2 = opFKEY2 || vPK2;
+    ELSE 
+        opFKEY2 = NULL;
+        
+    IF (vPK3 IS NOT NULL) THEN
+        opFKEY3 = opFKEY3 || vPK3;
+    ELSE 
+        opFKEY3 = NULL;
+    
+    IF (opSQL IS NOT NULL) THEN
+    BEGIN
+      SUSPEND; 
+    END
+  END
+  
+
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'NO');
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATEDELETE (
+    IPOPERATIONID Bigint )
+RETURNS (
+    OPSQL Blob sub_type 1 )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vWhereClause VARCHAR(400);
+BEGIN
+  SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE
+  FROM REPLICATE$OPERATIONLOG ol
+  WHERE ol.ID = :ipOPERATIONID
+  INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v;
+
+  EXECUTE PROCEDURE REPLICATE$BUILDWHERECLAUSE(vKey1, vKey2, vKey3, vKey1v, vKey2v, vKey3v) RETURNING_VALUES :vWhereClause;
+
+  
+  opSQL = 'DELETE FROM ' || vTableName || ' ' || vWhereClause;
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATEINSERT (
+    IPOPERATIONID Bigint,
+    IPPRIMARY_KEY_COLUMN Varchar(31),
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPINDICETYPE Integer )
+RETURNS (
+    OPSQL Blob sub_type 1,
+    OPOLD_ID Bigint,
+    OPPK1OLD Bigint,
+    OPPK2OLD Bigint,
+    OPPK3OLD Varchar(24) )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vColumnName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vFirst INTEGER;
+  DECLARE VARIABLE vParamCount INTEGER;
+  DECLARE VARIABLE vNewValue VARCHAR(300); 
+  DECLARE VARIABLE vNewValueBlob BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vOldValue VARCHAR(300); 
+  DECLARE VARIABLE vOldValueBlob BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vQuoteString CHAR(1);
+  DECLARE VARIABLE vInsertColumns VARCHAR(700);
+  DECLARE VARIABLE vInsertValues BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vSeperator VARCHAR(1);
+  DECLARE VARIABLE vChangedValue VARCHAR(24);
+BEGIN
+  vInsertColumns = '';
+  vInsertValues = '';
+  vSeperator = '';
+  vParamCount = 0;
+
+  SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE
+  FROM REPLICATE$OPERATIONLOG ol
+  WHERE ol.ID = :ipOPERATIONID
+  INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v;
+  
+  opOLD_ID = NULL;
+  
+  IF ((vKey1 = ipPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = IPKEY1)) THEN
+  BEGIN
+    opOLD_ID = vKey1v;
+    OPPK1OLD = vKey1v;
+  END ELSE
+  IF ((vKey1 = ipKEY1) OR (vKey1 = ipKEY2) OR (vKey1 = ipKey3)) THEN
+  BEGIN
+    OPPK1OLD = vkey1v;
+  END
+   
+  IF ((vKey2 = IpPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = IPKEY2)) THEN
+  BEGIN
+    opOLD_ID = vKey2v;
+    OPPK2OLD = vKey2v;
+  END ELSE
+  IF ((vKey2 = ipKEY1) OR (vKey2 = ipKEY2) OR (vKey2 = ipKey3)) THEN
+  BEGIN
+    OPPK2OLD = vkey2v;
+  END
+
+  IF ((vKey3 = ipPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = IPKEY3)) THEN
+  BEGIN
+    opOLD_ID = vKey3v;
+    OPPK3OLD = CAST(vKey3v AS VARCHAR(24));
+  END ELSE
+  IF ((vKey3 = ipKEY1) OR (vKey3 = ipKEY2) OR (vKey3 = ipKey3)) THEN
+  BEGIN
+    OPPK3OLD = CAST(vKey3v AS VARCHAR(24));
+  END 
+
+  IF (opOLD_ID IS NULL) THEN
+  BEGIN
+    IF (vKey1 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey1v;
+    ELSE IF (vKey2 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey2v;
+    ELSE IF (vKey3 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey3v;
+  END
+
+  FOR 
+    SELECT r.COLUMN_NAME, r.NEW_VALUE_BLOB, r.NEW_VALUE, r.OLD_VALUE_BLOB, r.OLD_VALUE
+    FROM REPLICATE$COLUMNLOG r
+    WHERE r.OPERATIONLOG_ID = :ipOPERATIONID
+  INTO :vColumnName, :vNewValueBlob, :vNewValue, :vOldValueBlob, :vOldValue
+  DO
+  BEGIN
+      vParamCount = vParamCount + 1;
+      vChangedValue = NULL;
+      
+      EXECUTE PROCEDURE REPLICATE$QUOTESTR(vTableName, vColumnName) RETURNING_VALUES vQuoteString;
+      
+      IF (EXISTS(Select TRIM(rc1.RDB$RELATION_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :vTableName
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+                AND TRIM(ins.RDB$FIELD_NAME) = :vColumnName)) THEN
+      BEGIN
+        SELECT CAST(a.NEW_PK_VALUE AS VARCHAR(24))
+        FROM REPLICATE$LOCALPKCHANGES a
+        WHERE a.TABLE_NAME IN (    Select TRIM(rc1.RDB$RELATION_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :vTableName
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+                AND TRIM(ins.RDB$FIELD_NAME) = :vColumnName)
+            AND a.OLD_PK_VALUE = :vNewValue     
+        INTO :vChangedValue;
+
+        if (vChangedValue IS NOT NULL AND vChangedValue &lt;&gt; '') THEN
+        BEGIN
+            vNewValue = vChangedValue;
+        END
+      END
+
+
+      IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL) AND (vOldValue IS NOT NULL OR vNewValue IS NOT NULL)) THEN
+      BEGIN
+        IF (vQuoteString = 'T') THEN
+        BEGIN
+            vInsertColumns = vInsertColumns || vSeperator || ' ' || vColumnName;
+          
+            IF (vNewValue IS NULL) THEN
+                vInsertValues = vInsertValues || vSeperator || ' NULL ';
+            ELSE
+                vInsertValues = vInsertValues || vSeperator || ' ''' || REPLACE(vNewValue, '''', '''''') || '''';
+        END ELSE
+        BEGIN
+            vInsertColumns = vInsertColumns || vSeperator || ' ' || vColumnName;
+                    
+            IF (UPPER(vColumnName) = UPPER(IPPRIMARY_KEY_COLUMN)) THEN
+            BEGIN
+                IF ((ipINDICETYPE IN (0, 1))) THEN
+                    vInsertValues = vInsertValues || vSeperator || ' ' || '@NEWGEN@';
+                ELSE
+                    vInsertValues = vInsertValues || vSeperator || ' @' || IPPRIMARY_KEY_COLUMN || '@';
+                    
+                opOLD_ID = CAST(vNewValue AS BIGINT);
+            END ELSE
+            BEGIN          
+            IF (UPPER(vColumnName) = UPPER(IPKEY1)) THEN
+            BEGIN
+                vInsertValues = vInsertValues || vSeperator || ' ' || '@' || ipKEY1 || '@';
+                opPK1Old = CAST(vNewValue AS BIGINT);
+            END ELSE IF (UPPER(vColumnName) = UPPER(IPKEY2)) THEN
+            BEGIN
+                vInsertValues = vInsertValues || vSeperator || ' ' ||  '@' || ipKEY2 || '@';
+                opPK2Old = CAST(vNewValue AS BIGINT);
+            END ELSE IF (UPPER(vColumnName) = UPPER(IPKEY3)) THEN
+            BEGIN
+                vInsertValues = vInsertValues || vSeperator || ' ' || '@' || ipKEY3 || '@';
+                opPK3Old = CAST(vNewValue AS VARCHAR(24));
+            END ELSE 
+            BEGIN
+                IF (vNewValue IS NULL) THEN
+                    vInsertValues = vInsertValues || vSeperator || ' NULL ';
+                ELSE
+                    vInsertValues = vInsertValues || vSeperator || ' ' || vNewValue;
+            END 
+            END
+        END
+      END ELSE 
+      BEGIN
+        vInsertColumns = vInsertColumns || vSeperator || ' ' || vColumnName;
+        vInsertValues = vInsertValues  || vSeperator || ' ''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+      END
+      
+      vSeperator = ',';
+  END
+  
+  opSQL = 'INSERT INTO ' || vTableName || ' (' || vInsertColumns || ') VALUES (' || vInsertValues || ');';
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATEUPDATE (
+    IPOPERATIONID Bigint,
+    IPPRIMARY_KEY_COLUMN Varchar(31),
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31) )
+RETURNS (
+    OPSQL Blob sub_type 1,
+    OPOLD_ID Bigint,
+    OPPK1OLD Bigint,
+    OPPK2OLD Bigint,
+    OPPK3OLD Varchar(24) )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vColumnName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vParamCount INTEGER;
+  DECLARE VARIABLE vNewValue VARCHAR(300); 
+  DECLARE VARIABLE vNewValueBlob BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vOldValue VARCHAR(300); 
+  DECLARE VARIABLE vOldValueBlob BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vQuoteString CHAR(1);
+  DECLARE VARIABLE vWhereClause VARCHAR(400);
+  DECLARE VARIABLE vSeperator VARCHAR(1);
+BEGIN
+    vSeperator = '';
+    vParamCount = 0;
+    OPPK1OLD = NULL;
+    OPPK2OLD = NULL;
+    OPPK3OLD = NULL;
+  
+    SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE
+    FROM REPLICATE$OPERATIONLOG ol
+    WHERE ol.ID = :ipOPERATIONID
+    INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v;
+
+  opOLD_ID = NULL;
+
+  IF ((vKey1 = ipPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = ipKey1)) THEN
+  BEGIN
+    opOLD_ID = vKey1v;
+    OPPK1OLD = vKey1v;
+  END ELSE
+  IF ((vKey1 = ipKEY1) OR (vKey1 = ipKEY2) OR (vKey1 = ipKey3)) THEN
+  BEGIN
+    OPPK1OLD = vkey1v;
+  END
+   
+  IF ((vKey2 = IpPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = ipKey2)) THEN
+  BEGIN
+    opOLD_ID = vKey2v;
+    OPPK2OLD = vKey2v;
+  END ELSE
+  IF ((vKey2 = ipKEY1) OR (vKey2 = ipKEY2) OR (vKey2 = ipKey3)) THEN
+  BEGIN
+    OPPK2OLD = vkey2v;
+  END
+
+  IF ((vKey3 = ipPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = ipKey3)) THEN
+  BEGIN
+    opOLD_ID = vKey3v;
+    OPPK3OLD = vKey3v;
+  END ELSE
+  IF ((vKey3 = ipKEY1) OR (vKey3 = ipKEY2) OR (vKey3 = ipKey3)) THEN
+  BEGIN
+    OPPK3OLD = vKey3v;
+  END 
+
+  IF (opOLD_ID IS NULL) THEN
+  BEGIN
+    IF (vKey1 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey1v;
+    ELSE IF (vKey2 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey2v;
+    ELSE IF (vKey3 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey3v;
+  END
+    
+  EXECUTE PROCEDURE REPLICATE$BUILDWHERECLAUSE2(vKey1, vKey2, vKey3, vKey1v, vKey2v, vKey3v, IPPRIMARY_KEY_COLUMN) RETURNING_VALUES :vWhereClause;
+
+  opSQL = 'UPDATE ' || vTableName || ' SET ';
+
+  FOR 
+    SELECT r.COLUMN_NAME, r.NEW_VALUE_BLOB, r.NEW_VALUE, r.OLD_VALUE_BLOB, r.OLD_VALUE
+    FROM REPLICATE$COLUMNLOG r
+    WHERE r.OPERATIONLOG_ID = :ipOPERATIONID
+  INTO :vColumnName, :vNewValueBlob, :vNewValue, :vOldValueBlob, :vOldValue
+  DO
+  BEGIN
+    vParamCount = vParamCount + 1;
+
+         EXECUTE PROCEDURE REPLICATE$QUOTESTR(vTableName, vColumnName) RETURNING_VALUES vQuoteString;
+ 
+    IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL)) THEN
+    BEGIN
+        IF (vQuoteString = 'T') THEN
+        BEGIN
+            IF (vNewValue IS NULL) THEN
+                opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = NULL ';
+            ELSE
+                opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = ''' || REPLACE(vNewValue, '''', '''''') || '''';
+    END ELSE
+    BEGIN
+        IF (UPPER(vColumnName) = UPPER(IPKEY1)) THEN
+        BEGIN
+            opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = ' || '@' || ipKEY1 || '@';
+            opPK1Old = CAST(vNewValue AS BIGINT);
+        END ELSE IF (UPPER(vColumnName) = UPPER(IPKEY2)) THEN
+        BEGIN
+            opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = ' || '@' || ipKEY2 || '@';
+            opPK2Old = CAST(vNewValue AS BIGINT);
+        END ELSE IF (UPPER(vColumnName) = UPPER(IPKEY3)) THEN
+        BEGIN
+            opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = ' || '@' || ipKEY3 || '@';
+            opPK3Old = CAST(vNewValue AS BIGINT);
+        END ELSE 
+        BEGIN 
+            IF (vNewValue IS NULL) THEN
+                opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = NULL ';
+            ELSE
+                opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = ' || vNewValue;
+        END
+    END
+    END ELSE 
+    BEGIN
+        opSQL = opSQL || vSeperator || ' ' || vColumnName || ' = ''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+    END
+      
+    vSeperator = ',';
+
+  END
+
+  IF (vParamCount &gt; 0) THEN
+  BEGIN
+    opSQL = opSQL || ' ' || vWhereClause;
+  
+    SUSPEND;
+  END ELSE 
+    opSQL = NULL;
+end^
+SET TERM ; ^
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$VERIFY_RECORDS (
+    IPTABLE_NAME Varchar(31),
+    IPPK_FIELD Varchar(31),
+    IPPAGENUMBER Integer,
+    IPPAGESIZE Integer )
+RETURNS (
+    OPARRAY_VALUES Blob sub_type 1,
+    OPFIRSTVALUE Varchar(24),
+    OPLASTVALUE Varchar(24) )
+AS
+DECLARE VARIABLE vSQL VARCHAR(2000);
+  DECLARE VARIABLE vValue VARCHAR(24);
+  DECLARE VARIABLE vCount INTEGER;
+  DECLARE VARIABLE vPAGENO BIGINT;
+  DECLARE VARIABLE vCOUNTER BIGINT;
+BEGIN
+  IF (ipPAGENUMBER &lt; 1) THEN
+    EXCEPTION ;
+
+  IF (ipPAGESIZE &lt; 1) THEN
+    EXCEPTION ;
+
+  opARRAY_VALUES = '';
+  vCOUNTER = 0;
+
+  vPAGENO = (ipPAGESIZE * ipPAGENUMBER) - ipPAGESIZE;
+
+  FOR EXECUTE STATEMENT 
+    'SELECT ' || ipPK_FIELD || ' FROM ' || ipTABLE_NAME || ' ORDER BY ' || ipPK_FIELD || ' DESC '
+  INTO :vValue
+  DO
+  BEGIN
+        IF ((vCOUNTER &gt;= vPAGENO) AND (vCOUNTER &lt; (vPAGENO + ipPAGESIZE))) THEN
+        BEGIN
+            IF (opARRAY_VALUES = '') THEN
+            BEGIN
+                opFIRSTVALUE = vValue;
+                opARRAY_VALUES = vValue;
+            END ELSE
+            BEGIN
+                opARRAY_VALUES = opARRAY_VALUES || ',' || vValue;
+                opLASTVALUE = vValue;
+            END
+        END
+
+        vCOUNTER = vCOUNTER + 1;
+
+        IF (vCOUNTER &gt; (vPAGENO + ipPAGESIZE)) THEN
+        BEGIN
+            BREAK;
+        END
+  END
+  
+  SUSPEND;
+END^
+SET TERM ; ^
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATEINSERT (
+    IPOPERATIONID Bigint,
+    IPPRIMARY_KEY_COLUMN Varchar(31),
+    IPKEY1 Varchar(31),
+    IPKEY2 Varchar(31),
+    IPKEY3 Varchar(31),
+    IPINDICETYPE Integer )
+RETURNS (
+    OPSQL Blob sub_type 1,
+    OPOLD_ID Bigint,
+    OPPK1OLD Bigint,
+    OPPK2OLD Bigint,
+    OPPK3OLD Varchar(24) )
+AS
+DECLARE VARIABLE vTableName VARCHAR(31);
+  DECLARE VARIABLE vColumnName VARCHAR(31);
+  DECLARE VARIABLE vKey1 VARCHAR(31);
+  DECLARE VARIABLE vKey2 VARCHAR(31);
+  DECLARE VARIABLE vKey3 VARCHAR(31);
+  DECLARE VARIABLE vKey1v VARCHAR(24);
+  DECLARE VARIABLE vKey2v VARCHAR(24);
+  DECLARE VARIABLE vKey3v VARCHAR(24);
+  DECLARE VARIABLE vFirst INTEGER;
+  DECLARE VARIABLE vParamCount INTEGER;
+  DECLARE VARIABLE vNewValue VARCHAR(300); 
+  DECLARE VARIABLE vNewValueBlob BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vOldValue VARCHAR(300); 
+  DECLARE VARIABLE vOldValueBlob BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vQuoteString CHAR(1);
+  DECLARE VARIABLE vInsertColumns VARCHAR(700);
+  DECLARE VARIABLE vInsertValues BLOB SUB_TYPE 1;
+  DECLARE VARIABLE vSeperator VARCHAR(1);
+  DECLARE VARIABLE vChangedValue VARCHAR(24);
+  DECLARE VARIABLE vRemoteGenerator VARCHAR(31);
+BEGIN
+  vInsertColumns = '';
+  vInsertValues = '';
+  vSeperator = '';
+  vParamCount = 0;
+
+  SELECT ol.TABLE_NAME, ol.PKEY1, ol.PKEY1_VALUE, ol.PKEY2, ol.PKEY2_VALUE, ol.PKEY3, ol.PKEY3_VALUE, COALESCE(rt.REMOTE_GENERATOR, '')
+  FROM REPLICATE$OPERATIONLOG ol
+    LEFT JOIN REPLICATE$TABLES rt ON (rt.TABLE_NAME = ol.TABLE_NAME AND rt.OPERATION = 'INSERT')
+  WHERE ol.ID = :ipOPERATIONID
+  INTO :vTableName, :vKey1, :vKey1v, :vKey2, :vKey2v, :vKey3, :vKey3v, :vRemoteGenerator;
+  
+  opOLD_ID = NULL;
+  
+  IF ((vKey1 = ipPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = IPKEY1)) THEN
+  BEGIN
+    opOLD_ID = vKey1v;
+    OPPK1OLD = vKey1v;
+  END ELSE
+  IF ((vKey1 = ipKEY1) OR (vKey1 = ipKEY2) OR (vKey1 = ipKey3)) THEN
+  BEGIN
+    OPPK1OLD = vkey1v;
+  END
+   
+  IF ((vKey2 = IpPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = IPKEY2)) THEN
+  BEGIN
+    opOLD_ID = vKey2v;
+    OPPK2OLD = vKey2v;
+  END ELSE
+  IF ((vKey2 = ipKEY1) OR (vKey2 = ipKEY2) OR (vKey2 = ipKey3)) THEN
+  BEGIN
+    OPPK2OLD = vkey2v;
+  END
+
+  IF ((vKey3 = ipPRIMARY_KEY_COLUMN) AND (ipPRIMARY_KEY_COLUMN = IPKEY3)) THEN
+  BEGIN
+    opOLD_ID = vKey3v;
+    OPPK3OLD = CAST(vKey3v AS VARCHAR(24));
+  END ELSE
+  IF ((vKey3 = ipKEY1) OR (vKey3 = ipKEY2) OR (vKey3 = ipKey3)) THEN
+  BEGIN
+    OPPK3OLD = CAST(vKey3v AS VARCHAR(24));
+  END 
+
+  IF (opOLD_ID IS NULL) THEN
+  BEGIN
+    IF (vKey1 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey1v;
+    ELSE IF (vKey2 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey2v;
+    ELSE IF (vKey3 = ipPRIMARY_KEY_COLUMN) THEN
+        opOLD_ID = vKey3v;
+  END
+
+  FOR 
+    SELECT r.COLUMN_NAME, r.NEW_VALUE_BLOB, r.NEW_VALUE, r.OLD_VALUE_BLOB, r.OLD_VALUE
+    FROM REPLICATE$COLUMNLOG r
+    WHERE r.OPERATIONLOG_ID = :ipOPERATIONID
+  INTO :vColumnName, :vNewValueBlob, :vNewValue, :vOldValueBlob, :vOldValue
+  DO
+  BEGIN
+      vParamCount = vParamCount + 1;
+      vChangedValue = NULL;
+      
+      EXECUTE PROCEDURE REPLICATE$QUOTESTR(vTableName, vColumnName) RETURNING_VALUES vQuoteString;
+      
+      IF (EXISTS(Select TRIM(rc1.RDB$RELATION_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :vTableName
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+                AND TRIM(ins.RDB$FIELD_NAME) = :vColumnName)) THEN
+      BEGIN
+        SELECT CAST(a.NEW_PK_VALUE AS VARCHAR(24))
+        FROM REPLICATE$LOCALPKCHANGES a
+        WHERE a.TABLE_NAME IN (    Select TRIM(rc1.RDB$RELATION_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :vTableName
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+                AND TRIM(ins.RDB$FIELD_NAME) = :vColumnName)
+            AND a.OLD_PK_VALUE = :vNewValue     
+        INTO :vChangedValue;
+
+        if (vChangedValue IS NOT NULL AND vChangedValue &lt;&gt; '') THEN
+        BEGIN
+            vNewValue = vChangedValue;
+        END
+      END
+
+
+      IF ((vNewValueBlob IS NULL AND vOldValueBlob IS NULL) AND (vOldValue IS NOT NULL OR vNewValue IS NOT NULL)) THEN
+      BEGIN
+        IF (vQuoteString = 'T') THEN
+        BEGIN
+            vInsertColumns = vInsertColumns || vSeperator || ' ' || vColumnName;
+          
+            IF (vNewValue IS NULL) THEN
+                vInsertValues = vInsertValues || vSeperator || ' NULL ';
+            ELSE
+                vInsertValues = vInsertValues || vSeperator || ' ''' || REPLACE(vNewValue, '''', '''''') || '''';
+        END ELSE
+        BEGIN
+            vInsertColumns = vInsertColumns || vSeperator || ' ' || vColumnName;
+            
+            IF (UPPER(vcolumnname) = UPPER(IPPRIMARY_KEY_COLUMN)) THEN
+            BEGIN
+              IF (vRemoteGenerator &lt;&gt; '') THEN
+              BEGIN
+                IF ((ipINDICETYPE IN (0, 1))) THEN
+                    vInsertValues = vInsertValues || vSeperator || ' ' || '@NEWGEN@';
+                ELSE
+                    vInsertValues = vInsertValues || vSeperator || ' @' || IPPRIMARY_KEY_COLUMN || '@';
+              END ELSE BEGIN
+                vInsertValues = vInsertValues || vSeperator || vNewValue;
+              END
+              
+              opOLD_ID = CAST(vNewValue AS BIGINT);
+            END ELSE
+            BEGIN      
+            IF (UPPER(vColumnName) = UPPER(IPKEY1)) THEN
+            BEGIN
+                vInsertValues = vInsertValues || vSeperator || ' ' || '@' || ipKEY1 || '@';
+                opPK1Old = CAST(vNewValue AS BIGINT);
+            END ELSE IF (UPPER(vColumnName) = UPPER(IPKEY2)) THEN
+            BEGIN
+                vInsertValues = vInsertValues || vSeperator || ' ' || '@' || ipKEY2 || '@';
+                opPK2Old = CAST(vNewValue AS BIGINT);
+            END ELSE IF (UPPER(vColumnName) = UPPER(IPKEY3)) THEN
+            BEGIN
+                vInsertValues = vInsertValues || vSeperator || ' ' || '@' || ipKEY3 || '@';
+                opPK3Old = CAST(vNewValue AS VARCHAR(24));
+            END ELSE 
+            BEGIN
+                IF (vNewValue IS NULL) THEN
+                    vInsertValues = vInsertValues || vSeperator || ' NULL ';
+                ELSE
+                    vInsertValues = vInsertValues || vSeperator || ' ' || vNewValue;
+            END 
+            END
+        END
+      END ELSE 
+      BEGIN
+        vInsertColumns = vInsertColumns || vSeperator || ' ' || vColumnName;
+        vInsertValues = vInsertValues  || vSeperator || ' ''' || REPLACE(vNewValueBlob, '''', '''''') || '''';
+      END
+      
+      vSeperator = ',';
+  END
+  
+  opSQL = 'INSERT INTO ' || vTableName || ' (' || vInsertColumns || ') VALUES (' || vInsertValues || ');';
+  SUSPEND;
+END^
+SET TERM ; ^
+
+
+
+SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$REPLICATECHANGES
+RETURNS (
+    OPOPERATION_ID Bigint,
+    OPSQL Blob sub_type 1,
+    OPTABLE_NAME Varchar(31),
+    OPOLD_ID Bigint,
+    OPPRIMARY_KEY_COLUMN Varchar(31),
+    OPREMOTE_GENERATOR Varchar(31),
+    OPFKEY1 Varchar(180),
+    OPFKEY2 Varchar(180),
+    OPFKEY3 Varchar(180),
+    OPOPTIONS Bigint )
+AS
+DECLARE VARIABLE VOperationType VARCHAR(6);
+DECLARE VARIABLE vpKey VARCHAR(120);
+DECLARE VARIABLE vFromTable VARCHAR(31);
+DECLARE VARIABLE vFromColumn VARCHAR(31);
+DECLARE VARIABLE vToTable VARCHAR(31);
+DECLARE VARIABLE vToColumn VARCHAR(31);
+DECLARE VARIABLE vFromPK1 VARCHAR(31);
+DECLARE VARIABLE vFromPK2 VARCHAR(31);
+DECLARE VARIABLE vFromPK3 VARCHAR(31);
+DECLARE VARIABLE vPK1 BIGINT;
+DECLARE VARIABLE vPK2 BIGINT;
+DECLARE VARIABLE vPK3 VARCHAR(24);
+DECLARE VARIABLE vCount INTEGER;
+DECLARE VARIABLE vIndice INTEGER;
+DECLARE VARIABLE vIndiceType VARCHAR(50);
+BEGIN
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'YES');
+  
+    
+  UPDATE REPLICATE$OPERATIONLOG 
+  SET REPLICATED = 3
+  WHERE (REPLICATED = 0 AND ID NOT IN (SELECT OPERATIONLOG_ID FROM REPLICATE$COLUMNLOG));
+
+  FOR
+    SELECT ol.ID, ol.OPERATION, ol.TABLE_NAME
+    FROM REPLICATE$OPERATIONLOG ol
+    WHERE ol.REPLICATED = 0
+
+    ORDER BY ol.ID
+    INTO :OPOPERATION_ID, :vOperationType, :OPTABLE_NAME
+  DO
+  BEGIN
+    
+    vCount = 0;
+    opFKEY1 = NULL;
+    opFKEY2 = NULL;
+    opFKEY3 = NULL;
+    vFromPK1 = NULL;
+    vFromPK2 = NULL;
+    vFromPK3 = NULL;
+    
+    SELECT FIRST 1 INDICE_TYPE
+    FROM REPLICATE$TABLES
+    WHERE TABLE_NAME = :OPTABLE_NAME
+    INTO :vIndice;
+    
+    FOR
+    Select TRIM(rc.RDB$RELATION_NAME), TRIM(ins.RDB$FIELD_NAME), TRIM(rc1.RDB$RELATION_NAME), TRIM(ins1.RDB$FIELD_NAME), rc.RDB$CONSTRAINT_TYPE
+    From RDB$RELATION_CONSTRAINTS rc 
+        left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+        left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+    WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+        AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+    UNION ALL
+    Select TRIM(rc.RDB$RELATION_NAME), TRIM(ins.RDB$FIELD_NAME), TRIM(rc1.RDB$RELATION_NAME), TRIM(ins1.RDB$FIELD_NAME), rc.RDB$CONSTRAINT_TYPE
+    From RDB$RELATION_CONSTRAINTS rc 
+        left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+        left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+        left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+    WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+        AND rc.RDB$CONSTRAINT_TYPE = 'PRIMARY KEY'
+        AND ins.RDB$FIELD_NAME NOT IN 
+        (
+            Select TRIM(ins.RDB$FIELD_NAME)
+            From RDB$RELATION_CONSTRAINTS rc 
+                left outer join RDB$INDICES ind on rc.rdb$Index_Name = ind.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins on rc.rdb$Index_Name = ins.rdb$Index_Name
+                left outer join RDB$RELATION_CONSTRAINTS rc1 on ind.rdb$Foreign_Key = rc1.rdb$Index_Name
+                left outer join RDB$INDEX_SEGMENTS ins1 on rc1.rdb$Index_Name = ins1.rdb$Index_Name
+            WHERE rc.RDB$RELATION_NAME = :OPTABLE_NAME
+                AND rc.RDB$CONSTRAINT_TYPE = 'FOREIGN KEY'
+        )
+    
+        ORDER BY 1, 3 DESC
+    INTO :vFromTable, :vFromColumn, :vToTable, :vToColumn, :vIndiceType
+    DO
+    BEGIN
+        IF ((vIndiceType = 'FOREIGN KEY' AND vIndice = 2) 
+            OR (vIndiceType = 'PRIMARY KEY' AND vIndice = 1)
+            OR (vIndice = 0)) THEN
+        BEGIN
+            IF (vCount = 0) THEN
+            BEGIN
+                OPFKEY1 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY1 = opFKEY1 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK1 = vFromColumn;
+            END ELSE IF (vCount = 1) THEN
+            BEGIN
+                OPFKEY2 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY2 = opFKEY2 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK2 = vFromColumn;
+            END ELSE IF (vCount = 2) THEN
+            BEGIN
+                OPFKEY3 = vFromTable || '#' || vFromColumn || '#';
+                
+                IF (vIndiceType = 'FOREIGN KEY') THEN
+                    opFKEY3 = opFKEY3 || vToTable || '#' || vToColumn || '#';
+                    
+                vFromPK3 = vFromColumn;
+            END
+            vCount = vCount + 1;
+        END
+    END
+  
+ 
+    opOLD_ID = NULL;
+    opPRIMARY_KEY_COLUMN = NULL;
+    opREMOTE_GENERATOR = NULL;
+    
+    vPK1 = NULL;
+    vPK2 = NULL;
+    vPK3 = NULL;
+    
+    SELECT rt.REMOTE_GENERATOR, rt.LOCAL_ID_COLUMN, rt.OPTIONS
+    FROM REPLICATE$TABLES rt
+    WHERE rt.TABLE_NAME = :opTABLE_NAME AND rt.OPERATION = :vOperationType
+    INTO :opREMOTE_GENERATOR, :opPRIMARY_KEY_COLUMN, :opOPTIONS;
+
+    IF (vOperationType = 'UPDATE') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEUPDATE(OPOPERATION_ID, opPRIMARY_KEY_COLUMN, vFromPK1, vFromPK2, vFromPK3) RETURNING_VALUES :opSQL, :opOLD_ID, :vPK1, :vPK2, :vPK3;
+    END ELSE IF (vOperationType = 'DELETE') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEDELETE(OPOPERATION_ID) RETURNING_VALUES :opSQL;
+    END ELSE IF (vOperationType = 'INSERT') THEN
+    BEGIN
+      EXECUTE PROCEDURE REPLICATE$REPLICATEINSERT(OPOPERATION_ID, opPRIMARY_KEY_COLUMN, vFromPK1, vFromPK2, vFromPK3, vIndice) RETURNING_VALUES :opSQL, :opOLD_ID, :vPK1, :vPK2, :vPK3;
+    END
+    
+    
+    IF (vPK1 IS NOT NULL) THEN
+        opFKEY1 = opFKEY1 || vPK1;
+    ELSE 
+        opFKEY1 = NULL;
+
+    IF (vPK2 IS NOT NULL) THEN
+        opFKEY2 = opFKEY2 || vPK2;
+    ELSE 
+        opFKEY2 = NULL;
+        
+    IF (vPK3 IS NOT NULL) THEN
+        opFKEY3 = opFKEY3 || vPK3;
+    ELSE 
+        opFKEY3 = NULL;
+    
+    IF (opSQL IS NOT NULL) THEN
+    BEGIN
+      SUSPEND; 
+    END
+  END
+  
+
+  RDB$SET_CONTEXT('USER_TRANSACTION', 'REPLICATING', 'NO');
+END^
+SET TERM ; ^
+</value>
+  </data>
+  <metadata name="textBlockClientRemove.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>582, 17</value>
+  </metadata>
+  <data name="textBlockClientRemove.StringBlock" xml:space="preserve">
+    <value>DROP PROCEDURE REPLICATE$AUTOFIXRECORD;
+DROP PROCEDURE REPLICATE$COLUMNLOG_INSERT;
+DROP PROCEDURE REPLICATE$FIND_MISSING_RECORDS;
+DROP PROCEDURE REPLICATE$GENERATEINSERT;
+DROP PROCEDURE REPLICATE$LOCALPKCHANGES_INSERT;
+DROP PROCEDURE REPLICATE$OPERATIONLOG_INSERT;
+DROP PROCEDURE REPLICATE$REMOTEUPDATES;
+DROP PROCEDURE REPLICATE$REMOTEUPDATES_2;
+DROP PROCEDURE REPLICATE$REPLICATECHANGES;
+DROP PROCEDURE REPLICATE$REPLICATECHANGES_I;
+DROP PROCEDURE REPLICATE$SPLITSTRING;
+DROP PROCEDURE REPLICATE$REPLICATECHANGES_TEST;
+DROP PROCEDURE REPLICATE$REPLICATEDELETE;
+DROP PROCEDURE REPLICATE$REPLICATEINSERT;
+DROP PROCEDURE REPLICATE$REPLICATEUPDATE;
+DROP PROCEDURE REPLICATE$QUOTESTR;
+DROP PROCEDURE REPLICATE$VERIFY_RECORDS;
+DROP PROCEDURE REPLICATE$BUILDWHERECLAUSE;
+DROP PROCEDURE REPLICATE$BUILDWHERECLAUSE2;
+
+DROP TABLE REPLICATE$AUTOCORRECTRULES;
+DROP TABLE REPLICATE$LOCALPKCHANGES;
+DROP TABLE REPLICATE$OPTIONS;
+DROP TABLE REPLICATE$TABLES;
+DROP TABLE REPLICATE$COLUMNLOG;
+DROP TABLE REPLICATE$OPERATIONLOG;
+
+DROP GENERATOR REPLICATE$COLUMNLOG_ID;
+DROP GENERATOR REPLICATE$OPERATIONLOG_ID;
+DROP GENERATOR REPLICATE$REMOTE_LOG_ID;
+DROP GENERATOR REPLICATE$REPLICATETABLES_ID;
+DROP GENERATOR REPLICATION$ID;</value>
+  </data>
+  <metadata name="textBlockServerRemove.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>690, 17</value>
+  </metadata>
+  <data name="textBlockServerRemove.StringBlock" xml:space="preserve">
+    <value>DROP PROCEDURE REPLICATION$REMOTECOUNT;
+DROP PROCEDURE REPLICATE$VERIFY_RECORDS;
+DROP PROCEDURE REPLICATE$RUNSQL;
+DROP PROCEDURE REPLICATE$MISSINGRECORD;
+DROP PROCEDURE REPLICATE$FIND_MISSING_RECORDS;
+DROP PROCEDURE REPLICATE$OPERATIONLOG_INSERT;
+DROP PROCEDURE REPLICATE$COLUMNLOG_INSERT;
+DROP PROCEDURE REPLICATE$REPLICATECHANGES;
+DROP PROCEDURE REPLICATE$REPLICATEUPDATE;
+DROP PROCEDURE REPLICATE$REPLICATEINSERT;
+DROP PROCEDURE REPLICATE$REPLICATEDELETE;
+DROP PROCEDURE REPLICATE$SPLITSTRING;
+DROP PROCEDURE REPLICATE$QUOTESTR;
+DROP PROCEDURE REPLICATE$BUILDWHERECLAUSE;
+DROP PROCEDURE REPLICATE$CREATE_MISSING_RECORD;
+
+DROP GENERATOR REPLICATE$COLUMNLOG_ID;
+DROP GENERATOR REPLICATE$OPERATIONLOG_ID;
+DROP GENERATOR REPLICATE$REPLICATETABLES_ID;
+
+DROP TABLE REPLICATE$REQUIRED_SQL;
+DROP TABLE REPLICATE$TABLES;
+DROP TABLE REPLICATE$COLUMNLOG;
+DROP TABLE REPLICATE$OPERATIONLOG;
+DROP TABLE REPLICATE$LOCALPKCHANGES;
+DROP TABLE REPLICATE$AUTOCORRECTRULES;
+DROP TABLE REPLICATE$OPTIONS;
+
+</value>
+  </data>
+  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>869, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAQAAEABAAoAQAAJgAAABAQAAABAAgAaAUAAE4BAAAoAAAAEAAAACAAAAABAAQAAAAAAIAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/
+        AAAA//8A/wAAAP8A/wD//wAA////AP////8AAAAA93d3fwAAAAD3d39/AAAAAPd3d38AAAAA93d3f///
+        /wD3d3d/d3d3j/f//393d3d/93d3f3d3d3/3//9/d3d3f/d3d393d3d//////3d3d38AAAD3d3d3fwAA
+        APf///9/AAAA9////38AAAD4d3d3jwAAAAD///8AAP8AAAD/AAAA/wAAAP8AAAADAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAD8AAAA/AAAAPwAAAD8AAAA/wMAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAA
+        AAAAAAAAAAEAAAABAAAAAAAAQkJCAE1NTQBjYmMAenp6AISDgwCPjo8AmpmZANTU1ADr6+sA8e/wAPb2
+        9gD5+fkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAD///8ACwsLCwsLCwsAAAAAAAAAAAsBAQEBAQELAAAAAAAAAAALAQEBAQoBCwAA
+        AAAAAAAACwEBAQEBAQsAAAAAAAAAAAsBAQEBAQELCwsLCwsLAAALAQEBAQEBCwQBAQEBBAgMCwEKCgoK
+        AQsBAQEBAQECCwsBAQEBAQELAQEBAQEBAQsLAQoKCgoBCwEBAQEBAQELCwEBAQEBAQsBAQEBAQEBCwsL
+        CwsLCwsLAQEBAQEBAQsAAAAAAAALAQMHBwcHAwELAAAAAAAACQUKCgoKCgoFCwAAAAAAAAkGCgoKCgoK
+        BgsAAAAAAAAMCAcHBwcHBwgMAAAAAAAAAAALCwsLCwsAAAD/AAAA/wAAAP8AAAD/AAAAAwAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA/AAAAPwAAAD8AAAA/AAAAP8DAAA=
+</value>
+  </data>
+</root>

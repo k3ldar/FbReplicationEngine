@@ -1,0 +1,11 @@
+/Firebird.Replication/obj/
+/Replication.Console/obj/
+/Replication.Service/obj/
+/.vs/
+/401.txt
+/ChildScriptCreate.4.2.5.txt
+/ChildScriptCreate.4.3.0.txt
+/ChildScriptDrop.4.2.5.txt
+/ChildScriptDrop.4.3.0.txt
+/MasterScriptCreate.4.2.5.txt
+/MasterScriptDrop.4.2.5.txt
