@@ -122,9 +122,6 @@ namespace Replication.Service
             }
         }
 
-#if LICENCE_CHECK
-        internal DateTime LastValidateLicence { get; set; }
-#endif
         /// <summary>
         /// Indicates wether replication can confirm counts
         /// </summary>
@@ -366,124 +363,118 @@ namespace Replication.Service
                     {
                         AddToLogFile(String.Format("Run Replication {0}", ConnectionName));
 
-                            _IsRunning = true;
+                        _IsRunning = true;
 
-                            //properties
-                            _replicationEngine = new ReplicationEngine(
-                                ConnectionName,
-                                _databaseConnection.ReplicateDatabase,
-                                _databaseConnection.ChildDatabase,
-                                _databaseConnection.MasterDatabase);
-                            try
-                            {
-                                _replicationEngine.Validate = true;
+                        //properties
+                        _replicationEngine = new ReplicationEngine(
+                            ConnectionName,
+                            _databaseConnection.ReplicateDatabase,
+                            _databaseConnection.ChildDatabase,
+                            _databaseConnection.MasterDatabase);
+                        try
+                        {
+                            _replicationEngine.Validate = true;
 
-                                // settings
-                                _replicationEngine.VerifyAllDataInterval = (int)_databaseConnection.VerifyDataInterval;
-                                _replicationEngine.VerifyTableCounts = 20;
+                            // settings
+                            _replicationEngine.VerifyAllDataInterval = (int)_databaseConnection.VerifyDataInterval;
+                            _replicationEngine.VerifyTableCounts = 20;
 #if ERROR_LIMIT_30000
-                                _replicationEngine.ForceRestartErrorCount = 30000;
+                            _replicationEngine.ForceRestartErrorCount = 30000;
 #else
-                                _replicationEngine.ForceRestartErrorCount = (int)_databaseConnection.VerifyErrorReset;
+                            _replicationEngine.ForceRestartErrorCount = (int)_databaseConnection.VerifyErrorReset;
 #endif
-                                _replicationEngine.MaximumDownloadCount = (int)_databaseConnection.MaximumDownloadCount;
-                                _replicationEngine.MaximumUploadCount = (int)_databaseConnection.MaximumUploadCount;
-                                _replicationEngine.TimeOutMinutes = (int)_databaseConnection.TimeOut;
-                                _replicationEngine.RequireUniqueAccess = _databaseConnection.RequireUniqueAccess;
+                            _replicationEngine.MaximumDownloadCount = (int)_databaseConnection.MaximumDownloadCount;
+                            _replicationEngine.MaximumUploadCount = (int)_databaseConnection.MaximumUploadCount;
+                            _replicationEngine.TimeOutMinutes = (int)_databaseConnection.TimeOut;
+                            _replicationEngine.RequireUniqueAccess = _databaseConnection.RequireUniqueAccess;
 
-                                // event hookups
-                                _replicationEngine.OnProgress += new ReplicationPercentEventArgs(rep_OnProgress);
-                                _replicationEngine.OnReplicationTextChanged += new ReplicationProgress(rep_OnReplicationTextChanged);
-                                _replicationEngine.BeginReplication += new ReplicationEventHandler(rep_BeginReplication);
-                                _replicationEngine.EndReplication += new ReplicationEventHandler(rep_EndReplication);
-                                _replicationEngine.OnReplicationError += new ReplicationError(rep_OnReplicationError);
-                                _replicationEngine.OnIDChanged += rep_OnIDChanged;
-                                _replicationEngine.OnCheckCancel += _replicationEngine_OnCheckCancel;
+                            // event hookups
+                            _replicationEngine.OnProgress += new ReplicationPercentEventArgs(rep_OnProgress);
+                            _replicationEngine.OnReplicationTextChanged += new ReplicationProgress(rep_OnReplicationTextChanged);
+                            _replicationEngine.BeginReplication += new ReplicationEventHandler(rep_BeginReplication);
+                            _replicationEngine.EndReplication += new ReplicationEventHandler(rep_EndReplication);
+                            _replicationEngine.OnReplicationError += new ReplicationError(rep_OnReplicationError);
+                            _replicationEngine.OnIDChanged += rep_OnIDChanged;
+                            _replicationEngine.OnCheckCancel += _replicationEngine_OnCheckCancel;
 
-                                //are we forcing hard confirm between certain hours?
-                                if (!ForceVerifyRecords)
-                                {
-                                    ForceVerifyRecords = ForceConfirmBasedOnHoursOrIterations();
-                                }
+                            //are we forcing hard confirm between certain hours?
+                            if (!ForceVerifyRecords)
+                            {
+                                ForceVerifyRecords = ForceConfirmBasedOnHoursOrIterations();
+                            }
 
-                                _replicationError = _replicationEngine.Run(_allowConfirmCounts, ForceVerifyRecords);
+                            _replicationError = _replicationEngine.Run(_allowConfirmCounts, ForceVerifyRecords);
 
-                                missingRecordCount = _replicationEngine.MissingRecordCount;
+                            missingRecordCount = _replicationEngine.MissingRecordCount;
 
+                            switch (_replicationError)
+                            {
+                                case ReplicationResult.ThresholdExceeded:
+                                    _runInterval = 0;
+                                    break;
+
+                                case ReplicationResult.UniqueAccessDenied:
+                                    // we do not reset force hard confirm here as it was set before the run
+                                    //_forceHardConfirm = _forceHardConfirm;
+                                    _runInterval = (int)_databaseConnection.ReplicateInterval;
+                                    break;
+                            }
+
+                            if (ForceVerifyRecords && (missingRecordCount >= _databaseConnection.VerifyErrorReset))
+                            {
+                                AddToLogFile(String.Format("{0} Force Verify Records Missing Records Exceeded", ConnectionName));
+                                ForceVerifyRecords = true;
+                                _runInterval = 0;
+
+                                // get list of confirmed tables so we don't scan them next time
+                                //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
+                            }
+                            else
+                            {
                                 switch (_replicationError)
                                 {
+                                    case ReplicationResult.TimeOutExceeded:
+                                        //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
+                                        _runInterval = (int)_databaseConnection.ReplicateInterval;
+                                        AddToLogFile(String.Format("{0} Time out exceeded, restarting", ConnectionName));
+
+                                        break;
                                     case ReplicationResult.ThresholdExceeded:
+                                        //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
+
+                                        // we do not reset force hard confirm here as it was set before the run
+                                        //_forceHardConfirm = _forceHardConfirm;
+                                        _runInterval = 0;
+                                        break;
+                                    case ReplicationResult.UniqueAccessDenied:
+                                        //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
+                                        _runInterval = (int)_databaseConnection.ReplicateInterval;
+                                        AddToLogFile(String.Format("{0} Unique access for deep scan not allowed, retry next time...", ConnectionName));
+                                        break;
+                                    case ReplicationResult.Error:
+                                    case ReplicationResult.DeepScanInitialised:
+                                        //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
                                         _runInterval = 0;
                                         break;
 
-                                    case ReplicationResult.UniqueAccessDenied:
-                                        // we do not reset force hard confirm here as it was set before the run
-                                        //_forceHardConfirm = _forceHardConfirm;
+                                    case ReplicationResult.NotInitialised:
+                                    case ReplicationResult.Cancelled:
+                                    case ReplicationResult.Completed:
+                                    case ReplicationResult.DeepScanCompleted:
+                                        ForceVerifyRecords = false;
+                                        //_confirmedTables = String.Empty;
+                                        _replicationEngine.Statuses.Clear();
                                         _runInterval = (int)_databaseConnection.ReplicateInterval;
                                         break;
                                 }
-
-                                if (ForceVerifyRecords && (missingRecordCount >= _databaseConnection.VerifyErrorReset))
-                                {
-                                    AddToLogFile(String.Format("{0} Force Verify Records Missing Records Exceeded", ConnectionName));
-                                    ForceVerifyRecords = true;
-                                    _runInterval = 0;
-
-                                    // get list of confirmed tables so we don't scan them next time
-                                    //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
-                                }
-                                else
-                                {
-                                    switch (_replicationError)
-                                    {
-                                        case ReplicationResult.TimeOutExceeded:
-                                            //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
-                                            _runInterval = (int)_databaseConnection.ReplicateInterval;
-                                            AddToLogFile(String.Format("{0} Time out exceeded, restarting", ConnectionName));
-
-                                            break;
-                                        case ReplicationResult.ThresholdExceeded:
-                                            //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
-
-                                            // we do not reset force hard confirm here as it was set before the run
-                                            //_forceHardConfirm = _forceHardConfirm;
-                                            _runInterval = 0;
-                                            break;
-                                        case ReplicationResult.UniqueAccessDenied:
-                                            //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
-                                            _runInterval = (int)_databaseConnection.ReplicateInterval;
-                                            AddToLogFile(String.Format("{0} Unique access for deep scan not allowed, retry next time...", ConnectionName));
-                                            break;
-                                        case ReplicationResult.Error:
-                                        case ReplicationResult.DeepScanInitialised:
-                                            //_confirmedTables = _replicationEngine.TablesConfirmedCorrect;
-                                            _runInterval = 0;
-                                            break;
-
-                                        case ReplicationResult.NotInitialised:
-                                        case ReplicationResult.Cancelled:
-                                        case ReplicationResult.Completed:
-                                        case ReplicationResult.DeepScanCompleted:
-                                            ForceVerifyRecords = false;
-                                            //_confirmedTables = String.Empty;
-                                            _replicationEngine.Statuses.Clear();
-                                            _runInterval = (int)_databaseConnection.ReplicateInterval;
-                                            break;
-                                    }
-                                }
                             }
-                            finally
-                            {
-                                _replicationEngine.Dispose();
-                                _replicationEngine = null;
-                            }
-#if LICENCE_CHECK
                         }
-                        else
+                        finally
                         {
-                            AddToLogFile("Could not validate licence.  Please contact support.");
+                            _replicationEngine.Dispose();
+                            _replicationEngine = null;
                         }
-#endif 
+
                         _IsRunning = false;
                         LastRunReplication = DateTime.Now;
                         _replicationCount++;

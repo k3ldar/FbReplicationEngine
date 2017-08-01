@@ -1,4 +1,4 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+﻿/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
  * 
  * The contents of this file are subject to the GNU General Public License
  * v3.0 (the "License"); you may not use this file except in compliance
@@ -46,4 +46,4 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("4.0.5.1730")]
+[assembly: AssemblyVersion("4.0.6.1735")]

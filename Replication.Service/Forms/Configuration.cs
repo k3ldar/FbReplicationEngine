@@ -54,7 +54,7 @@ namespace Replication.Service.Forms
             API api = new API(Utilities.AddTrailingBackSlash(Utilities.CurrentPath(true) + "Config"), ENCRYPRION_KEY);
             try
             {
-                int maxAvailable = api.GetTotalUsage();
+                int maxAvailable = int.MaxValue;
 
                 foreach (ConfigFileNode fileNode in api.GetConfigurationSettings())
                 {

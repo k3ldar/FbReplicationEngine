@@ -40,6 +40,12 @@ namespace Replication.Service
     /// </summary>
     public sealed class API
     {
+        #region Constants
+
+        internal const int MAX_THREADS = 500;
+
+        #endregion Constants
+
         #region Constructors
 
         public API()
@@ -249,24 +255,12 @@ namespace Replication.Service
 
         public int GetTotalUsage()
         {
-#if LICENCE_CHECK
-            WebDefenderLicence licence = WebDefenderLicence.Load(LicenceType.ReplicationEngine);
-            return (licence == null ? 10 : licence.Count);
-#else
-            return (int.MaxValue);
-#endif
+            return (MAX_THREADS);
         }
 
         public string GetConfigurationFileName(DatabaseConnection connection)
         {
-#if LICENCE_CHECK
-            WebDefenderLicence licence = WebDefenderLicence.Load(LicenceType.ReplicationEngine);
-            int maxUsage = licence == null ? 10 : licence.Count;
-#else
-            int maxUsage = int.MaxValue;
-#endif
-
-            for (int i = 1; i <= maxUsage; i++)
+            for (int i = 1; i <= MAX_THREADS; i++)
             {
                 string newFile = Path + String.Format("File{0}.frc", i);
 
@@ -1730,7 +1724,7 @@ namespace Replication.Service
 
                     if (attempt < MaxReconnectAttempts)
                     {
-                        return (ConnectToDatabase(connectionString, ref tran, allowPool, isolationLevel, attempt++));
+                        return (ConnectToDatabase(connectionString, ref tran, allowPool, isolationLevel, ++attempt));
                     }
                     else
                         throw;

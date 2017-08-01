@@ -160,8 +160,7 @@ namespace Replication.Service
                     Shared.Classes.ThreadManager.Initialise();
                     try
                     {                            
-                        UpdateBackupReplication asApp = new UpdateBackupReplication();
-                        INSTANCE = asApp;
+                        INSTANCE = new UpdateBackupReplication();
 
                         Shared.EventLog.Add("Initializing UserInteractive");
 
@@ -200,7 +199,7 @@ namespace Replication.Service
                         {
                             Shared.EventLog.Add("Run as Application");
                             Shared.Classes.ThreadManager.ThreadForcedToClose += ThreadManager_ThreadForcedToClose;
-                            asApp.RunAsApp();
+                            INSTANCE.RunAsApp();
                         }
                     }
                     catch (Exception err)
@@ -593,17 +592,8 @@ namespace Replication.Service
                         Forms.Configuration.ENCRYPRION_KEY);
                     try
                     {
-#if LICENCE_CHECK
-                        int maxUsage = api.GetTotalUsage();
-                        int count = 0;
-#endif
                         foreach (ConfigFileNode config in api.GetConfigurationSettings())
                         {
-#if LICENCE_CHECK
-                            // limit to licence count
-                            if (count >= maxUsage)
-                                break;
-#endif
                             if (!config.Connection.Enabled)
                                 continue;
 
@@ -632,13 +622,8 @@ namespace Replication.Service
                             }
                             catch (Exception error)
                             {
-                                Shared.EventLog.Add(error.Message);
                                 Shared.EventLog.Add(error);
                             }
-
-#if LICENCE_CHECK
-                            count++;
-#endif
                         }
                     }
                     finally
