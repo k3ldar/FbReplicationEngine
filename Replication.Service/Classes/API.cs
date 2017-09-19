@@ -868,7 +868,7 @@ namespace Replication.Service
                         Result.Add(new ReplicatedTable(rdr.GetInt64(0), rdr.GetString(1),
                             (Operation)Enum.Parse(typeof(Operation), rdr.GetString(2), true), 
                             rdr.GetString(3), rdr.GetInt32(4), rdr.GetString(5), rdr.GetString(6), rdr.GetString(7),
-                            rdr.GetString(8), rdr.GetInt32(9), rdr.GetInt32(10)));
+                            rdr.GetString(8), rdr.GetInt32(9), (TableOptions)rdr.GetInt64(10)));
                 }
                 finally
                 {
@@ -886,13 +886,13 @@ namespace Replication.Service
 
         public void ChildUpdateReplicatedTables(DatabaseConnection connection, string tableName, string localID, 
             bool insert, bool update, bool delete, string triggerName, string excludeFields, int sortOrder,
-            int indiceType, string localGenerator, string remoteGenerator, bool updateMaster)
+            int indiceType, string localGenerator, string remoteGenerator, bool updateMaster, TableOptions options)
         {
             RemoveReplicatedTable(connection, tableName, updateMaster, true, true, true);
 
             string SQL = "INSERT INTO REPLICATE$TABLES (TABLE_NAME, OPERATION, TRIGGER_NAME, SORT_ORDER, " +
                 "EXCLUDE_FIELDS, LOCAL_GENERATOR, REMOTE_GENERATOR, LOCAL_ID_COLUMN, INDICE_TYPE, OPTIONS, ID) " +
-                " VALUES ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{7}', {8}, 0, " +
+                " VALUES ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{7}', {8}, {9}, " +
                 "GEN_ID(REPLICATE$REPLICATETABLES_ID, 1))";
 
             FbTransaction tran = null;
@@ -907,7 +907,7 @@ namespace Replication.Service
                     {
                         cmd = new FbCommand(String.Format(SQL, tableName, "INSERT",
                             triggerName, sortOrder, excludeFields, localGenerator, remoteGenerator,
-                            localID, indiceType), db, tran);
+                            localID, indiceType, (Int64)options), db, tran);
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -922,7 +922,7 @@ namespace Replication.Service
                     {
                         cmd = new FbCommand(String.Format(SQL, tableName, "DELETE",
                             triggerName, sortOrder, excludeFields, String.Empty, String.Empty,
-                            localID, indiceType), db, tran);
+                            localID, indiceType, (Int64)options), db, tran);
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -937,7 +937,7 @@ namespace Replication.Service
                     {
                         cmd = new FbCommand(String.Format(SQL, tableName, "UPDATE",
                             triggerName, sortOrder, excludeFields, localGenerator, remoteGenerator,
-                            localID, indiceType), db, tran);
+                            localID, indiceType, (Int64)options), db, tran);
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -951,7 +951,7 @@ namespace Replication.Service
                     if (updateMaster)
                         MasterUpdateReplicatedTables(connection, tableName, localID, insert, update,
                             delete, triggerName, excludeFields, sortOrder, indiceType, localGenerator,
-                            remoteGenerator);
+                            remoteGenerator, options);
                 }
                 finally
                 {
@@ -1149,11 +1149,11 @@ namespace Replication.Service
 
                     // loca
                     repVersion = repVersion.Substring(0, repVersion.LastIndexOf("."));
-                    int ver = Shared.Utilities.StrToInt(repVersion.Replace(".", ""), 0);
+                    int internalVersion = Shared.Utilities.StrToInt(repVersion.Replace(".", ""), 0);
 
-                    while (ver > replicationVersion)
+                    while (internalVersion > replicationVersion)
                     {
-                        string contents = UpdateBackupReplication.GetInternalVersion(ver, master);
+                        string contents = UpdateBackupReplication.GetInternalVersion(replicationVersion, master);
                         string localTempFile = String.Empty;
 
                         if (String.IsNullOrEmpty(contents))
@@ -1525,7 +1525,7 @@ namespace Replication.Service
                     {
                         Result.Add(new ReplicatedTable(rdr.GetInt64(0), rdr.GetString(1), (Operation)rdr.GetInt32(2),
                             rdr.GetString(3), rdr.GetInt32(4), rdr.GetString(5), rdr.GetString(6), rdr.GetString(7),
-                            rdr.GetString(8), rdr.GetInt32(9), rdr.GetInt32(10)));
+                            rdr.GetString(8), rdr.GetInt32(9), (TableOptions)rdr.GetInt64(10)));
                     }
                 }
                 finally
@@ -1544,13 +1544,13 @@ namespace Replication.Service
 
         public void MasterUpdateReplicatedTables(DatabaseConnection connection, string tableName, string localID,
             bool insert, bool update, bool delete, string triggerName, string excludeFields, int sortOrder,
-            int indiceType, string localGenerator, string remoteGenerator)
+            int indiceType, string localGenerator, string remoteGenerator, TableOptions options)
         {
             RemoveMasterReplicatedTable(connection, tableName, true, true, true);
 
             string SQL = "INSERT INTO REPLICATE$TABLES (TABLE_NAME, OPERATION, TRIGGER_NAME, SORT_ORDER, " +
                 "EXCLUDE_FIELDS, LOCAL_GENERATOR, REMOTE_GENERATOR, LOCAL_ID_COLUMN, INDICE_TYPE, OPTIONS, ID) " +
-                " VALUES ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{7}', {8}, 0, " +
+                " VALUES ('{0}', '{1}', '{2}', {3}, '{4}', '{5}', '{6}', '{7}', {8}, {9}, " +
                 "GEN_ID(REPLICATE$REPLICATETABLES_ID, 1))";
 
             FbTransaction tran = null;
@@ -1565,7 +1565,7 @@ namespace Replication.Service
                     {
                         cmd = new FbCommand(String.Format(SQL, tableName, "INSERT",
                             triggerName, sortOrder, excludeFields, String.Empty, String.Empty,
-                            localID, indiceType), db, tran);
+                            localID, indiceType, (Int64)options), db, tran);
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -1580,7 +1580,7 @@ namespace Replication.Service
                     {
                         cmd = new FbCommand(String.Format(SQL, tableName, "DELETE",
                             triggerName, sortOrder, excludeFields, String.Empty, String.Empty,
-                            localID, indiceType), db, tran);
+                            localID, indiceType, (Int64)options), db, tran);
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -1595,7 +1595,7 @@ namespace Replication.Service
                     {
                         cmd = new FbCommand(String.Format(SQL, tableName, "UPDATE",
                             triggerName, sortOrder, excludeFields, String.Empty, String.Empty,
-                            localID, indiceType), db, tran);
+                            localID, indiceType, (Int64)options), db, tran);
                         try
                         {
                             cmd.ExecuteNonQuery();

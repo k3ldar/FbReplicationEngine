@@ -61,19 +61,23 @@ namespace Replication.Service.Forms
             // tvConfigurationFiles
             // 
             this.tvConfigurationFiles.AllowNoNodeSelected = true;
+            this.tvConfigurationFiles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tvConfigurationFiles.FullRowSelect = true;
             this.tvConfigurationFiles.HideSelection = false;
             this.tvConfigurationFiles.Location = new System.Drawing.Point(12, 12);
             this.tvConfigurationFiles.Name = "tvConfigurationFiles";
             this.tvConfigurationFiles.RightClickSelect = true;
             this.tvConfigurationFiles.SelectedNodeBold = false;
-            this.tvConfigurationFiles.Size = new System.Drawing.Size(197, 237);
+            this.tvConfigurationFiles.Size = new System.Drawing.Size(314, 237);
             this.tvConfigurationFiles.TabIndex = 0;
             this.tvConfigurationFiles.DoubleClick += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(216, 13);
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Location = new System.Drawing.Point(333, 13);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 1;
@@ -83,7 +87,8 @@ namespace Replication.Service.Forms
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(216, 43);
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(333, 43);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -93,7 +98,8 @@ namespace Replication.Service.Forms
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(216, 73);
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Location = new System.Drawing.Point(333, 73);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 3;
@@ -103,7 +109,8 @@ namespace Replication.Service.Forms
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(215, 226);
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbout.Location = new System.Drawing.Point(332, 226);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(76, 23);
             this.btnAbout.TabIndex = 4;
@@ -115,7 +122,7 @@ namespace Replication.Service.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 262);
+            this.ClientSize = new System.Drawing.Size(420, 262);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
@@ -126,7 +133,6 @@ namespace Replication.Service.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Configuration";
-            this.SaveState = true;
             this.Text = "Firebird Replication Configuration";
             this.ResumeLayout(false);
 

@@ -45,9 +45,17 @@ namespace Replication.Engine
         DoNotVerifyMaster = 4,
 
         /// <summary>
-        /// Full table scan is ascending
+        /// Full table scan is ascending, default is descending
         /// </summary>
         Ascending = 8,
+
+#if LogRowData
+        /// <summary>
+        /// If set, then full table logging will be included, otherwise only overview changes
+        /// will be logged in operation log table
+        /// </summary>
+        LogRowData = 16
+#endif
     }
 
     public enum ReplicationStatus

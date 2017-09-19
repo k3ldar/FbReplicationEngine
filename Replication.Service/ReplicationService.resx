@@ -428,6 +428,32 @@ BEGIN
 END^
 SET TERM ; ^</value>
   </data>
+  <metadata name="versionMaster407.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>21, 253</value>
+  </metadata>
+  <data name="versionMaster407.StringBlock" xml:space="preserve">
+    <value>SET TERM ^ ;
+ALTER PROCEDURE REPLICATE$OPERATIONLOG_INSERT (
+    IPTABLE_NAME Varchar(31),
+    IPOPERATION Varchar(6),
+    IPPKEY1 Varchar(31),
+    IPPKEY1_VALUE Varchar(24),
+    IPPKEY2 Varchar(31),
+    IPPKEY2_VALUE Varchar(24),
+    IPPKEY3 Varchar(31),
+    IPPKEY3_VALUE Varchar(24) )
+RETURNS (
+    OPNEWID Bigint )
+AS
+BEGIN 
+  opNEWID = GEN_ID(REPLICATE$OPERATIONLOG_ID, 1);
+  INSERT INTO REPLICATE$OPERATIONLOG (ID, DATETIME, TABLE_NAME, OPERATION, PKEY1, PKEY1_VALUE, PKEY2, PKEY2_VALUE, PKEY3, PKEY3_VALUE, REPLICATED, CLIENT_ADDRESS, USER_NAME, USER_ROLE)
+  VALUES (:opNEWID, CURRENT_TIMESTAMP, :ipTABLE_NAME, :ipOPERATION, :ipPKEY1, :ipPKEY1_VALUE, :ipPKEY2, :ipPKEY2_VALUE, :ipPKEY3, :ipPKEY3_VALUE, COALESCE(rdb$get_context('USER_TRANSACTION', 'CLIENT_ID'), 0), rdb$get_context('SYSTEM', 'CLIENT_ADDRESS'), USER, CURRENT_ROLE); 
+  SUSPEND;
+END^
+SET TERM ; ^
+</value>
+  </data>
   <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>

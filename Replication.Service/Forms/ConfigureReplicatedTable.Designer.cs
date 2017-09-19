@@ -75,10 +75,18 @@ namespace Replication.Service.Forms
             this.lblLocalIDColumn = new System.Windows.Forms.Label();
             this.cmbLocalIDColumn = new System.Windows.Forms.ComboBox();
             this.cbUpdateMaster = new System.Windows.Forms.CheckBox();
+            this.gbOptions = new System.Windows.Forms.GroupBox();
+            this.rbAscending = new System.Windows.Forms.RadioButton();
+            this.rbDescending = new System.Windows.Forms.RadioButton();
+            this.cbLogRowData = new System.Windows.Forms.CheckBox();
+            this.cbVerify = new System.Windows.Forms.CheckBox();
+            this.cbVerifyMaster = new System.Windows.Forms.CheckBox();
+            this.cbVerifyChild = new System.Windows.Forms.CheckBox();
             this.gbLogChanges.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.udSortOrder)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.gbOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTableName
@@ -106,7 +114,7 @@ namespace Replication.Service.Forms
             this.gbLogChanges.Controls.Add(this.cbInsert);
             this.gbLogChanges.Location = new System.Drawing.Point(9, 118);
             this.gbLogChanges.Name = "gbLogChanges";
-            this.gbLogChanges.Size = new System.Drawing.Size(213, 104);
+            this.gbLogChanges.Size = new System.Drawing.Size(213, 98);
             this.gbLogChanges.TabIndex = 4;
             this.gbLogChanges.TabStop = false;
             this.gbLogChanges.Text = "Log Changes";
@@ -166,7 +174,7 @@ namespace Replication.Service.Forms
             // lblGenerator
             // 
             this.lblGenerator.AutoSize = true;
-            this.lblGenerator.Location = new System.Drawing.Point(9, 238);
+            this.lblGenerator.Location = new System.Drawing.Point(9, 222);
             this.lblGenerator.Name = "lblGenerator";
             this.lblGenerator.Size = new System.Drawing.Size(114, 13);
             this.lblGenerator.TabIndex = 5;
@@ -176,7 +184,7 @@ namespace Replication.Service.Forms
             // 
             this.cmbLocalGenerator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLocalGenerator.FormattingEnabled = true;
-            this.cmbLocalGenerator.Location = new System.Drawing.Point(9, 255);
+            this.cmbLocalGenerator.Location = new System.Drawing.Point(9, 239);
             this.cmbLocalGenerator.Name = "cmbLocalGenerator";
             this.cmbLocalGenerator.Size = new System.Drawing.Size(213, 21);
             this.cmbLocalGenerator.TabIndex = 6;
@@ -185,7 +193,7 @@ namespace Replication.Service.Forms
             // 
             this.cmbRemoteGenerator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRemoteGenerator.FormattingEnabled = true;
-            this.cmbRemoteGenerator.Location = new System.Drawing.Point(9, 305);
+            this.cmbRemoteGenerator.Location = new System.Drawing.Point(9, 286);
             this.cmbRemoteGenerator.Name = "cmbRemoteGenerator";
             this.cmbRemoteGenerator.Size = new System.Drawing.Size(213, 21);
             this.cmbRemoteGenerator.TabIndex = 8;
@@ -193,7 +201,7 @@ namespace Replication.Service.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 288);
+            this.label1.Location = new System.Drawing.Point(9, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 13);
             this.label1.TabIndex = 7;
@@ -224,7 +232,7 @@ namespace Replication.Service.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 340);
+            this.label2.Location = new System.Drawing.Point(9, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 9;
@@ -232,7 +240,7 @@ namespace Replication.Service.Forms
             // 
             // udSortOrder
             // 
-            this.udSortOrder.Location = new System.Drawing.Point(9, 357);
+            this.udSortOrder.Location = new System.Drawing.Point(9, 329);
             this.udSortOrder.Maximum = new decimal(new int[] {
             32500,
             0,
@@ -247,7 +255,7 @@ namespace Replication.Service.Forms
             this.groupBox2.Controls.Add(this.rbMultipleColumns);
             this.groupBox2.Controls.Add(this.rbForeignKey);
             this.groupBox2.Controls.Add(this.rbSingleColumn);
-            this.groupBox2.Location = new System.Drawing.Point(243, 288);
+            this.groupBox2.Location = new System.Drawing.Point(243, 296);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(316, 53);
             this.groupBox2.TabIndex = 14;
@@ -290,7 +298,7 @@ namespace Replication.Service.Forms
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(484, 395);
+            this.btnSave.Location = new System.Drawing.Point(484, 457);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 16;
@@ -302,7 +310,7 @@ namespace Replication.Service.Forms
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(403, 395);
+            this.btnCancel.Location = new System.Drawing.Point(403, 457);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 17;
@@ -331,12 +339,89 @@ namespace Replication.Service.Forms
             // 
             this.cbUpdateMaster.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbUpdateMaster.AutoSize = true;
-            this.cbUpdateMaster.Location = new System.Drawing.Point(193, 399);
+            this.cbUpdateMaster.Location = new System.Drawing.Point(193, 461);
             this.cbUpdateMaster.Name = "cbUpdateMaster";
             this.cbUpdateMaster.Size = new System.Drawing.Size(172, 17);
             this.cbUpdateMaster.TabIndex = 15;
             this.cbUpdateMaster.Text = "Save changes to Master Table";
             this.cbUpdateMaster.UseVisualStyleBackColor = true;
+            // 
+            // gbOptions
+            // 
+            this.gbOptions.Controls.Add(this.cbVerifyChild);
+            this.gbOptions.Controls.Add(this.cbVerifyMaster);
+            this.gbOptions.Controls.Add(this.cbVerify);
+            this.gbOptions.Controls.Add(this.cbLogRowData);
+            this.gbOptions.Controls.Add(this.rbDescending);
+            this.gbOptions.Controls.Add(this.rbAscending);
+            this.gbOptions.Location = new System.Drawing.Point(9, 355);
+            this.gbOptions.Name = "gbOptions";
+            this.gbOptions.Size = new System.Drawing.Size(550, 96);
+            this.gbOptions.TabIndex = 18;
+            this.gbOptions.TabStop = false;
+            this.gbOptions.Text = "Options";
+            // 
+            // rbAscending
+            // 
+            this.rbAscending.AutoSize = true;
+            this.rbAscending.Location = new System.Drawing.Point(184, 17);
+            this.rbAscending.Name = "rbAscending";
+            this.rbAscending.Size = new System.Drawing.Size(75, 17);
+            this.rbAscending.TabIndex = 0;
+            this.rbAscending.TabStop = true;
+            this.rbAscending.Text = "Ascending";
+            this.rbAscending.UseVisualStyleBackColor = true;
+            // 
+            // rbDescending
+            // 
+            this.rbDescending.AutoSize = true;
+            this.rbDescending.Location = new System.Drawing.Point(184, 40);
+            this.rbDescending.Name = "rbDescending";
+            this.rbDescending.Size = new System.Drawing.Size(82, 17);
+            this.rbDescending.TabIndex = 1;
+            this.rbDescending.TabStop = true;
+            this.rbDescending.Text = "Descending";
+            this.rbDescending.UseVisualStyleBackColor = true;
+            // 
+            // cbLogRowData
+            // 
+            this.cbLogRowData.AutoSize = true;
+            this.cbLogRowData.Location = new System.Drawing.Point(350, 18);
+            this.cbLogRowData.Name = "cbLogRowData";
+            this.cbLogRowData.Size = new System.Drawing.Size(95, 17);
+            this.cbLogRowData.TabIndex = 2;
+            this.cbLogRowData.Text = "Log Row Data";
+            this.cbLogRowData.UseVisualStyleBackColor = true;
+            // 
+            // cbVerify
+            // 
+            this.cbVerify.AutoSize = true;
+            this.cbVerify.Location = new System.Drawing.Point(6, 20);
+            this.cbVerify.Name = "cbVerify";
+            this.cbVerify.Size = new System.Drawing.Size(82, 17);
+            this.cbVerify.TabIndex = 3;
+            this.cbVerify.Text = "Verify Table";
+            this.cbVerify.UseVisualStyleBackColor = true;
+            // 
+            // cbVerifyMaster
+            // 
+            this.cbVerifyMaster.AutoSize = true;
+            this.cbVerifyMaster.Location = new System.Drawing.Point(7, 42);
+            this.cbVerifyMaster.Name = "cbVerifyMaster";
+            this.cbVerifyMaster.Size = new System.Drawing.Size(87, 17);
+            this.cbVerifyMaster.TabIndex = 4;
+            this.cbVerifyMaster.Text = "Verify Master";
+            this.cbVerifyMaster.UseVisualStyleBackColor = true;
+            // 
+            // cbVerifyChild
+            // 
+            this.cbVerifyChild.AutoSize = true;
+            this.cbVerifyChild.Location = new System.Drawing.Point(6, 66);
+            this.cbVerifyChild.Name = "cbVerifyChild";
+            this.cbVerifyChild.Size = new System.Drawing.Size(78, 17);
+            this.cbVerifyChild.TabIndex = 5;
+            this.cbVerifyChild.Text = "Verify Child";
+            this.cbVerifyChild.UseVisualStyleBackColor = true;
             // 
             // ConfigureReplicatedTable
             // 
@@ -344,7 +429,8 @@ namespace Replication.Service.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(570, 428);
+            this.ClientSize = new System.Drawing.Size(570, 490);
+            this.Controls.Add(this.gbOptions);
             this.Controls.Add(this.cmbLocalIDColumn);
             this.Controls.Add(this.lblLocalIDColumn);
             this.Controls.Add(this.cbUpdateMaster);
@@ -376,6 +462,8 @@ namespace Replication.Service.Forms
             ((System.ComponentModel.ISupportInitialize)(this.udSortOrder)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbOptions.ResumeLayout(false);
+            this.gbOptions.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +496,12 @@ namespace Replication.Service.Forms
         private System.Windows.Forms.Label lblLocalIDColumn;
         private System.Windows.Forms.ComboBox cmbLocalIDColumn;
         private System.Windows.Forms.CheckBox cbUpdateMaster;
+        private System.Windows.Forms.GroupBox gbOptions;
+        private System.Windows.Forms.RadioButton rbDescending;
+        private System.Windows.Forms.RadioButton rbAscending;
+        private System.Windows.Forms.CheckBox cbLogRowData;
+        private System.Windows.Forms.CheckBox cbVerify;
+        private System.Windows.Forms.CheckBox cbVerifyChild;
+        private System.Windows.Forms.CheckBox cbVerifyMaster;
     }
 }

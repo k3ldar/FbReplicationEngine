@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Firebird Replication Engine"
-#define MyAppVersion "4.0.5"
-#define MyAppPublisher "SieraDelta"
-#define MyAppURL "http://www.sieradelta.com"
+#define MyAppVersion "4.0.7"
+#define MyAppPublisher "Siimon Carter"
+#define MyAppURL "https://github.com/k3ldar/FbReplicationEngine"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -20,13 +20,13 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppPublisher}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-LicenseFile=T:\SieraDelta\Replication\Install\ReplicationLicence.txt
-OutputDir=T:\SieraDelta\Replication\Install
+LicenseFile=ReplicationLicence.txt
+OutputDir=..\..\Builds\
 OutputBaseFilename=ReplicationEngineSetup_v_{#MyAppVersion}
-SetupIconFile=T:\VS2012 Modern Image Library\Objects\ico\Server_5720.ico
+SetupIconFile=Server_5720.ico
 Compression=lzma
 SolidCompression=yes
-AppCopyright=Copyright (c) 2012 - 2017.  SieraDelta.com
+AppCopyright=Copyright (c) 2012 - 2017.  Simon Carter.  All Rights Reserved.
 ShowLanguageDialog=no
 InternalCompressLevel=ultra
 
@@ -36,21 +36,17 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 
 [Files]
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\ErrorManager.ErrorClient.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\FirebirdSql.Data.FirebirdClient.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\ICSharpCode.SharpZipLib.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\Replication.Engine.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Console\bin\Debug\Replication.Service.Console.exe"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\Replication.Service.exe"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\SieraDelta.Cloud.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\SieraDelta.Controls.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\SieraDelta.Languages.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\SieraDelta.Library.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\SieraDelta.Shared.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
-Source: "T:\SieraDelta\Replication\Replication.Service\bin\Debug\WebDefender.dll"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
-Source: "T:\SieraDelta\Replication\Manual\Replication Manual.pdf"; DestDir: "{app}\Docs"; Flags: ignoreversion; Components: Service
-Source: "T:\SieraDelta\Replication\Install\ReplicationLicence.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
-Source: "T:\SieraDelta\Replication\Install\SieraDelta Home Page.url"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\ErrorManager.ErrorClient.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\FirebirdSql.Data.FirebirdClient.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\ICSharpCode.SharpZipLib.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\Replication.Engine.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\Replication.Service.Console.exe"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\Replication.Service.exe"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\SharedControls.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\SharedLib.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\Manual\Replication Manual.pdf"; DestDir: "{app}\Docs"; Flags: ignoreversion; Components: Service
+Source: "ReplicationLicence.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
+Source: "FbReplicationEngine.url"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
 
 [Run]
 Filename: "{app}\Replication.Service.exe"; Parameters: "/i"; WorkingDir: "{app}"; Flags: runascurrentuser shellexec; Description: "Install Service Application"; StatusMsg: "Install Service Application"

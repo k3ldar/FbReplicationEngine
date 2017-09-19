@@ -36,7 +36,7 @@ namespace Replication.Engine
 
         #region Public Methods
 
-        public string GenerateTriggerRemoveScript(string connectionString, bool generateOnly, 
+        public string GenerateTriggerRemoveScript(string connectionString, bool generateOnly,
             DatabaseRemoteUpdate remoteUpdate)
         {
             // get temp file for triggers
@@ -224,7 +224,7 @@ namespace Replication.Engine
                             FbDataReader rdr = null;
                             FbCommand cmd = new FbCommand(SQL, db, tran);
                             try
-                            { 
+                            {
                                 rdr = cmd.ExecuteReader();
 
                                 while (rdr.Read())
@@ -289,7 +289,7 @@ namespace Replication.Engine
                                 CloseAndDispose(ref cmd, ref rdr);
                             }
 
-                            SQL = "SELECT r.TABLE_NAME, r.OPERATION, r.TRIGGER_NAME, r.EXCLUDE_FIELDS, r.LOCAL_ID_COLUMN \n" +
+                            SQL = "SELECT r.TABLE_NAME, r.OPERATION, r.TRIGGER_NAME, r.EXCLUDE_FIELDS, r.LOCAL_ID_COLUMN, r.OPTIONS \n" +
                                 "FROM REPLICATE$TABLES r \nORDER BY r.TABLE_NAME, r.OPERATION ";
                             cmd = new FbCommand(SQL, db, tran);
                             try
@@ -304,19 +304,19 @@ namespace Replication.Engine
                                     switch (rdr.GetString(1))
                                     {
                                         case "INSERT":
-                                            triggerCode = ReplicateCreateTriggerInsert(db, tran, generateOnly, 
+                                            triggerCode = ReplicateCreateTriggerInsert(db, tran, generateOnly,
                                                 rdr.GetString(0).Trim(), rdr.GetString(2).Trim(),
-                                                rdr.GetString(3));
+                                                rdr.GetString(3), (TableOptions)rdr.GetInt64(5));
                                             break;
                                         case "UPDATE":
-                                            triggerCode = ReplicateCreateTriggerUpdate(db, tran, generateOnly, 
+                                            triggerCode = ReplicateCreateTriggerUpdate(db, tran, generateOnly,
                                                 rdr.GetString(0).Trim(), rdr.GetString(2).Trim(),
-                                                rdr.GetString(3), rdr.GetString(4));
+                                                rdr.GetString(3), rdr.GetString(4), (TableOptions)rdr.GetInt64(5));
                                             break;
                                         case "DELETE":
-                                            triggerCode = ReplicateCreateTriggerDelete(db, tran, generateOnly, 
+                                            triggerCode = ReplicateCreateTriggerDelete(db, tran, generateOnly,
                                                 rdr.GetString(0).Trim(), rdr.GetString(2).Trim(),
-                                                rdr.GetString(3));
+                                                rdr.GetString(3), (TableOptions)rdr.GetInt64(5));
                                             break;
                                     }
 
@@ -379,7 +379,7 @@ namespace Replication.Engine
                 if (rdr.GetInt32(0) == 0)
                 {
                     string sqlTriggers = String.Format("SELECT TRIM(a.RDB$TRIGGER_NAME) FROM RDB$TRIGGERS a WHERE " +
-                        "a.RDB$SYSTEM_FLAG = 0 AND a.RDB$TRIGGER_INACTIVE = 0 AND TRIM(UPPER(a.RDB$RELATION_NAME)) = '{0}' ", 
+                        "a.RDB$SYSTEM_FLAG = 0 AND a.RDB$TRIGGER_INACTIVE = 0 AND TRIM(UPPER(a.RDB$RELATION_NAME)) = '{0}' ",
                         tableName.Trim().ToUpper());
                     FbCommand cmdTriggers = new FbCommand(sqlTriggers, conn, tran);
                     FbDataReader rdrTriggers = cmdTriggers.ExecuteReader();
@@ -394,7 +394,7 @@ namespace Replication.Engine
 
                     Result += deactivateTriggers;
                     Result += String.Format("ALTER TABLE {0} ADD REPLICATE$HASH BIGINT;\r\n", tableName);
-                    
+
                     string hashTriggerSQL = String.Format("SELECT r.TABLE_NAME, r.OPERATION, r.TRIGGER_NAME, " +
                         "r.EXCLUDE_FIELDS, r.LOCAL_ID_COLUMN \n" +
                         "FROM REPLICATE$TABLES r WHERE r.OPERATION = 'UPDATE' AND r.TABLE_NAME = '{0}' \n" +
@@ -404,7 +404,7 @@ namespace Replication.Engine
 
                     if (rdrHashTrigger.Read())
                     {
-                        string hashCode = ReplicateCreateTriggerUpdateHash(conn, tran, 
+                        string hashCode = ReplicateCreateTriggerUpdateHash(conn, tran,
                             rdrHashTrigger.GetString(0).Trim(), rdrHashTrigger.GetString(2).Trim(),
                             rdrHashTrigger.GetString(3), rdrHashTrigger.GetString(4));
 
@@ -432,8 +432,8 @@ namespace Replication.Engine
         /// <param name="TableName"></param>
         /// <param name="TriggerName"></param>
         /// <param name="ExcludeFields"></param>
-        private string ReplicateCreateTriggerInsert(FbConnection conn, FbTransaction tran, bool generateOnly, 
-            string tableName, string triggerName, string excludeFields)
+        private string ReplicateCreateTriggerInsert(FbConnection conn, FbTransaction tran, bool generateOnly,
+            string tableName, string triggerName, string excludeFields, TableOptions options)
         {
             string Result = String.Empty;
             int i = 0;
@@ -471,16 +471,16 @@ namespace Replication.Engine
 
                 excludeFields += ":REPLICATE$HASH:";
 
-                Result +="SET TERM ^ ;\r\n";
-                Result +=String.Format("CREATE OR ALTER TRIGGER REPLICATE${0}_I FOR {1} ACTIVE\r\n", triggerName, tableName);
-                Result +="BEFORE INSERT POSITION 32767\r\n";
-                Result +="AS\r\n";
-                Result +="  DECLARE VARIABLE vOperationLogID BIGINT;\r\n";
-                Result +="  DECLARE VARIABLE vHASH BIGINT;\r\n";
-                Result +="BEGIN\r\n";
-                Result +="  IF ((RDB$GET_CONTEXT('USER_TRANSACTION', 'REPLICATING') IS NULL) OR " +
+                Result += "SET TERM ^ ;\r\n";
+                Result += String.Format("CREATE OR ALTER TRIGGER REPLICATE${0}_I FOR {1} ACTIVE\r\n", triggerName, tableName);
+                Result += "BEFORE INSERT POSITION 32767\r\n";
+                Result += "AS\r\n";
+                Result += "  DECLARE VARIABLE vOperationLogID BIGINT;\r\n";
+                Result += "  DECLARE VARIABLE vHASH BIGINT;\r\n";
+                Result += "BEGIN\r\n";
+                Result += "  IF ((RDB$GET_CONTEXT('USER_TRANSACTION', 'REPLICATING') IS NULL) OR " +
                     "(RDB$GET_CONTEXT('USER_TRANSACTION', 'REPLICATING') = 'NO')) THEN\r\n";
-                Result +="  BEGIN\r\n";
+                Result += "  BEGIN\r\n";
                 //file.WriteLine(ReplicateCreateAnyRecordChangedTest(conn, tran, tableName, excludeFields, 1));
 
                 while (i < 3)
@@ -489,15 +489,15 @@ namespace Replication.Engine
                     i++;
                 }
 
-                Result +=String.Format("    EXECUTE PROCEDURE REPLICATE$OPERATIONLOG_INSERT ('{0}', 'INSERT', {1}) " +
+                Result += String.Format("    EXECUTE PROCEDURE REPLICATE$OPERATIONLOG_INSERT ('{0}', 'INSERT', {1}) " +
                     "RETURNING_VALUES :vOperationLogID;", tableName, Indexes);
-                Result +="\r\n";
+                Result += "\r\n";
 
                 SQL = String.Format("select f.rdb$field_name, CASE flds.RDB$FIELD_TYPE WHEN 261 THEN 50000 ELSE " +
-                    "flds.RDB$CHARACTER_LENGTH END from rdb$relation_fields f join rdb$relations r on f.rdb$relation_name = " +
-                    "r.rdb$relation_name and r.rdb$view_blr is null and (r.rdb$system_flag is null or r.rdb$system_flag = 0) " +
-                    "join rdb$fields flds on flds.RDB$FIELD_NAME = f.RDB$FIELD_SOURCE WHERE f.RDB$RELATION_NAME = '{0}' " +
-                    "order by 1, f.rdb$field_position;", tableName);
+                "flds.RDB$CHARACTER_LENGTH END from rdb$relation_fields f join rdb$relations r on f.rdb$relation_name = " +
+                "r.rdb$relation_name and r.rdb$view_blr is null and (r.rdb$system_flag is null or r.rdb$system_flag = 0) " +
+                "join rdb$fields flds on flds.RDB$FIELD_NAME = f.RDB$FIELD_SOURCE WHERE f.RDB$RELATION_NAME = '{0}' " +
+                "order by 1, f.rdb$field_position;", tableName);
                 cmd = new FbCommand(SQL, conn, tran);
                 rdr = cmd.ExecuteReader();
                 string updateHash = "NEW.REPLICATE$HASH = HASH(";
@@ -513,28 +513,34 @@ namespace Replication.Engine
                         else
                             updateHash += String.Format(" || COALESCE(NEW.{0}, '')", rdr.GetString(0).Trim());
 
+#if LogRowData
+                        if (options.HasFlag(TableOptions.LogRowData))
+                        {
+#endif
+                            Result += String.Format("    IF (NEW.{0} IS NOT NULL) THEN", rdr.GetString(0).Trim());
+                            Result += "        INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, " +
+                                "NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)\r\n";
 
-                        Result +=String.Format("    IF (NEW.{0} IS NOT NULL) THEN", rdr.GetString(0).Trim());
-                        Result +="        INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, " +
-                            "NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)\r\n";
+                            if (Length < 301)
+                                Result += String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, " +
+                                    "'{0}', NULL, NEW.{0}, NULL, NULL);", rdr.GetString(0).Trim());
+                            else
+                                Result += String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, " +
+                                    "'{0}', NULL, NULL, NULL, NEW.{0});", rdr.GetString(0).Trim());
 
-                        if (Length < 301)
-                            Result +=String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, " +
-                                "'{0}', NULL, NEW.{0}, NULL, NULL);", rdr.GetString(0).Trim());
-                        else
-                            Result +=String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, " +
-                                "'{0}', NULL, NULL, NULL, NEW.{0});", rdr.GetString(0).Trim());
-
-                        Result +="\r\n";
+                            Result += "\r\n";
+#if LogRowData
+                        }
+#endif
                     }
                 }
 
-                Result +="  END\r\n\r\n";
-                Result +=String.Format("  {0});\r\n", updateHash);
-                Result +="END^\r\n";
-                Result +="SET TERM ; ^\r\n";
-                Result +="\r\n";
-                Result +="\r\n";
+                Result += "  END\r\n\r\n";
+                Result += String.Format("  {0});\r\n", updateHash);
+                Result += "END^\r\n";
+                Result += "SET TERM ; ^\r\n";
+                Result += "\r\n";
+                Result += "\r\n";
             }
             finally
             {
@@ -556,8 +562,8 @@ namespace Replication.Engine
         /// <param name="TableName"></param>
         /// <param name="TriggerName"></param>
         /// <param name="ExcludeFields"></param>
-        private string ReplicateCreateTriggerDelete(FbConnection conn, FbTransaction tran, bool generateOnly, 
-            string tableName, string triggerName, string excludeFields)
+        private string ReplicateCreateTriggerDelete(FbConnection conn, FbTransaction tran, bool generateOnly,
+            string tableName, string triggerName, string excludeFields, TableOptions options)
         {
             string Result = String.Empty;
             int i = 0;
@@ -602,7 +608,6 @@ namespace Replication.Engine
                 Result += "  IF ((RDB$GET_CONTEXT('USER_TRANSACTION', 'REPLICATING') IS NULL) OR " +
                     "(RDB$GET_CONTEXT('USER_TRANSACTION', 'REPLICATING') = 'NO')) THEN\r\n";
                 Result += "  BEGIN\r\n";
-                //file.WriteLine(ReplicateCreateAnyRecordChangedTest(conn, tran, tableName, excludeFields, 2));
 
                 while (i < 3)
                 {
@@ -619,40 +624,47 @@ namespace Replication.Engine
                 CloseAndDispose(ref cmd, ref rdr);
             }
 
-            SQL = String.Format("select f.rdb$field_name, CASE flds.RDB$FIELD_TYPE WHEN 261 THEN 50000 ELSE flds.RDB$CHARACTER_LENGTH END from rdb$relation_fields f join rdb$relations r on f.rdb$relation_name = r.rdb$relation_name " +
-                "and r.rdb$view_blr is null and (r.rdb$system_flag is null or r.rdb$system_flag = 0) join rdb$fields flds on flds.RDB$FIELD_NAME = f.RDB$FIELD_SOURCE WHERE f.RDB$RELATION_NAME = '{0}' " +
-                "order by 1, f.rdb$field_position;", tableName);
-            cmd = new FbCommand(SQL, conn, tran);
-            try
+#if LogRowData
+            if (options.HasFlag(TableOptions.LogRowData))
             {
-                rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
+#endif
+                SQL = String.Format("select f.rdb$field_name, CASE flds.RDB$FIELD_TYPE WHEN 261 THEN 50000 ELSE flds.RDB$CHARACTER_LENGTH END from rdb$relation_fields f join rdb$relations r on f.rdb$relation_name = r.rdb$relation_name " +
+                    "and r.rdb$view_blr is null and (r.rdb$system_flag is null or r.rdb$system_flag = 0) join rdb$fields flds on flds.RDB$FIELD_NAME = f.RDB$FIELD_SOURCE WHERE f.RDB$RELATION_NAME = '{0}' " +
+                    "order by 1, f.rdb$field_position;", tableName);
+                cmd = new FbCommand(SQL, conn, tran);
+                try
                 {
-                    int Length = rdr.IsDBNull(1) ? 0 : rdr.GetInt32(1);
+                    rdr = cmd.ExecuteReader();
 
-                    if (!excludeFields.Contains(String.Format("{0}:", rdr.GetString(0).Trim())))
+                    while (rdr.Read())
                     {
-                        //file.WriteLine(String.Format("    IF ((OLD.{0} IS DISTINCT FROM NEW.{0})) THEN", rdr.GetString(0).Trim()));
-                        Result += String.Format("    IF (OLD.{0} IS NOT NULL) THEN\r\n", rdr.GetString(0).Trim());
-                        Result += "      INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, " +
-                            "OLD_VALUE, NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)\r\n";
+                        int Length = rdr.IsDBNull(1) ? 0 : rdr.GetInt32(1);
 
-                        if (Length < 301)
-                            Result += String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), " +
-                                ":vOperationLogID, '{0}', OLD.{0}, NULL, NULL, NULL);\r\n", rdr.GetString(0).Trim());
-                        else
-                            Result += String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), " +
-                                ":vOperationLogID, '{0}', NULL, NULL, OLD.{0}, NULL);\r\n", rdr.GetString(0).Trim());
+                        if (!excludeFields.Contains(String.Format("{0}:", rdr.GetString(0).Trim())))
+                        {
+                            //file.WriteLine(String.Format("    IF ((OLD.{0} IS DISTINCT FROM NEW.{0})) THEN", rdr.GetString(0).Trim()));
+                            Result += String.Format("    IF (OLD.{0} IS NOT NULL) THEN\r\n", rdr.GetString(0).Trim());
+                            Result += "      INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, " +
+                                "OLD_VALUE, NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)\r\n";
 
-                        Result += "\r\n";
+                            if (Length < 301)
+                                Result += String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), " +
+                                    ":vOperationLogID, '{0}', OLD.{0}, NULL, NULL, NULL);\r\n", rdr.GetString(0).Trim());
+                            else
+                                Result += String.Format("      VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), " +
+                                    ":vOperationLogID, '{0}', NULL, NULL, OLD.{0}, NULL);\r\n", rdr.GetString(0).Trim());
+
+                            Result += "\r\n";
+                        }
                     }
                 }
+                finally
+                {
+                    CloseAndDispose(ref cmd, ref rdr);
+                }
+#if LogRowData
             }
-            finally
-            {
-                CloseAndDispose(ref cmd, ref rdr);
-            }
+#endif
 
             //file.WriteLine("   END");
             Result += "  END\r\n";
@@ -676,8 +688,8 @@ namespace Replication.Engine
         /// <param name="TableName"></param>
         /// <param name="TriggerName"></param>
         /// <param name="ExcludeFields"></param>
-        private string ReplicateCreateTriggerUpdate(FbConnection conn, FbTransaction tran, bool generateOnly, 
-            string tableName, string triggerName, string excludeFields, string localIDColumn)
+        private string ReplicateCreateTriggerUpdate(FbConnection conn, FbTransaction tran, bool generateOnly,
+            string tableName, string triggerName, string excludeFields, string localIDColumn, TableOptions options)
         {
             string Result = String.Empty;
             int i = 0;
@@ -743,8 +755,8 @@ namespace Replication.Engine
             }
 
             SQL = String.Format("select f.rdb$field_name, CASE flds.RDB$FIELD_TYPE WHEN 261 THEN 50000 ELSE flds.RDB$CHARACTER_LENGTH END from rdb$relation_fields f join rdb$relations r on f.rdb$relation_name = r.rdb$relation_name " +
-                "and r.rdb$view_blr is null and (r.rdb$system_flag is null or r.rdb$system_flag = 0) join rdb$fields flds on flds.RDB$FIELD_NAME = f.RDB$FIELD_SOURCE WHERE f.RDB$RELATION_NAME = '{0}' " +
-                "order by 1, f.rdb$field_position;", tableName);
+            "and r.rdb$view_blr is null and (r.rdb$system_flag is null or r.rdb$system_flag = 0) join rdb$fields flds on flds.RDB$FIELD_NAME = f.RDB$FIELD_SOURCE WHERE f.RDB$RELATION_NAME = '{0}' " +
+            "order by 1, f.rdb$field_position;", tableName);
             cmd = new FbCommand(SQL, conn, tran);
             try
             {
@@ -761,18 +773,25 @@ namespace Replication.Engine
                         else
                             updateHash += String.Format(" || COALESCE(NEW.{0}, '')", rdr.GetString(0).Trim());
 
-                        Result += String.Format("    IF ((OLD.{0} IS DISTINCT FROM NEW.{0})) THEN\r\n", rdr.GetString(0).Trim());
-                        Result += "    INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, " +
-                            "NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)\r\n";
+#if LogRowData
+                        if (options.HasFlag(TableOptions.LogRowData))
+                        {
+#endif
+                            Result += String.Format("    IF ((OLD.{0} IS DISTINCT FROM NEW.{0})) THEN\r\n", rdr.GetString(0).Trim());
+                            Result += "    INSERT INTO REPLICATE$COLUMNLOG (ID, OPERATIONLOG_ID, COLUMN_NAME, OLD_VALUE, " +
+                                "NEW_VALUE, OLD_VALUE_BLOB, NEW_VALUE_BLOB)\r\n";
 
-                        if (Length < 301)
-                            Result += String.Format("    VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, '{0}', " +
-                                "OLD.{0}, NEW.{0}, NULL, NULL);\r\n", rdr.GetString(0).Trim());
-                        else
-                            Result += String.Format("    VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, '{0}', " +
-                                "NULL, NULL, OLD.{0}, NEW.{0});\r\n", rdr.GetString(0).Trim());
+                            if (Length < 301)
+                                Result += String.Format("    VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, '{0}', " +
+                                    "OLD.{0}, NEW.{0}, NULL, NULL);\r\n", rdr.GetString(0).Trim());
+                            else
+                                Result += String.Format("    VALUES (GEN_ID(REPLICATE$COLUMNLOG_ID, 1), :vOperationLogID, '{0}', " +
+                                    "NULL, NULL, OLD.{0}, NEW.{0});\r\n", rdr.GetString(0).Trim());
 
-                        Result += "\r\n";
+                            Result += "\r\n";
+#if LogRowData
+                        }
+#endif
                     }
                 }
 
@@ -785,7 +804,8 @@ namespace Replication.Engine
                     Result += "    END\r\n";
                 }
 
-                Result += "  END\r\n";
+                Result += "  END\r\n\r\n";
+
                 Result += String.Format("  {0});\r\n", updateHash);
                 Result += "END^\r\n";
                 Result += "SET TERM ; ^\r\n";
@@ -812,7 +832,7 @@ namespace Replication.Engine
         /// <param name="TableName"></param>
         /// <param name="TriggerName"></param>
         /// <param name="ExcludeFields"></param>
-        private string ReplicateCreateTriggerUpdateHash(FbConnection conn, FbTransaction tran, 
+        private string ReplicateCreateTriggerUpdateHash(FbConnection conn, FbTransaction tran,
             string tableName, string triggerName, string excludeFields, string localIDColumn)
         {
             string Result = String.Empty;
@@ -933,6 +953,6 @@ namespace Replication.Engine
             }
         }
 
-        #endregion Trigger Replication Methods
+#endregion Trigger Replication Methods
     }
 }

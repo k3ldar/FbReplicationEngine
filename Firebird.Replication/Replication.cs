@@ -2327,7 +2327,7 @@ namespace Replication.Engine
                         long missingRemote = 0;
                         long missingLocal = 0;
 
-                        if (!tableStatus.ConfirmedChild)
+                        if (!tableStatus.ConfirmedChild && !tableOptions.HasFlag(TableOptions.DoNotVerifyChild))
                         {
                             missingLocal = ConfirmReplicationByTableMasterToChild(tranLocal, tranRemote,
                                  tableName, remoteCount, tableStatus, tableOptions, true);
@@ -2341,10 +2341,14 @@ namespace Replication.Engine
                         }
                         else
                         {
-                            RaiseProgressText("Child Table Skipped as upto date");
+                            if (tableOptions.HasFlag(TableOptions.DoNotVerifyChild))
+                                RaiseProgressText("Child Table Skipped as not set to verify");
+                            else
+                                RaiseProgressText("Child Table Skipped as upto date");
                         }
 
-                        if (MissingRecordCount < ForceRestartErrorCount && !tableStatus.ConfirmedMaster)
+                        if (MissingRecordCount < ForceRestartErrorCount && !tableStatus.ConfirmedMaster &&
+                             !tableOptions.HasFlag(TableOptions.DoNotVerifyMaster))
                         {
                             missingRemote = ConfirmReplicationByTableChildToMaster(tranLocal, tranRemote,
                                 tableName, localCount, tableStatus, tableOptions, true);
@@ -2358,7 +2362,9 @@ namespace Replication.Engine
                         }
                         else
                         {
-                            if (tableStatus.ConfirmedMaster)
+                            if (tableOptions.HasFlag(TableOptions.DoNotVerifyMaster))
+                                RaiseProgressText("Master Table Skipped as not set to verify");
+                            else if (tableStatus.ConfirmedMaster)
                                 RaiseProgressText("Master Table Skipped as upto date");
                         }
                     }
@@ -2408,11 +2414,10 @@ namespace Replication.Engine
             bool Result = true;
             previouslySuccessful = true;
 
-            switch (options)
+            if (options.HasFlag(TableOptions.DoNotVerify))
             {
-                case TableOptions.DoNotVerify:
-                    previouslySuccessful = false;
-                    return (false);
+                previouslySuccessful = false;
+                return (false);
             }
 
             string table = String.Format(";{0}#", tableToConfirm.ToUpper());

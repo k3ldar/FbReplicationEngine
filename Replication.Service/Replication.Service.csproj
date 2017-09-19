@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>8.0.30319</ProductVersion>
@@ -20,7 +20,7 @@
     <StartupObject>Replication.Service.UpdateBackupReplication</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>0.0</OldToolsVersion>
@@ -59,6 +59,7 @@
     <DebugType>full</DebugType>
     <ErrorReport>prompt</ErrorReport>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>..\..\Builds\FbReplicationEngine\Release\</OutputPath>
@@ -78,6 +79,7 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>none</DebugType>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -86,20 +88,20 @@
     <Reference Include="ErrorManager.ErrorClient">
       <HintPath>..\..\..\..\SieraDelta\ErrorServer\ClientLibrary\bin\Debug\ErrorManager.ErrorClient.dll</HintPath>
     </Reference>
-    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\FBNetProvider\NETProvider\5.6\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.11.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.11.0\lib\net452\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="NHunspell">
       <HintPath>..\..\SieraDelta.Controls\bin\Release\NHunspell.dll</HintPath>
     </Reference>
-    <Reference Include="SharedControls, Version=2.7.0.192, Culture=neutral, PublicKeyToken=dc89a76629b91548, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitProjects\Builds\Shared\Release\SharedControls.dll</HintPath>
+    <Reference Include="SharedControls, Version=2.8.10.201, Culture=neutral, PublicKeyToken=5e7029cf0b93cfbe, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.SharedControls.2.8.10\lib\net452\SharedControls.dll</HintPath>
     </Reference>
-    <Reference Include="SharedLib, Version=2.5.0.41, Culture=neutral, PublicKeyToken=9365c660faaf14cc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitProjects\Builds\Shared\Release\SharedLib.dll</HintPath>
+    <Reference Include="SharedLib, Version=2.5.8.50, Culture=neutral, PublicKeyToken=bcec03f2c05555a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Shared.Library.2.5.8\lib\net452\SharedLib.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -211,6 +213,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReplicationService.resx">
       <DependentUpon>ReplicationService.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Replication.Service.Key.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -251,7 +255,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>T:\SieraDelta\UpdateVersion\UpdateVersion\bin\Debug\UpdateVersion.exe /path "$(ProjectDir)"</PreBuildEvent>
+    <PreBuildEvent>T:\GitProjects\Builds\NetBuildTools\Release\UpdateVersion.exe /path "$(ProjectDir)"</PreBuildEvent>
     <PostBuildEvent />
   </PropertyGroup>
 </Project>

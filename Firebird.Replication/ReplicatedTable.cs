@@ -25,7 +25,7 @@ namespace Replication.Engine
     {
         public ReplicatedTable(Int64 id, string name, Operation operation, string triggerName,
             int sortOrder, string excludeFields, string localGenerator, string remoteGenerator,
-            string idColumn, int indiceType, int options)
+            string idColumn, int indiceType, TableOptions options)
         {
             ID = id;
             Name = name;
@@ -50,6 +50,6 @@ namespace Replication.Engine
         public string RemoteGenerator { get; set; }
         public string IDColumn { get; set; }
         public int IndiceType { get; set; }
-        public int Options { get; set; }
+        public TableOptions Options { get; set; }
     }
 }

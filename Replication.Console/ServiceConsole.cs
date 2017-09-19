@@ -230,10 +230,18 @@ namespace Replication.Service.Console
                     }
                     else if (message.Contents.StartsWith("Sleeping, time until next run"))
                     {
-                        if (_replicationEnabled)
+                        if (cmbClient.SelectedIndex == 0)
+                        {
+                            tsLabelTimeTillRun.Text = String.Empty;
+                        }
+                        else if (_replicationEnabled)
+                        {
                             tsLabelTimeTillRun.Text = String.Format("Next Run: {0}", message.Contents.Substring(30));
+                        }
                         else
+                        {
                             tsLabelTimeTillRun.Text = "Replication Disabled";
+                        }
 
                         tsLabelTimeTillRun.Invalidate();
                     }

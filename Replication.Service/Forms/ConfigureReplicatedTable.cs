@@ -41,6 +41,12 @@ namespace Replication.Service.Forms
         public ConfigureReplicatedTable()
         {
             InitializeComponent();
+
+#if LogRowData
+            cbLogRowData.Visible = true;
+#else
+            cbLogRowData.Visible = false;
+#endif
         }
 
         public ConfigureReplicatedTable(API api, DatabaseConnection connection, string tableName)
@@ -69,17 +75,38 @@ namespace Replication.Service.Forms
                     LoadRemoteGenerators();
                     break;
             }
+
             cbUpdateMaster.Checked = false;
             cbUpdateMaster.Enabled = false;
 
             LoadOtherData();
 
             LoadColumnNames();
+
+            if (_replicatedTables.Count > 0)
+            {
+#if LogRowData
+                cbLogRowData.Checked = _replicatedTables[0].Options.HasFlag(TableOptions.LogRowData);
+#endif
+                rbAscending.Checked = _replicatedTables[0].Options.HasFlag(TableOptions.Ascending);
+                rbDescending.Checked = !rbAscending.Checked;
+                cbVerify.Checked = !_replicatedTables[0].Options.HasFlag(TableOptions.DoNotVerify);
+                cbVerifyChild.Checked = !_replicatedTables[0].Options.HasFlag(TableOptions.DoNotVerifyChild);
+                cbVerifyMaster.Checked = !_replicatedTables[0].Options.HasFlag(TableOptions.DoNotVerifyMaster);
+            }
+            else
+            {
+                cbLogRowData.Checked = false;
+                rbDescending.Checked = true;
+                cbVerify.Checked = true;
+                cbVerifyChild.Checked = true;
+                cbVerifyMaster.Checked = true;
+            }
         }
 
-        #endregion Constructors
+#endregion Constructors
 
-        #region Static Methods
+#region Static Methods
 
         public static bool Show(API api, DatabaseConnection connection, string tableName)
         {
@@ -96,9 +123,9 @@ namespace Replication.Service.Forms
             }
         }
 
-        #endregion Static Methods
+#endregion Static Methods
 
-        #region Private Methods
+#region Private Methods
 
         private void LoadOtherData()
         {
@@ -312,11 +339,31 @@ namespace Replication.Service.Forms
                 if (cmbLocalIDColumn.SelectedIndex > -1)
                     localID = (string)cmbLocalIDColumn.Items[cmbLocalIDColumn.SelectedIndex];
 
+                TableOptions options = TableOptions.None;
+
+                if (!cbVerify.Checked)
+                    options |= TableOptions.DoNotVerify;
+
+                if (rbAscending.Checked)
+                    options |= TableOptions.Ascending;
+
+                if (!cbVerifyChild.Checked)
+                    options |= TableOptions.DoNotVerifyChild;
+
+                if (!cbVerifyMaster.Checked)
+                    options |= TableOptions.DoNotVerifyMaster;
+
+#if LogRowData
+                if (cbLogRowData.Checked)
+                    options |= TableOptions.LogRowData;
+#endif
+
+
                 _api.ChildUpdateReplicatedTables(_connection, txtTableName.Text.Trim(), localID, 
                     cbInsert.Checked, cbUpdate.Checked, cbDelete.Checked, txtTriggerName.Text.Trim(),
                     excludeColumns, (int)udSortOrder.Value, indiceType, localGen,
                     remoteGen,
-                    cbUpdateMaster.Checked);
+                    cbUpdateMaster.Checked, options);
 
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
@@ -367,7 +414,7 @@ namespace Replication.Service.Forms
             }
         }
 
-        #endregion Private Methods
+#endregion Private Methods
 
         private void ConfigureReplicatedTable_Shown(object sender, EventArgs e)
         {

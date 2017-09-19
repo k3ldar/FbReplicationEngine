@@ -266,8 +266,11 @@ namespace Replication.Service.Forms
                     string triggerName = GenerateTriggerName(item.Text);
                     api.ChildAddTable(_connection, item.Text, triggerName);
 
-                    if (rbReplicateChild.Checked)
+                    if (rbReplicateChild.Checked &&
+                        !String.IsNullOrEmpty(Utilities.GetDatabasePart(_connection.MasterDatabase, "Database")))
+                    {
                         api.MasterAddTable(_connection, item.Text);
+                    }
 
                     item.SubItems[1].Text = "Yes";
 
@@ -1053,6 +1056,7 @@ namespace Replication.Service.Forms
                         try
                         {
                             remoteUpdate.OnUpdateDatabase += DatabaseRemoteUpdate_OnUpdateDatabase;
+
                             if (prep.PrepareDatabaseForReplication(_connection.ChildDatabase, true, false, 
                                 ref fileName, remoteUpdate))
                             {

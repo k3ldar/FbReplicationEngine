@@ -63,6 +63,7 @@ namespace Replication.Service
         private SharedControls.Controls.TextBlock versionMaster401;
         private SharedControls.Controls.TextBlock versionMaster402;
         private SharedControls.Controls.TextBlock versionMaster404;
+        private SharedControls.Controls.TextBlock versionMaster407;
         private System.ComponentModel.IContainer components;
 
         #endregion Private / Protected Members
@@ -342,6 +343,7 @@ namespace Replication.Service
             this.versionMaster401 = new SharedControls.Controls.TextBlock();
             this.versionMaster402 = new SharedControls.Controls.TextBlock();
             this.versionMaster404 = new SharedControls.Controls.TextBlock();
+            this.versionMaster407 = new SharedControls.Controls.TextBlock();
             this.pumNotifyIcon.SuspendLayout();
             // 
             // pumNotifyIcon
@@ -397,6 +399,10 @@ namespace Replication.Service
             // versionMaster404
             // 
             this.versionMaster404.StringBlock = resources.GetString("versionMaster404.StringBlock");
+            // 
+            // versionMaster407
+            // 
+            this.versionMaster407.StringBlock = resources.GetString("versionMaster407.StringBlock");
             // 
             // UpdateBackupReplication
             // 
@@ -618,6 +624,7 @@ namespace Replication.Service
                                     name, ThreadPriority.BelowNormal);
 
                                 _replicationThreads.Add(name, replicationThread);
+                                MessageReceived(this, new Shared.Communication.Message("REPLICATION_CLIENTS", "", Shared.Communication.MessageType.Command));
                                 ThreadManager_ThreadCpuChanged(this, EventArgs.Empty);
                             }
                             catch (Exception error)
@@ -723,7 +730,7 @@ namespace Replication.Service
                         foreach (KeyValuePair<string, ReplicationThread> kvp in _replicationThreads)
                             message.Contents += String.Format("{0}#", kvp.Value.DatabaseConnection.Name);
 
-                        MessageSend(message, false);
+                        MessageSend(message, true);
 
                         break;
 
@@ -739,7 +746,7 @@ namespace Replication.Service
 
                         message.Contents = Result;
                             
-                        MessageSend(message, false);
+                        MessageSend(message, true);
 
                         break;
 
@@ -917,9 +924,6 @@ namespace Replication.Service
 
         #region Version Data
 
-        //internal static int INTERNAL_VERSION = 404;
-
-
         internal static string GetInternalVersion(int version, bool master)
         {
             if (master)
@@ -935,9 +939,12 @@ namespace Replication.Service
                     case 404:
                         return (INSTANCE.versionMaster404.StringBlock);
                     case 405:
+                    case 406:
                         return (String.Empty);
+                    case 407:
+                        return (INSTANCE.versionMaster407.StringBlock);
                     default:
-                        throw new Exception("Invalid Version Data");
+                        return (String.Empty);
                 }
             }
             else
@@ -949,9 +956,10 @@ namespace Replication.Service
                     case 403:
                     case 404:
                     case 405:
-                        return (String.Empty);
+                    case 406:
+                    case 407:
                     default:
-                        throw new Exception("Invalid Version Data");
+                        return (String.Empty);
                 }
             }
         }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Replication.Service.Console</RootNamespace>
     <AssemblyName>Replication.Service.Console</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>Replication.Service.Console.Program</StartupObject>
@@ -48,13 +50,14 @@
     <ApplicationIcon>ServerProject.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SharedControls, Version=2.7.0.192, Culture=neutral, PublicKeyToken=dc89a76629b91548, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitProjects\Builds\Shared\Release\SharedControls.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="SharedLib, Version=2.5.0.41, Culture=neutral, PublicKeyToken=9365c660faaf14cc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\GitProjects\Builds\Shared\Release\SharedLib.dll</HintPath>
+    <Reference Include="SharedControls, Version=2.8.10.201, Culture=neutral, PublicKeyToken=5e7029cf0b93cfbe, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.SharedControls.2.8.10\lib\net452\SharedControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedLib, Version=2.5.8.50, Culture=neutral, PublicKeyToken=bcec03f2c05555a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Shared.Library.2.5.8\lib\net452\SharedLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -91,6 +94,8 @@
       <DependentUpon>ServiceConsole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SynchClient.resx" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,7 +119,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>T:\SieraDelta\UpdateVersion\UpdateVersion\bin\Debug\UpdateVersion.exe /path "$(ProjectDir)"</PreBuildEvent>
+    <PreBuildEvent>T:\GitProjects\Builds\NetBuildTools\Release\UpdateVersion.exe /path "$(ProjectDir)"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

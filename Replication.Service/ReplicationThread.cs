@@ -75,7 +75,7 @@ namespace Replication.Service
             API api = new API();
             try
             {
-                api.UpdateReplicationVersion(_databaseConnection, databaseConnection.SiteID == 0);
+                api.UpdateReplicationVersion(_databaseConnection, databaseConnection.ReplicationType == ReplicationType.Master);
                 Version = api.GetCurrentDatabaseVersion(_databaseConnection);
             }
             finally
