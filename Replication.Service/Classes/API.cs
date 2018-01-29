@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using System.Text;
 using System.IO;
 
 using FirebirdSql.Data.FirebirdClient;
@@ -30,7 +29,9 @@ using FirebirdSql.Data.Isql;
 using Replication.Engine;
 using Replication.Engine.Classes;
 
-using Shared;
+#pragma warning disable IDE1005
+#pragma warning disable IDE1006
+#pragma warning disable IDE0018
 
 namespace Replication.Service
 {
@@ -91,9 +92,11 @@ namespace Replication.Service
 
             foreach (string file in configFiles)
             {
-                ConfigFileNode node = new ConfigFileNode();
-                node.Connection = DatabaseConnection.Load(file, EncryptionKey);
-                node.FileName = file;
+                ConfigFileNode node = new ConfigFileNode
+                {
+                    Connection = DatabaseConnection.Load(file, EncryptionKey),
+                    FileName = file
+                };
 
                 if (node != null)
                 {

@@ -25,6 +25,8 @@ using Shared.Communication;
 
 using FirebirdSql.Data.FirebirdClient;
 
+#pragma warning disable IDE1006
+
 namespace Replication.Service
 {
     internal class ReplicationThread : Shared.Classes.ThreadManager

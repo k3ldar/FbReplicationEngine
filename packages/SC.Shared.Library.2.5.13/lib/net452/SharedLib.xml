@@ -581,6 +581,76 @@
             File upload end event
             </summary>
         </member>
+        <member name="T:Shared.Classes.FTPEntry">
+            <summary>
+            FTP Entry
+            </summary>
+        </member>
+        <member name="T:Shared.Classes.FTPEntry.EntryType">
+            <summary>
+            Entry Type
+            </summary>
+        </member>
+        <member name="F:Shared.Classes.FTPEntry.EntryType.Unknown">
+            <summary>
+            Unknown Entry Type
+            </summary>
+        </member>
+        <member name="F:Shared.Classes.FTPEntry.EntryType.File">
+            <summary>
+            Type is a file
+            </summary>
+        </member>
+        <member name="F:Shared.Classes.FTPEntry.EntryType.Folder">
+            <summary>
+            Type is a folder
+            </summary>
+        </member>
+        <member name="M:Shared.Classes.FTPEntry.#ctor(Shared.Classes.FTPEntry.EntryType,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Shared.Classes.FTPEntry.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Shared.Classes.FTPEntry.#ctor(System.String,System.Int64)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+            <param name="size"></param>
+        </member>
+        <member name="P:Shared.Classes.FTPEntry.Type">
+            <summary>
+            Type of entry
+            </summary>
+        </member>
+        <member name="P:Shared.Classes.FTPEntry.Name">
+            <summary>
+            Name (File or folder name)
+            </summary>
+        </member>
+        <member name="P:Shared.Classes.FTPEntry.Size">
+            <summary>
+            File Size
+            </summary>
+        </member>
+        <member name="M:Shared.Classes.FTPEntry.ParseFTPLine(System.String,Shared.Classes.FTPEntry@)">
+            <summary>
+            Parses an FTP line and returns an entry, if vald
+            
+            Only tested on FileZilla FTP Server
+            </summary>
+            <param name="line">Line to be parsed</param>
+            <param name="entry">Entry to be returned if valid</param>
+            <returns>true if successful, otherwise false</returns>
+        </member>
         <member name="T:Shared.Classes.LogScanner">
             <summary>
             Scans a log file
@@ -2508,7 +2578,22 @@
         <member name="M:Shared.Communication.Email.#ctor">
             <summary>
             Constructor
+            
+            Reads settings from saved/encrypted file
             </summary>
+        </member>
+        <member name="M:Shared.Communication.Email.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Constructor
+            
+            User defined details
+            </summary>
+            <param name="sender"></param>
+            <param name="host"></param>
+            <param name="userName"></param>
+            <param name="password"></param>
+            <param name="port"></param>
+            <param name="ssl"></param>
         </member>
         <member name="M:Shared.Communication.Email.Save">
             <summary>
@@ -2519,6 +2604,19 @@
             <summary>
             Send a test email 
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shared.Communication.Email.SendEmail(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            Sends and email with optional attachments
+            </summary>
+            <param name="senderName"></param>
+            <param name="recipientName"></param>
+            <param name="recipientEmail"></param>
+            <param name="message"></param>
+            <param name="subject"></param>
+            <param name="isHtml"></param>
+            <param name="attachments"></param>
             <returns></returns>
         </member>
         <member name="P:Shared.Communication.Email.Sender">

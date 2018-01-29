@@ -23,6 +23,8 @@ using System.Windows.Forms;
 
 using Shared.Communication;
 
+#pragma warning disable IDE1006
+
 namespace Replication.Service.Console
 {
     public partial class ReplicationClient : Form

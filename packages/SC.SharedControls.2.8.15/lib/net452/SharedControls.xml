@@ -2299,6 +2299,48 @@
             <param name="pages">Collection of pages to be shown within the wizard</param>
             <returns>true if user copletes, otherwise false if cancelled</returns>
         </member>
+        <member name="T:SharedControls.WizardBase.WizardForm.ButtonType">
+            <summary>
+            Button Types
+            </summary>
+        </member>
+        <member name="F:SharedControls.WizardBase.WizardForm.ButtonType.Cancel">
+            <summary>
+            CancelButton
+            </summary>
+        </member>
+        <member name="F:SharedControls.WizardBase.WizardForm.ButtonType.Previous">
+            <summary>
+            Previous button
+            </summary>
+        </member>
+        <member name="F:SharedControls.WizardBase.WizardForm.ButtonType.Next">
+            <summary>
+            Next button
+            </summary>
+        </member>
+        <member name="F:SharedControls.WizardBase.WizardForm.ButtonType.Finish">
+            <summary>
+            Finish Button
+            </summary>
+        </member>
+        <member name="M:SharedControls.WizardBase.WizardForm.UpdateLanguage(System.Globalization.CultureInfo,System.String,System.String,System.String,System.String)">
+            <summary>
+            Updates the language
+            </summary>
+            <param name="culture"></param>
+            <param name="cancelText"></param>
+            <param name="previousText"></param>
+            <param name="nextText"></param>
+            <param name="finishText"></param>
+        </member>
+        <member name="M:SharedControls.WizardBase.WizardForm.SetButtonText(SharedControls.WizardBase.WizardForm.ButtonType,System.String)">
+            <summary>
+            Set's the text on each button, for localized languages
+            </summary>
+            <param name="buttonType"></param>
+            <param name="text"></param>
+        </member>
         <member name="M:SharedControls.WizardBase.WizardForm.SaveAllSavedPageData(System.String,System.String)">
             <summary>
             Instructs the wizard to save data

@@ -3,7 +3,7 @@
 
 #define MyAppName "Firebird Replication Engine"
 #define MyAppVersion "4.0.7"
-#define MyAppPublisher "Siimon Carter"
+#define MyAppPublisher "Simon Carter"
 #define MyAppURL "https://github.com/k3ldar/FbReplicationEngine"
 
 [Setup]

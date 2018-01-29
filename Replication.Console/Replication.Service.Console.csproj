@@ -53,11 +53,11 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="SharedControls, Version=2.8.10.201, Culture=neutral, PublicKeyToken=5e7029cf0b93cfbe, processorArchitecture=MSIL">
-      <HintPath>..\packages\SC.SharedControls.2.8.10\lib\net452\SharedControls.dll</HintPath>
+    <Reference Include="SharedControls, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5e7029cf0b93cfbe, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.SharedControls.2.8.15\lib\net452\SharedControls.dll</HintPath>
     </Reference>
-    <Reference Include="SharedLib, Version=2.5.8.50, Culture=neutral, PublicKeyToken=bcec03f2c05555a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\SC.Shared.Library.2.5.8\lib\net452\SharedLib.dll</HintPath>
+    <Reference Include="SharedLib, Version=2.5.0.0, Culture=neutral, PublicKeyToken=bcec03f2c05555a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\SC.Shared.Library.2.5.13\lib\net452\SharedLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

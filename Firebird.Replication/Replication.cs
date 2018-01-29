@@ -25,6 +25,10 @@ using FirebirdSql.Data.FirebirdClient;
 
 using Replication.Engine.Classes;
 
+#pragma warning disable IDE1005
+#pragma warning disable IDE1006
+#pragma warning disable IDE0018
+
 namespace Replication.Engine
 {
     public class ReplicationEngine : IDisposable
@@ -540,7 +544,7 @@ namespace Replication.Engine
                 if (i >= values.Length)
                     parameters += String.Format("{0} = {1}\r\n", parms[i].Name, "missing parameter value???");
                 else
-                    parameters += String.Format("{0} = {1}\r\n", parms[i].Name, values[i] == null ? "null" : values[i]);
+                    parameters += String.Format("{0} = {1}\r\n", parms[i].Name, values[i] ?? "null");
             }
 
             _failures += String.Format("\r\n\r\nMissing from Child Table: {4}\r\n\r\n{2}\r\n\r\n{3}\r\n\r\n{0}\r\n{1}", 
@@ -2247,7 +2251,14 @@ namespace Replication.Engine
         {
             FbDataReader rdrReplicatedTables = null;
             string SQL = "SELECT DISTINCT(rt.TABLE_NAME), rt.OPTIONS FROM REPLICATE$TABLES rt WHERE rt.OPERATION IN " +
-                "('DELETE', 'INSERT') AND rt.TABLE_NAME <> 'WS_EMAIL' ORDER BY rt.SORT_ORDER, rt.TABLE_NAME;";
+                "('DELETE', 'INSERT') AND rt.TABLE_NAME <> 'WS_EMAIL' " +
+
+                " AND rt.TABLE_NAME IN (SELECT DISTINCT TRIM(a.RDB$RELATION_NAME) " +
+                " FROM RDB$RELATION_FIELDS a " +
+                " GROUP BY a.RDB$RELATION_NAME) " +
+
+
+                "ORDER BY rt.SORT_ORDER, rt.TABLE_NAME;";
             FbCommand cmdLocalReplicatedTables = new FbCommand(SQL, local, tranLocal);
             try
             {
@@ -2270,6 +2281,7 @@ namespace Replication.Engine
 
                     Int64 localCount = 0;
                     Int64 remoteCount = 0;
+                    bool tableMissing = false;
 
                     FbDataReader rdrLocalCount = null;
                     FbCommand cmdLocalCount = new FbCommand(String.Format("SELECT COUNT(*) FROM {0}", tableName), 
@@ -2291,10 +2303,22 @@ namespace Replication.Engine
                         remote, tranRemote);
                     try
                     {
-                        rdrRemoteCount = cmdRemoteCount.ExecuteReader();
+                        try
+                        { 
+                            rdrRemoteCount = cmdRemoteCount.ExecuteReader();
 
-                        if (rdrRemoteCount.Read())
-                            remoteCount = rdrRemoteCount.GetInt64(0);
+                            if (rdrRemoteCount.Read())
+                                remoteCount = rdrRemoteCount.GetInt64(0);
+                        }
+                        catch (Exception err)
+                        {
+                            if (err.Message.Contains("Table unknown"))
+                            {
+                                continue;
+                            }
+                            else
+                                throw;
+                        }
                     }
                     finally
                     {
@@ -2770,9 +2794,11 @@ namespace Replication.Engine
 
         private string FixConnectionString(string connectionString)
         {
-            FbConnectionStringBuilder csb = new FbConnectionStringBuilder(connectionString);
-            csb.MaxPoolSize = 1;
-            csb.Pooling = false;
+            FbConnectionStringBuilder csb = new FbConnectionStringBuilder(connectionString)
+            {
+                MaxPoolSize = 1,
+                Pooling = false
+            };
 
             return (csb.ToString());
         }

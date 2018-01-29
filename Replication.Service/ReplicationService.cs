@@ -18,7 +18,7 @@
  *
  */
 
- using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
@@ -34,6 +34,8 @@ using ErrorManager.ErrorClient;
 
 using Shared;
 using Shared.Classes;
+
+#pragma warning disable IDE1006
 
 namespace Replication.Service
 {
@@ -897,8 +899,11 @@ namespace Replication.Service
 
         private void menuRunAsAppConsole_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo si = new ProcessStartInfo();
-            si.FileName = Utilities.CurrentPath(true) + "Replication.Service.Console.exe";
+            ProcessStartInfo si = new ProcessStartInfo()
+            {
+                FileName = Utilities.CurrentPath(true) + "Replication.Service.Console.exe"
+            };
+
             System.Diagnostics.Process.Start(si);
         }
 
@@ -909,9 +914,12 @@ namespace Replication.Service
 
         private void menuRunAsAppConfigure_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo si = new ProcessStartInfo();
-            si.Arguments = "/c";
-            si.FileName = Application.ExecutablePath;
+            ProcessStartInfo si = new ProcessStartInfo()
+            {
+                Arguments = "/c",
+                FileName = Application.ExecutablePath
+            };
+
             System.Diagnostics.Process.Start(si);
         }
 
