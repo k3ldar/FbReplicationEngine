@@ -12,7 +12,7 @@
  *
  *  The Original Code was created by Simon Carter (s1cart3r@gmail.com)
  *
- *  Copyright (c) 2011 - 2017 Simon Carter.  All Rights Reserved
+ *  Copyright (c) 2011 - 2019 Simon Carter.  All Rights Reserved
  *
  *  Purpose:  Service Assembly Information
  *
@@ -46,6 +46,6 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("4.0.7.1776")]
+[assembly: AssemblyVersion("4.0.0.0")]
 
-[assembly: AssemblyFileVersion("1.0.0.8")]
+[assembly: AssemblyFileVersion("4.0.8.15")]

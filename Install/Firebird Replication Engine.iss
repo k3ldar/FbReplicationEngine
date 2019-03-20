@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Firebird Replication Engine"
-#define MyAppVersion "4.0.7"
+#define MyAppVersion "4.0.8"
 #define MyAppPublisher "Simon Carter"
 #define MyAppURL "https://github.com/k3ldar/FbReplicationEngine"
 
@@ -26,7 +26,7 @@ OutputBaseFilename=ReplicationEngineSetup_v_{#MyAppVersion}
 SetupIconFile=Server_5720.ico
 Compression=lzma
 SolidCompression=yes
-AppCopyright=Copyright (c) 2012 - 2017.  Simon Carter.  All Rights Reserved.
+AppCopyright=Copyright (c) 2012 - 2019.  Simon Carter.  All Rights Reserved.
 ShowLanguageDialog=no
 InternalCompressLevel=ultra
 
@@ -44,6 +44,8 @@ Source: "..\..\Builds\FbReplicationEngine\Release\Replication.Service.Console.ex
 Source: "..\..\Builds\FbReplicationEngine\Release\Replication.Service.exe"; DestDir: "{app}"; Flags: ignoreversion restartreplace uninsrestartdelete; Components: Service
 Source: "..\..\Builds\FbReplicationEngine\Release\SharedControls.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
 Source: "..\..\Builds\FbReplicationEngine\Release\SharedLib.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\System.Security.AccessControl.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
+Source: "..\..\Builds\FbReplicationEngine\Release\System.Security.Principal.Windows.dll"; DestDir: "{app}"; Flags: ignoreversion restartreplace; Components: Service
 Source: "..\Manual\Replication Manual.pdf"; DestDir: "{app}\Docs"; Flags: ignoreversion; Components: Service
 Source: "ReplicationLicence.txt"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
 Source: "FbReplicationEngine.url"; DestDir: "{app}"; Flags: ignoreversion; Components: Service
