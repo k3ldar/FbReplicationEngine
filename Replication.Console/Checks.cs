@@ -12,13 +12,13 @@
  *
  *  The Original Code was created by Simon Carter (s1cart3r@gmail.com)
  *
- *  Copyright (c) 2011 - 2019 Simon Carter.  All Rights Reserved
+ *  Copyright (c) 2011 - 2022 Simon Carter.  All Rights Reserved
  *
  *  Purpose:  Compiler Warnings
  *
  */
 
- namespace Replication.Service.Console
+namespace Replication.Service.Console
 {
 #if DEBUG
 #warning Debug Build Replication.Service.Console.exe

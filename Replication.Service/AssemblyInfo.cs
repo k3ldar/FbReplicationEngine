@@ -12,13 +12,13 @@
  *
  *  The Original Code was created by Simon Carter (s1cart3r@gmail.com)
  *
- *  Copyright (c) 2011 - 2019 Simon Carter.  All Rights Reserved
+ *  Copyright (c) 2011 - 2022 Simon Carter.  All Rights Reserved
  *
  *  Purpose:  Service Assembly Information
  *
  */
 
- using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 //
@@ -48,4 +48,4 @@ using System.Runtime.CompilerServices;
 
 [assembly: AssemblyVersion("4.0.0.0")]
 
-[assembly: AssemblyFileVersion("4.0.8.15")]
+[assembly: AssemblyFileVersion("4.0.8.17")]
