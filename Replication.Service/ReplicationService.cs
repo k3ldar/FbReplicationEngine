@@ -45,9 +45,9 @@ namespace Replication.Service
 
         internal static UpdateBackupReplication INSTANCE;
 
-        private static Dictionary<string, ReplicationThread> _replicationThreads = new Dictionary<string, ReplicationThread>();
+        private static readonly Dictionary<string, ReplicationThread> _replicationThreads = new Dictionary<string, ReplicationThread>();
 
-        private static object _lockObject = new object();
+        private static readonly object _lockObject = new object();
 
         private FileSystemWatcher _watcher = null;
 
@@ -160,7 +160,7 @@ namespace Replication.Service
                         return;
                     }
 
-                    Shared.Classes.ThreadManager.Initialise();
+                    Shared.Classes.ThreadManager.Initialise(new SharedLib.Win.WindowsCpuUsage());
                     try
                     {                            
                         INSTANCE = new UpdateBackupReplication();
